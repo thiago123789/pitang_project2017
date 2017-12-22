@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>c1f0217c-f4ce-44af-92d6-ff91bde9aa12</ProjectGuid>
+    <ProjectGuid>cb9ada96-65d4-490c-958b-ede7c934e141</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pitangueiros.GuardioesDasQuentinhas.Domain</RootNamespace>
-    <AssemblyName>Pitangueiros.GuardioesDasQuentinhas.Domain</AssemblyName>
+    <RootNamespace>Pitangueiros.GuardioesDasQuentinhas.App.Contracts</RootNamespace>
+    <AssemblyName>Pitangueiros.GuardioesDasQuentinhas.App.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

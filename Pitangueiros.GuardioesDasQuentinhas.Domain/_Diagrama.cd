@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Cliente">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Usuario" HideInheritanceLine="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Vendedor">
+    <Position X="1" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Vendedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.EntidadeBase">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntidadeBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Comentario" HideInheritanceLine="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Comentario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Pedido" HideInheritanceLine="true">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAKAAAAA=</HashCode>
+      <FileName>Pedido.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Prato" HideInheritanceLine="true">
+    <Position X="2.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Prato.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Porcao" HideInheritanceLine="true">
+    <Position X="4.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Porcao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.PedidoCliente" HideInheritanceLine="true">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAACAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>PedidoCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Pagamento" HideInheritanceLine="true">
+    <Position X="7" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pagamento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.ClienteAvaliaLoja" HideInheritanceLine="true">
+    <Position X="6.75" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClienteAvaliaVendedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Avaliacao" HideInheritanceLine="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAAAAA=</HashCode>
+      <FileName>Avaliacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Loja" HideInheritanceLine="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Loja.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
