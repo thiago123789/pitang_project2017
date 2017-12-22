@@ -5,5 +5,12 @@ using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
     public class Comentario : EntidadeBase {
+        public string Texto
+        {
+            get => default(int);
+            set
+            {
+            }
+        }
     }
 }

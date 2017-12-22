@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
-    public class Avaliacao : EntidadeBase {
-        public int Nota
+    public class Local {
+        public int Endereco
         {
             get => default(int);
             set
@@ -13,7 +13,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
             }
         }
 
-        public string Comentario
+        public int CEP
         {
             get => default(int);
             set

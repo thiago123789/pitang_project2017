@@ -5,25 +5,15 @@ using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
     public class Pedido : EntidadeBase {
-        public List<Prato> Prato
-        {
-            get => default(Prato);
-            set
-            {
-            }
-        }
+        public List<Prato> Prato { get; set; }
 
-        public Comentario Comentario
-        {
-            get => default(Comentario);
-            set
-            {
-            }
-        }
+        public Comentario Comentario { get; set; }
 
-        public double Preco
+        public double Preco { get; set; }
+
+        public Local LocalDeEntrega
         {
-            get => default(int);
+            get => default(Local);
             set
             {
             }

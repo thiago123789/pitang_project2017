@@ -1,7 +1,15 @@
-﻿namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
-    public class ClienteAvaliaLoja : EntidadeBase {
+﻿using System;
+
+namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities
+{
+    public class Avaliacao : EntidadeBase
+    {
         public Cliente Cliente { get; set; }
-        public Avaliacao Avaliacao { get; set; }
+        public string Comentario { get; set; }
         public Loja Loja { get; set; }
+
+        public DateTime DataAvaliacao { get; set; }
+
+        public int Nota { get; set; }
     }
 }
