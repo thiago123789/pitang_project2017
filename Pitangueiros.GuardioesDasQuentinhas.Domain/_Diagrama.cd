@@ -38,7 +38,7 @@
   <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Pedido" HideInheritanceLine="true">
     <Position X="3" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAKAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAKAABAA=</HashCode>
       <FileName>Pedido.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -52,29 +52,29 @@
   <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Porcao" HideInheritanceLine="true">
     <Position X="5.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAUAAAAAAA=</HashCode>
       <FileName>Porcao.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.PedidoCliente" HideInheritanceLine="true">
     <Position X="5.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAACAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAACAAAAAAAAAAAQAAAAgAAAAAAA=</HashCode>
       <FileName>PedidoCliente.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Pagamento" HideInheritanceLine="true">
     <Position X="7.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pagamento.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.ClienteAvaliaLoja" HideInheritanceLine="true">
+  <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Avaliacao" HideInheritanceLine="true">
     <Position X="7.5" Y="1.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAACAAAAAAAACAAAAAAAAECAAAAA=</HashCode>
-      <FileName>ClienteAvaliaVendedor.cs</FileName>
+      <FileName>Avaliacao.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Loja" HideInheritanceLine="true">
