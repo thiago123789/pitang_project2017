@@ -5,5 +5,6 @@ using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
     public class Cliente : Usuario {
+        public List<Cartao> Cartao { get; set; }
     }
 }

@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E968A184-60BF-413F-B602-78F5CDBD2A32}</ProjectGuid>
+    <ProjectGuid>{479759D5-9D4F-4E95-BBDB-E94299809DD4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts</RootNamespace>
-    <AssemblyName>Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>Pintangueiros.GuardioesDasQuentinhas.App.Services.Impl</RootNamespace>
+    <AssemblyName>Pintangueiros.GuardioesDasQuentinhas.App.Services.Impl</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -42,18 +42,15 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Repositories\IUsuarioRepository.cs" />
-    <Compile Include="Services\IClienteService.cs" />
-    <Compile Include="Services\ILojaService.cs" />
-    <Compile Include="Services\IUsuarioService.cs" />
-    <Compile Include="Services\IVendedorService.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain\Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.csproj">
-      <Project>{c1f0217c-f4ce-44af-92d6-ff91bde9aa12}</Project>
-      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Entities</Name>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.App.Contracts\Pitangueiros.GuardioesDasQuentinhas.App.Contracts.csproj">
+      <Project>{cb9ada96-65d4-490c-958b-ede7c934e141}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.App.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.App.Entities\Pitangueiros.GuardioesDasQuentinhas.App.Entities.csproj">
+      <Project>{1046268e-99d6-4d8c-9543-05f26023141b}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.App.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

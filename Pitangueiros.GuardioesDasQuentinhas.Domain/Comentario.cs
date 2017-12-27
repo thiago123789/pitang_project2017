@@ -4,13 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
-    public class Comentario : EntidadeBase {
-        public string Texto
-        {
-            get => default(int);
-            set
-            {
-            }
-        }
+    public class Comentario : EntidadeBase<long> {
+        public string Texto { get; set; }
     }
 }

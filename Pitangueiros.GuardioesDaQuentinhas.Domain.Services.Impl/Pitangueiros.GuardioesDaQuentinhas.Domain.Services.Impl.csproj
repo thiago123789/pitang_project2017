@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E968A184-60BF-413F-B602-78F5CDBD2A32}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts</RootNamespace>
-    <AssemblyName>Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <ProjectGuid>{FA7393E6-DA98-4C91-8C90-D287EFB18498}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Pitangueiros.GuardioesDaQuentinhas.Domain.Services.Impl</RootNamespace>
+    <AssemblyName>Pitangueiros.GuardioesDaQuentinhas.Domain.Services.Impl</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,17 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Repositories\IUsuarioRepository.cs" />
-    <Compile Include="Services\IClienteService.cs" />
-    <Compile Include="Services\ILojaService.cs" />
-    <Compile Include="Services\IUsuarioService.cs" />
-    <Compile Include="Services\IVendedorService.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IoC\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.csproj">
+      <Project>{e968a184-60bf-413f-b602-78f5cdbd2a32}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain\Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.csproj">
       <Project>{c1f0217c-f4ce-44af-92d6-ff91bde9aa12}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Entities</Name>

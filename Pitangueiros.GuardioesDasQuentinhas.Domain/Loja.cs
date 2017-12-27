@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
-    public class Loja : EntidadeBase { 
+    public class Loja : EntidadeBase<int> { 
         public List<Prato> Prato { get; set; }
     }
 }
