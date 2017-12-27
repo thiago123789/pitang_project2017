@@ -82,7 +82,7 @@
     <Position X="6.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAABAQAAAACBAAA=</HashCode>
-      <FileName>Cartoes.cs</FileName>
+      <FileName>Cartao.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.StatusPedido">

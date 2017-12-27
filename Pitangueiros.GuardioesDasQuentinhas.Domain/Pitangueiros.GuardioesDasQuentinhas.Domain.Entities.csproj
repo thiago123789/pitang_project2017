@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cartoes.cs" />
+    <Compile Include="Cartao.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Avaliacao.cs" />
     <Compile Include="Comentario.cs" />
@@ -49,7 +49,6 @@
     <Compile Include="Loja.cs" />
     <Compile Include="Pagamento.cs" />
     <Compile Include="Pedido.cs" />
-    <Compile Include="PedidoCliente.cs" />
     <Compile Include="Porcao.cs" />
     <Compile Include="Prato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FA7393E6-DA98-4C91-8C90-D287EFB18498}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Pitangueiros.GuardioesDaQuentinhas.Domain.Services.Impl</RootNamespace>
-    <AssemblyName>Pitangueiros.GuardioesDaQuentinhas.Domain.Services.Impl</AssemblyName>
+    <ProjectGuid>{1B0B88E7-9CB2-4CE7-8231-C86F68D3B864}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl</RootNamespace>
+    <AssemblyName>Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,14 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ClienteRepository.cs" />
+    <Compile Include="LojaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IoC\" />
+    <Compile Include="UsuarioRepository.cs" />
+    <Compile Include="VendedorRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.csproj">
