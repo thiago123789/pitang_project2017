@@ -8,9 +8,9 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
-    class UsuarioRepository : IUsuarioRepository
+    public class UsuarioRepository : IUsuarioRepository
     {
-        void IRepository<Usuario, long>.Delete(long entityId)
+        void IRepository<Usuario, long>.Delete(Usuario entity)
         {
             throw new NotImplementedException();
         }
@@ -21,6 +21,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         }
 
         IEnumerable<Usuario> IRepository<Usuario, long>.List()
+        {
+            throw new NotImplementedException();
+        }
+
+        Usuario IUsuarioRepository.ObterPorLogin(string email)
         {
             throw new NotImplementedException();
         }

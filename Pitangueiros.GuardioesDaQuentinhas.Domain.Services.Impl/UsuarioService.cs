@@ -4,25 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services;
+using Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 {
-    class UsuarioService : IUsuarioService
+    public class UsuarioService : IUsuarioService
     {
+        private readonly IUsuarioRepository usuarioRepository;
+        public UsuarioService(IUsuarioRepository usuarioRepository)
+        {
+            this.usuarioRepository = usuarioRepository;
+        }
         public bool Autenticar(string email, string senha)
         {
-            throw new NotImplementedException();
+            Usuario usuario = this.usuarioRepository.ObterPorLogin(email);
+            bool autenticado = false;
+            if (usuario != null)
+            {
+                autenticado = usuario.Senha == senha;
+            }
+
+            return autenticado;
         }
 
         public void CriarUsuario(Usuario usuario)
         {
-            throw new NotImplementedException();
+            this.usuarioRepository.Save(usuario);
         }
 
-        public void DesativarUsuario(string email)
+        public void DesativarUsuario(Usuario usuario)
         {
-            throw new NotImplementedException();
+            this.usuarioRepository.Delete(usuario);
         }
     }
 }
