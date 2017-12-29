@@ -10,7 +10,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     class LojaRepository : ILojaRepository
     {
-        void IRepository<Loja, int>.Delete(int entityId)
+
+        void IRepository<Loja, int>.Delete(Loja entity)
         {
             throw new NotImplementedException();
         }

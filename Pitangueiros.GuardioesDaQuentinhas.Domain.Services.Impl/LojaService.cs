@@ -10,11 +10,19 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 {
     public class LojaService : ILojaService  {
         public bool AceitarPedido(Pedido pedido) {
-            throw new NotImplementedException();
+
+            bool aceito = false;
+
+            if (pedido != null && pedido.StatusPedido.Equals(StatusPedido.Aceito))
+            {
+                aceito = true;
+            }
+
+            return aceito;
         }
 
         public void AtualizarStatusDoPedido(Pedido pedido) {
-            throw new NotImplementedException();
+           
         }
 
         public void CriarNovoPrato(Prato prato) {

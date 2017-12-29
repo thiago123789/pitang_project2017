@@ -51,9 +51,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Porcao" HideInheritanceLine="true">
-    <Position X="5.25" Y="6.5" Width="1.5" />
+    <Position X="5.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAUAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAQUAAAAAAA=</HashCode>
       <FileName>Porcao.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -97,6 +97,13 @@
     <TypeIdentifier>
       <HashCode>iAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>OpcaoDePagamento.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.CategoriaPorcao">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAEABAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CategoriaPorcao.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

@@ -8,5 +8,13 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public string Item { get; set; }
         public int Quantidade { get; set; }
         public int Preco { get; set; }
+
+        public CategoriaPorcao CategoriaPorcao
+        {
+            get => default(CategoriaPorcao);
+            set
+            {
+            }
+        }
     }
 }
