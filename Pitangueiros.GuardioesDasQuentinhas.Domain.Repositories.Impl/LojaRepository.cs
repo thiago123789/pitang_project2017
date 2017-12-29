@@ -8,7 +8,7 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
-    class LojaRepository : ILojaRepository
+    public class LojaRepository : ILojaRepository
     {
 
         void IRepository<Loja, int>.Delete(Loja entity)

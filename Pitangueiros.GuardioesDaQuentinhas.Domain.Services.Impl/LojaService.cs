@@ -1,24 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
+using Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 {
     public class LojaService : ILojaService  {
-        public bool AceitarPedido(Pedido pedido) {
 
-            bool aceito = false;
+        private IPedidoRepository pedidoRepository;
 
-            if (pedido != null && pedido.StatusPedido.Equals(StatusPedido.Aceito))
+        public bool AceitarPedido(Pedido pedido) { 
+            if (pedido != null)
             {
-                aceito = true;
-            }
+                pedido.StatusPedido = StatusPedido.Aceito;
 
-            return aceito;
+            }
+            return true;
         }
 
         public void AtualizarStatusDoPedido(Pedido pedido) {

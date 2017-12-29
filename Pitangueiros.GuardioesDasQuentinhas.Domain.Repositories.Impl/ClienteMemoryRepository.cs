@@ -8,9 +8,10 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
-    public class ClienteRepository : IClienteRepository
+    public class ClienteMemoryRepository : IClienteRepository
     {
-        public void Delete(long entityId)
+
+        public void Delete(Cliente entity)
         {
             throw new NotImplementedException();
         }

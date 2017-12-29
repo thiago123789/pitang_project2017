@@ -9,7 +9,7 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
-    class VendedorRepository : IVendedorRepository
+    public class VendedorRepository : IVendedorRepository
     {
         void IRepository<Vendedor, long>.Delete(long entityId)
         {
