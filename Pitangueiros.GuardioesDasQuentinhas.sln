@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pitangueiros.GuardioesDasQuentinhas.Domain.Entities", "Pitangueiros.GuardioesDasQuentinhas.Domain\Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.csproj", "{C1F0217C-F4CE-44AF-92D6-FF91BDE9AA12}"
 EndProject
@@ -28,6 +28,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{8FB84C21-A781-4835-90F6-06F28C791B52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl", "Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl\Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.csproj", "{1B0B88E7-9CB2-4CE7-8231-C86F68D3B864}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".sqls", ".sqls", "{2DAD3083-6429-4FFF-B5E2-CB043FEF44C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

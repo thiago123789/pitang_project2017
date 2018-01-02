@@ -15,9 +15,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
         //Precisa ser criada uma nova entidade para armazenar a forma de pagamento de cada usuário (Numero do cartao, Bandeira)
         void AdicionarUmCartao(Cartao cartao);
         //Após feita a compra ele poderá avaliar baseado na qualidade do serviço
-        void FazerAvaliacaoEmPedido(Pedido pedido, Comentario comentario);
+        void FazerComentarioEmPedido(Pedido pedido, Comentario comentario);
         void RealizarPagamento(Pedido pedido, Pagamento pagamento);
         void AvaliarLoja(Loja loja, Avaliacao avaliacao);
-       
     }
 }

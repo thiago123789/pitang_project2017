@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PagamentoService.cs" />
     <Compile Include="ClienteService.cs" />
     <Compile Include="LojaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +74,9 @@
       <Project>{c1f0217c-f4ce-44af-92d6-ff91bde9aa12}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

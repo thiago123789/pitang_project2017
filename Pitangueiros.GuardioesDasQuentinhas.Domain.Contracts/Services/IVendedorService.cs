@@ -9,5 +9,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
 {
     public interface IVendedorService {
         void CadastrarLoja(Loja loja);
+        void RemoverLoja(Loja loja);
     }
 }

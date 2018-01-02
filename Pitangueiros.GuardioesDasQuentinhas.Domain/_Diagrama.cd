@@ -72,9 +72,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.Loja" HideInheritanceLine="true">
-    <Position X="0.5" Y="6.5" Width="1.5" />
+    <Position X="0.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
       <FileName>Loja.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -4,40 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services;
+using Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 {
     class ClienteService : IClienteService
     {
+        ICartaoRepository cartaoRepository;
+        IPedidoRepository pedidoRepository;
+
+        public ClienteService(ICartaoRepository cartaoRepository, IPedidoRepository pedidoRepository)
+        {
+            this.cartaoRepository = cartaoRepository;
+            this.pedidoRepository = pedidoRepository;
+        }
         public void AdicionarUmCartao(Cartao cartao)
         {
-            throw new NotImplementedException();
+            cartaoRepository.Save(cartao);
         }
 
         public void AvaliarLoja(Loja loja, Avaliacao avaliacao)
         {
-            throw new NotImplementedException();
+            avaliacao.Loja = loja;
         }
 
         public void CancelarPedido(Pedido pedido)
         {
-            throw new NotImplementedException();
+            pedido.StatusPedido = StatusPedido.Cancelado;
         }
 
-        public void FazerAvaliacaoEmPedido(Pedido pedido, Comentario comentario)
+        public void FazerComentarioEmPedido(Pedido pedido, Comentario comentario)
         {
-            throw new NotImplementedException();
+            pedido.Comentario = comentario;
         }
 
         public void FazerPedido(Pedido pedido)
         {
-            throw new NotImplementedException();
+            pedidoRepository.Save(pedido);
         }
 
         public void RealizarPagamento(Pedido pedido, Pagamento pagamento)
         {
-            throw new NotImplementedException();
+            pedido.Pagamento = pagamento;
         }
     }
 }

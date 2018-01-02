@@ -9,5 +9,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories
 {
     public interface IAvaliacaoRepository: IRepository<Avaliacao, int>
     {
+
     }
 }

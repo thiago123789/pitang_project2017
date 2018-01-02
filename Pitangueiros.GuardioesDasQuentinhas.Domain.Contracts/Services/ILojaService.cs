@@ -11,8 +11,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
         void CriarNovoPrato(Prato prato);
         void ExcluirPratoDaLoja(Prato prato);
         //Precisa ser revisado (Será CEP ou Coordenada ?) \/
-        void DefinirAreaDeEntrega(string cep);
-        bool AceitarPedido(Pedido pedido);
-        void AtualizarStatusDoPedido(Pedido pedido);
+        void DefinirAreaDeEntrega(Loja loja, List<string> cep);
+        void AtualizarStatusDoPedido(Pedido pedido, StatusPedido status);
     }
 }

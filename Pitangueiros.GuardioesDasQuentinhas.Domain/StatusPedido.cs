@@ -12,6 +12,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities
         Recusado,
         EmPreparacao,
         SaiuParaEntrega,
-        Entregue
+        Entregue,
+        Cancelado
     }
 }
