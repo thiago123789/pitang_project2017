@@ -9,7 +9,7 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
-    public class VendedorRepository : IVendedorRepository
+    public class VendedorMemoryRepository : IVendedorRepository
     {
         private readonly IList<Vendedor> repositorio = new List<Vendedor>();
         public void Delete(Vendedor entity)

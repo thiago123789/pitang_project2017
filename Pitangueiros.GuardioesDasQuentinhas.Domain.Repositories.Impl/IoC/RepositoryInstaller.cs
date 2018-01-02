@@ -17,7 +17,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.IoC
         {
             container.Register(
                 Component.For<IPedidoRepository, PedidoMemoryRepository>(),
-                Component.For<IClienteRepository, ClienteMemoryRepository>()
+                Component.For<IClienteRepository, ClienteMemoryRepository>(),
+                Component.For<IVendedorRepository, VendedorMemoryRepository>(),
+                Component.For<IUsuarioRepository, UsuarioMemoryRepository>(),
+                Component.For<ILojaRepository, LojaMemoryRepository>(),
+                Component.For<ICartaoRepository, CartaoMemoryRepository>(),
+                Component.For<IPratoRepository, PratoMemoryRepository>()
             );
         }
     }

@@ -8,7 +8,7 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
-    public class UsuarioRepository : IUsuarioRepository
+    public class UsuarioMemoryRepository : IUsuarioRepository
     {
         private readonly IList<Usuario> repositorio = new List<Usuario>();
         public void Delete(Usuario entity)

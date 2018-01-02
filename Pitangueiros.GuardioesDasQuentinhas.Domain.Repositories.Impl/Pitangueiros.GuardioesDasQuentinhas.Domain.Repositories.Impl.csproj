@@ -49,13 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartaoMemoryRepository.cs" />
     <Compile Include="ClienteMemoryRepository.cs" />
     <Compile Include="IoC\RepositoryInstaller.cs" />
-    <Compile Include="LojaRepository.cs" />
+    <Compile Include="LojaMemoryRepository.cs" />
     <Compile Include="PedidoMemoryRepository.cs" />
+    <Compile Include="PratoMemoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsuarioRepository.cs" />
-    <Compile Include="VendedorRepository.cs" />
+    <Compile Include="UsuarioMemoryRepository.cs" />
+    <Compile Include="VendedorMemoryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.csproj">

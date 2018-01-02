@@ -8,7 +8,7 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 { 
-    public class LojaRepository : ILojaRepository
+    public class LojaMemoryRepository : ILojaRepository
     {
         private readonly IList<Loja> repositorio = new List<Loja>();
 
