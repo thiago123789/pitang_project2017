@@ -10,25 +10,29 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     public class ClienteMemoryRepository : IClienteRepository
     {
+        private readonly IList<Cliente> repositorio = new List<Cliente>();
 
         public void Delete(Cliente entity)
         {
-            throw new NotImplementedException();
+            this.repositorio.Remove(entity);
         }
 
         public Cliente GetOne(long entityId)
         {
-            throw new NotImplementedException();
+            var query = (from c in this.repositorio
+                         where c.Id == entityId
+                         select c).FirstOrDefault();
+            return query;
         }
 
         public IEnumerable<Cliente> List()
         {
-            throw new NotImplementedException();
+            return this.repositorio;
         }
 
         public void Save(Cliente entity)
         {
-            throw new NotImplementedException();
+            this.repositorio.Add(entity);
         }
     }
 }

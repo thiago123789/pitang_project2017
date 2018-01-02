@@ -7,28 +7,32 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
-{
+{ 
     public class LojaRepository : ILojaRepository
     {
+        private readonly IList<Loja> repositorio = new List<Loja>();
 
-        void IRepository<Loja, int>.Delete(Loja entity)
+        public void Delete(Loja entity)
         {
-            throw new NotImplementedException();
+            this.repositorio.Remove(entity);
         }
 
-        Loja IRepository<Loja, int>.GetOne(int entityId)
+        public Loja GetOne(int entityId)
         {
-            throw new NotImplementedException();
+            var query = (from l in this.repositorio
+                        where l.Id == entityId
+                        select l).FirstOrDefault();
+            return query;
         }
 
-        IEnumerable<Loja> IRepository<Loja, int>.List()
+        public IEnumerable<Loja> List()
         {
-            throw new NotImplementedException();
+            return this.repositorio;
         }
 
-        void IRepository<Loja, int>.Save(Loja entity)
+        public void Save(Loja entity)
         {
-            throw new NotImplementedException();
+            this.repositorio.Add(entity);
         }
     }
 }

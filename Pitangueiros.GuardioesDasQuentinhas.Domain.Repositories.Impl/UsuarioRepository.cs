@@ -10,29 +10,33 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        void IRepository<Usuario, long>.Delete(Usuario entity)
+        private readonly IList<Usuario> repositorio = new List<Usuario>();
+        public void Delete(Usuario entity)
+        {
+            this.repositorio.Remove(entity);
+        }
+        
+        public Usuario GetOne(long entityId)
+        {
+            var query = (from u in this.repositorio
+                         where u.Id == entityId
+                         select u).FirstOrDefault();
+            return query;
+        }
+
+        public IEnumerable<Usuario> List()
+        {
+            return this.repositorio;
+        }
+
+        public Usuario ObterPorLogin(string email)
         {
             throw new NotImplementedException();
         }
 
-        Usuario IRepository<Usuario, long>.GetOne(long entityId)
+        public void Save(Usuario entity)
         {
-            throw new NotImplementedException();
-        }
-
-        IEnumerable<Usuario> IRepository<Usuario, long>.List()
-        {
-            throw new NotImplementedException();
-        }
-
-        Usuario IUsuarioRepository.ObterPorLogin(string email)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IRepository<Usuario, long>.Save(Usuario entity)
-        {
-            throw new NotImplementedException();
+            this.repositorio.Add(entity);
         }
     }
 }

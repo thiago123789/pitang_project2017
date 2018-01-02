@@ -11,24 +11,29 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     public class VendedorRepository : IVendedorRepository
     {
-        void IRepository<Vendedor, long>.Delete(long entityId)
+        private readonly IList<Vendedor> repositorio = new List<Vendedor>();
+        public void Delete(Vendedor entity)
         {
-            throw new NotImplementedException();
+            this.repositorio.Remove(entity);
         }
 
-        Vendedor IRepository<Vendedor, long>.GetOne(long entityId)
+        public Vendedor GetOne(long entityId)
         {
-            throw new NotImplementedException();
+            var query = (from v in this.repositorio
+                         where v.Id == entityId
+                         select v).FirstOrDefault();
+            return query;
+
         }
 
-        IEnumerable<Vendedor> IRepository<Vendedor, long>.List()
+        public IEnumerable<Vendedor> List()
         {
-            throw new NotImplementedException();
+            return this.repositorio;
         }
 
-        void IRepository<Vendedor, long>.Save(Vendedor entity)
+        public void Save(Vendedor entity)
         {
-            throw new NotImplementedException();
+            this.repositorio.Add(entity);
         }
     }
 }
