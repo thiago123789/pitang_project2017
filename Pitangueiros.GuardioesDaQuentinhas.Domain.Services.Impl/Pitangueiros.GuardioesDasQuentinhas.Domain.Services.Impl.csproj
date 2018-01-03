@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IoC\DomainServiceInstaller.cs" />
     <Compile Include="PagamentoService.cs" />
     <Compile Include="ClienteService.cs" />
     <Compile Include="LojaService.cs" />
@@ -62,9 +63,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IoC\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.csproj">
       <Project>{e968a184-60bf-413f-b602-78f5cdbd2a32}</Project>
