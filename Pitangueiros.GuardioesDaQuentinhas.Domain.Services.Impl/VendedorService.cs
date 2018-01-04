@@ -11,7 +11,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 {
     public class VendedorService : IVendedorService
     {
-        ILojaRepository lojaRepository;
+        private readonly ILojaRepository lojaRepository;
         public VendedorService(ILojaRepository lojaRepository)
         {
             this.lojaRepository = lojaRepository;
