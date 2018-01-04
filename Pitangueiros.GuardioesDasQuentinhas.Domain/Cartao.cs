@@ -11,5 +11,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities
         public int Bandeira { get; set; }
         public int CodSeg { get; set; }
         public int NomeTitular { get; set; }
+        public Cliente Cliente { get; set; }
     }
 }

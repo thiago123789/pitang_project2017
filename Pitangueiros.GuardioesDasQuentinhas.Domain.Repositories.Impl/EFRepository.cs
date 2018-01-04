@@ -9,7 +9,8 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     //Lembrar perguntar BURGO SOBRE ISSO POR QUÊ TÁ DANDO PROBLEMA QUANDO USA A INTERFACE???
-    public class EFRepository<T,TId> : IRepository<T, TId> where T : EntidadeBase<TId>
+    public class EFRepository<T,TId> : IRepository<T, TId> 
+        where T : EntidadeBase<TId>, new()
         where TId : IEquatable<TId>, IComparable
     {
         public void Delete(T entity)

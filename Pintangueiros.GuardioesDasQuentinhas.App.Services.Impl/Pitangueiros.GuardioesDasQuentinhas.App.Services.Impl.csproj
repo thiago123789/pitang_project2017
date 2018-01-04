@@ -7,8 +7,8 @@
     <ProjectGuid>{479759D5-9D4F-4E95-BBDB-E94299809DD4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pintangueiros.GuardioesDasQuentinhas.App.Services.Impl</RootNamespace>
-    <AssemblyName>Pintangueiros.GuardioesDasQuentinhas.App.Services.Impl</AssemblyName>
+    <RootNamespace>Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl</RootNamespace>
+    <AssemblyName>Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -2,6 +2,7 @@ use GuardioesDasQuentinhas;
 
 create table Usuario(
 	[Id] bigint not null primary key,
+	[UsuarioType] nvarchar(20) not null,
 	[Nome] nvarchar(100) not null,
 	[Senha] nvarchar(20) not null,
 	[Email] nvarchar(50) not null
