@@ -9,10 +9,10 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 {
-    class ClienteService : IClienteService
+    public class ClienteService : IClienteService
     {
-        ICartaoRepository cartaoRepository;
-        IPedidoRepository pedidoRepository;
+        private readonly ICartaoRepository cartaoRepository;
+        private readonly IPedidoRepository pedidoRepository;
 
         public ClienteService(ICartaoRepository cartaoRepository, IPedidoRepository pedidoRepository)
         {

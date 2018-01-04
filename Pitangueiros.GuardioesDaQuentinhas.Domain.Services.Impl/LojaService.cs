@@ -8,7 +8,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 {
     public class LojaService : ILojaService  {
 
-        private IPratoRepository pratoRepository;
+        private readonly IPratoRepository pratoRepository;
 
         public LojaService(IPratoRepository pratoRepository)
         {
