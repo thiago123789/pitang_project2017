@@ -30,6 +30,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl", "Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl\Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.csproj", "{1B0B88E7-9CB2-4CE7-8231-C86F68D3B864}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".sqls", ".sqls", "{2DAD3083-6429-4FFF-B5E2-CB043FEF44C2}"
+	ProjectSection(SolutionItems) = preProject
+		.sql\GuardioesDasQuetinhas_V1 [Criacao].sql = .sql\GuardioesDasQuetinhas_V1 [Criacao].sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
