@@ -5,16 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
+using Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     public class GuardioesDasQuentinhasDbContext : DbContext{
 
-        public GuardioesDasQuentinhasDbContext() /*: base ("A gente n")*/{
+        public GuardioesDasQuentinhasDbContext() {
 
         }
-        public DbSet<Usuario> Usuarios { get; set; }
+        /*public DbSet<Usuario> Usuarios { get; set; }
 
         public DbSet<Cliente> Clientes { get; set; }
 
@@ -31,25 +32,24 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         public DbSet<Comentario> Comentarios { get; set; }
 
         public DbSet<Avaliacao> Avaliacoes { get; set; }
-
-        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }*/
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //Mapeamento de Usuario
-            modelBuilder.Entity<Usuario>()
-                .HasKey(p => p.Id);
-            modelBuilder.Entity<Usuario>().Property(p => p.Id)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            modelBuilder.Entity<Usuario>()
-                .Map<Cliente>(p => p.Requires("UsuarioType").HasValue("Cliente"))
-                .Map<Vendedor>(p => p.Requires("UsuarioType").HasValue("Vendedor"));
-            modelBuilder.Entity<Usuario>().Property(p => p.Nome)
-                .HasColumnName("Nome");
-            modelBuilder.Entity<Usuario>().Property(p => p.Email)
-                .HasColumnName("Email");
-            modelBuilder.Entity<Usuario>().Property(p => p.Senha)
-                .HasColumnName("Senha");
+            modelBuilder.Configurations.Add(new VendedorMapping());
+            modelBuilder.Configurations.Add(new UsuarioMapping());
+            modelBuilder.Configurations.Add(new PratoMapping());
+            modelBuilder.Configurations.Add(new PorcaoMapping());
+            modelBuilder.Configurations.Add(new PedidoMapping());
+            modelBuilder.Configurations.Add(new PagamentoMapping());
+            modelBuilder.Configurations.Add(new LojaMapping());
+            //modelBuilder.Configurations.Add(new EntidadeBaseMapping());
+            modelBuilder.Configurations.Add(new ComentarioMapping());
+            modelBuilder.Configurations.Add(new ClienteMapping());
+            modelBuilder.Configurations.Add(new CartaoMapping());
+            modelBuilder.Configurations.Add(new AvaliacaoMapping());
+
+            /*
             
             //Mapeamento de Cartao
             modelBuilder.Entity<Cartao>()
@@ -147,9 +147,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             //    .HasColumnName("Preco");
             //modelBuilder.Entity<Pedido>().Property(p => p.StatusPedido)
             //    .HasColumnName("Status");
-
-
-
+            */
 
             base.OnModelCreating(modelBuilder);
         }
