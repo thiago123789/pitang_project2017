@@ -6,6 +6,7 @@ using System.Text;
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
     public class Pedido : EntidadeBase<long> {
         public List<Prato> Prato { get; set; }
+        public Loja Loja { get; set; }
         public Comentario Comentario { get; set; }
         public double Preco { get; set; }
         public StatusPedido StatusPedido { get; set; }
