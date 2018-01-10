@@ -9,7 +9,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories
 {
     public interface IRepository<T, TId>
         where T: IEntidadeBase<TId>
-        where TId: IEquatable<TId>, IComparable{
+        where TId: IEquatable<TId>, IComparable<TId>{
 
         void Save(T entity);
         T GetOne(TId entityId);
