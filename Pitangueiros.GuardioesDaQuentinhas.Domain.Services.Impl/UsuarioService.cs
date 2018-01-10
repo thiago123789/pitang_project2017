@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
+using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts
 {
-    interface IDependenciaTransient
+    public interface IDependenciaTransient
     {
     }
 }
