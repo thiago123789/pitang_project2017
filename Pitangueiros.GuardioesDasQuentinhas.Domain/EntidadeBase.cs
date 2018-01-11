@@ -11,7 +11,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
     }
 
 
-   public interface IEntidadeBase<TId> where TId: IEquatable<TId>, IComparable
+   public interface IEntidadeBase<TId> where TId: IEquatable<TId>, IComparable<TId>
    {
         TId Id { get; set; }
     }
