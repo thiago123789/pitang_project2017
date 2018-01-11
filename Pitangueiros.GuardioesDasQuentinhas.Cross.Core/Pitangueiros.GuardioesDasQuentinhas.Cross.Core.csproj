@@ -41,12 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Colecoes\CollectionExtensions.cs" />
+    <Compile Include="Colecoes\DictionaryExtensions.cs" />
+    <Compile Include="Colecoes\EnumerableExtensions.cs" />
+    <Compile Include="Colecoes\ListExtensions.cs" />
     <Compile Include="Configuracao\DicionarioBaseDeConfiguracao.cs" />
     <Compile Include="Configuracao\IDicionarioBaseDeConfiguracao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Colecoes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
