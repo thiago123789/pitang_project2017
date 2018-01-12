@@ -6,8 +6,8 @@ using System.Text;
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
     public class Cliente : Usuario {
         
-        public List<Cartao> Cartao { get; set; }
+        public IList<Cartao> Cartao { get; set; }
 
-        public List<Pedido> Pedido { get; set; }
+        public IList<Pedido> Pedido { get; set; }
     }
 }
