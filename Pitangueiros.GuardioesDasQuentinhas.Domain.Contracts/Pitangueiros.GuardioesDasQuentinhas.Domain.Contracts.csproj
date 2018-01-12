@@ -54,7 +54,6 @@
     <Compile Include="Repositories\IVendedorRepository.cs" />
     <Compile Include="Services\IClienteService.cs" />
     <Compile Include="Services\ILojaService.cs" />
-    <Compile Include="Services\IPagamentoService.cs" />
     <Compile Include="Services\IUsuarioService.cs" />
     <Compile Include="Services\IVendedorService.cs" />
   </ItemGroup>

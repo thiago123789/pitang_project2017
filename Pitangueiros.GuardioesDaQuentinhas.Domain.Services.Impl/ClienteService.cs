@@ -48,5 +48,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         {
             pedido.Pagamento = pagamento;
         }
+        public void EscolherOpcaoDePagamento(Pagamento pagamento, OpcaoDePagamento opcaoDePagamento)
+        {
+            if (pagamento != null) pagamento.OpcaoDePagamento = opcaoDePagamento;
+        }
     }
 }

@@ -20,9 +20,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         {
             if (loja != null) this.lojaRepository.Save(loja);
         }
-        public void RemoverLoja(Loja loja)
+        public void RemoverLoja(int id)
         {
-            if (loja != null) this.lojaRepository.Delete(loja);
+            this.lojaRepository.Delete(id);
         }
     }
 }

@@ -12,9 +12,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
     {
         private readonly IList<Cliente> repositorio = new List<Cliente>();
 
-        public void Delete(Cliente entity)
+        public void Delete(long entityId)
         {
-            this.repositorio.Remove(entity);
+            var query = (from c in this.repositorio
+                         where c.Id == entityId
+                         select c).FirstOrDefault();
+            repositorio.Remove(query);
         }
 
         public Cliente GetOne(long entityId)

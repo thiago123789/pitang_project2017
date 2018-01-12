@@ -53,7 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IoC\DomainServiceInstaller.cs" />
-    <Compile Include="PagamentoService.cs" />
     <Compile Include="ClienteService.cs" />
     <Compile Include="LojaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

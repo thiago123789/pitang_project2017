@@ -15,9 +15,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 
         private readonly IList<Pedido> repositorio = new List<Pedido>(); 
 
-        public void Delete(Pedido entity)
+        public void Delete(long entityId)
         {
-            this.repositorio.Remove(entity);
+            var query = (from p in this.repositorio
+                         where p.Id == entityId
+                         select p).FirstOrDefault();
+            repositorio.Remove(query);
         }
 
         public Pedido GetOne(long entityId)

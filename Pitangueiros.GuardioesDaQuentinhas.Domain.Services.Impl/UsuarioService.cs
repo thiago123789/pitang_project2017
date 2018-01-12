@@ -34,9 +34,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.usuarioRepository.Save(usuario);
         }
 
-        public void DesativarUsuario(Usuario usuario)
+        public void DesativarUsuario(int id)
         {
-            this.usuarioRepository.Delete(usuario);
+            this.usuarioRepository.Delete(id);
         }
     }
 }
