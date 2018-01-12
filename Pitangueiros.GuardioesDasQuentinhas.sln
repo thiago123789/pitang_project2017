@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pitangueiros.GuardioesDasQuentinhas.Domain.Entities", "Pitangueiros.GuardioesDasQuentinhas.Domain\Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.csproj", "{C1F0217C-F4CE-44AF-92D6-FF91BDE9AA12}"
 EndProject
@@ -39,6 +39,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC", "Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Io\Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC.csproj", "{A1EF83E9-756E-4841-A76B-175F84BB8A60}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi", "Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi\Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.csproj", "{7DF39C0A-2A85-4E0D-B2A2-D8CD7F221637}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC", "Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC\Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC.csproj", "{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -228,6 +230,22 @@ Global
 		{7DF39C0A-2A85-4E0D-B2A2-D8CD7F221637}.Release|x64.Build.0 = Release|Any CPU
 		{7DF39C0A-2A85-4E0D-B2A2-D8CD7F221637}.Release|x86.ActiveCfg = Release|Any CPU
 		{7DF39C0A-2A85-4E0D-B2A2-D8CD7F221637}.Release|x86.Build.0 = Release|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Debug|ARM.Build.0 = Debug|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Debug|x64.Build.0 = Debug|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Debug|x86.Build.0 = Debug|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Release|ARM.ActiveCfg = Release|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Release|ARM.Build.0 = Release|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Release|x64.ActiveCfg = Release|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Release|x64.Build.0 = Release|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Release|x86.ActiveCfg = Release|Any CPU
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -244,6 +262,7 @@ Global
 		{BA893A70-581D-4D0C-84BD-C6D48495EFB7} = {DA37F7D0-093B-4282-ABB9-DDE10DA33EAB}
 		{A1EF83E9-756E-4841-A76B-175F84BB8A60} = {8FB84C21-A781-4835-90F6-06F28C791B52}
 		{7DF39C0A-2A85-4E0D-B2A2-D8CD7F221637} = {7E00C958-CF4C-4957-93C3-38B03E70776B}
+		{AD9DD1EF-6A5F-4113-8F04-EEC065DB9165} = {FD141618-B4F9-4585-9BB3-1675A5254D55}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B5CBFD18-EA25-4A72-90E8-0C2B5C563958}

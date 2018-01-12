@@ -41,12 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IApplicationService.cs" />
+    <Compile Include="IUsuarioAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.App.Entities\Pitangueiros.GuardioesDasQuentinhas.App.Entities.csproj">
       <Project>{1046268e-99d6-4d8c-9543-05f26023141b}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.App.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Cross.IoC\Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.csproj">
+      <Project>{3b982ca9-944f-47ff-ab75-9bc5e1fde87f}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.Cross.IoC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

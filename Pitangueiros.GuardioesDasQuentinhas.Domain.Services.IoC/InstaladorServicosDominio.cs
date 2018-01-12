@@ -2,13 +2,12 @@
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 
-namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC
+namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC
 {
-    public class InstaladorRepositorios : IWindsorInstaller
+    class InstaladorServicosDominio : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            
         }
     }
 }

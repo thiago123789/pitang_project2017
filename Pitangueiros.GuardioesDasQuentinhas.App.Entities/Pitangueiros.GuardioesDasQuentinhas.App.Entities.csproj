@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutenticacaoInputDto.cs" />
+    <Compile Include="DesativarUsuarioInputDto.cs" />
     <Compile Include="LojaInputDto.cs" />
     <Compile Include="LojaOutputDto.cs" />
     <Compile Include="PorcoesInputDto.cs" />
