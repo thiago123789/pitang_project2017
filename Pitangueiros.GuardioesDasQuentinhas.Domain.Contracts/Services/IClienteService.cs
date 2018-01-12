@@ -11,6 +11,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
     {
         //Nesse metodo ele poderá adicinar observação definindo modificações no pedido
         void FazerPedido(Pedido pedido);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pedido"></param>
         void CancelarPedido(Pedido pedido);
         //Precisa ser criada uma nova entidade para armazenar a forma de pagamento de cada usuário (Numero do cartao, Bandeira)
         void AdicionarUmCartao(Cartao cartao);

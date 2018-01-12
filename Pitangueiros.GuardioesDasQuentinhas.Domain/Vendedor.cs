@@ -5,6 +5,6 @@ using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
     public class Vendedor : Usuario {
-        public List<Loja> Lojas { get; set; }
+        public IList<Loja> Lojas { get; set; }
     }
 }

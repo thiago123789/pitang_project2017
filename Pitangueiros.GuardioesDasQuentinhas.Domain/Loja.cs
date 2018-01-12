@@ -5,8 +5,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public string Nome { get; set; }
         public string CEP { get; set; }
         public Vendedor Vendedor { get; set; }
-        public List<Prato> Prato { get; set; }
-        public List<string> CEPs { get; set; }
-        public List<Pedido> Pedido { get; set; }
+        public IList<Prato> Prato { get; set; }
+        public IList<string> CEPs { get; set; }
+        public IList<Pedido> Pedido { get; set; }
     }
 }
