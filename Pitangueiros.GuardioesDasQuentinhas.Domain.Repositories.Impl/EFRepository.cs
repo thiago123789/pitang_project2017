@@ -21,9 +21,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         {
             this.Context = context;
         }
-        public void Delete(T entity)
+        public void Delete(TId entityId)
         {
-            this.Context.Set<T>().Remove(entity);
+            var query = (from entity in Context.Set<T>()
+                         where entity.Id.Equals(entityId)
+                         select entity).FirstOrDefault();
+            this.Context.Set<T>().Remove(query);
             this.Context.SaveChanges();
         }
 

@@ -11,9 +11,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
     class PratoMemoryRepository : IPratoRepository
     {
         private readonly IList<Prato> repositorio = new List<Prato>();
-        public void Delete(Prato entity)
+        public void Delete(int entityId)
         {
-            this.repositorio.Remove(entity);
+            var query = (from p in this.repositorio
+                         where p.Id == entityId
+                         select p).FirstOrDefault();
+            repositorio.Remove(query);
         }
 
         public Prato GetOne(int entityId)

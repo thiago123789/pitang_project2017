@@ -12,9 +12,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
     public class VendedorMemoryRepository : IVendedorRepository
     {
         private readonly IList<Vendedor> repositorio = new List<Vendedor>();
-        public void Delete(Vendedor entity)
+        public void Delete(long entityId)
         {
-            this.repositorio.Remove(entity);
+            var query = (from v in this.repositorio
+                         where v.Id == entityId
+                         select v).FirstOrDefault();
+            repositorio.Remove(query);
         }
 
         public Vendedor GetOne(long entityId)

@@ -11,9 +11,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
     public class CartaoMemoryRepository : ICartaoRepository
     {
         private readonly IList<Cartao> repositorio = new List<Cartao>();
-        public void Delete(Cartao entity)
+        public void Delete(int entityId)
         {
-            this.repositorio.Remove(entity);
+            var query = (from c in this.repositorio
+                         where c.Id == entityId
+                         select c).FirstOrDefault();
+            repositorio.Remove(query);
         }
 
         public Cartao GetOne(int entityId)

@@ -11,9 +11,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
     public class UsuarioMemoryRepository : IUsuarioRepository
     {
         private readonly IList<Usuario> repositorio = new List<Usuario>();
-        public void Delete(Usuario entity)
+        public void Delete(long entityId)
         {
-            this.repositorio.Remove(entity);
+            var query = (from u in this.repositorio
+                         where u.Id == entityId
+                         select u).FirstOrDefault();
+            repositorio.Remove(query);
         }
         
         public Usuario GetOne(long entityId)
