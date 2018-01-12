@@ -27,8 +27,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             if (loja != null && ceps != null) loja.Ceps = ceps;
         }
 
-        public void ExcluirPratoDaLoja(Prato prato) {
-            if (prato != null) pratoRepository.Delete(prato);
+        public void ExcluirPratoDaLoja(int id) {
+            pratoRepository.Delete(id);
         }
     }
 }
