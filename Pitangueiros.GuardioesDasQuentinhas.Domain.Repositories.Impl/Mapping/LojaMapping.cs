@@ -19,7 +19,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             this.Property(p => p.Nome)
                 .HasColumnName("Nome");
-            this.Property(p => p.CEP)
+            this.Property(p => p.CEPDaLoja)
                 .HasColumnName("CEP");
             this.HasRequired<Vendedor>(s => s.Vendedor)
                 .WithMany(c => c.Lojas);
