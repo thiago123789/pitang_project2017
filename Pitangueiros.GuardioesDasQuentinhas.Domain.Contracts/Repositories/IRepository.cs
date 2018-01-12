@@ -13,8 +13,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories
 
         void Save(T entity);
         T GetOne(TId entityId);
-        //IEnumerable<T> List();
-        //void Delete(TId entityId);
+        ICollection<T> ListActive();
+        ICollection<T> ListAll();
         void Delete(TId entityId);
     }
 }

@@ -22,6 +22,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .HasColumnName("Email").IsRequired();
             this.Property(p => p.Senha)
                 .HasColumnName("Senha").IsRequired();
+            this.Property(p => p.StatusUsuario)
+                .HasColumnName("StatusUsuario").IsRequired();
 
         }
     }

@@ -23,11 +23,20 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         }
         public void Delete(TId entityId)
         {
-            var query = (from entity in Context.Set<T>()
+            var entity_rtn = (from entity in Context.Set<T>()
                          where entity.Id.Equals(entityId)
-                         select entity).FirstOrDefault();
-            this.Context.Set<T>().Remove(query);
-            this.Context.SaveChanges();
+                         select entity).SingleOrDefault();
+
+            if (entity_rtn != null)
+            {
+                entity_rtn.StatusEntidade = StatusEntidade.Desativado;
+            }
+
+            using(var dbContext = new GuardioesDasQuentinhasDbContext())
+            {
+                dbContext.Entry(entity_rtn).State = EntityState.Modified;
+                dbContext.SaveChanges();
+            }
         }
 
         public T GetOne(TId entityId)
@@ -42,6 +51,21 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         {
             this.Context.Set<T>().Add(entity);
             this.Context.SaveChanges();
+        }
+
+        public ICollection<T> ListActive()
+        {
+            var list = (from entity in Context.Set<T>()
+                       where entity.StatusEntidade.Equals(StatusEntidade.Ativado)
+                       select entity).ToList();
+            return list;
+        }
+
+        public ICollection<T> ListAll()
+        {
+            var list = (from entity in Context.Set<T>()
+                        select entity).ToList();
+            return list;
         }
     }
 }

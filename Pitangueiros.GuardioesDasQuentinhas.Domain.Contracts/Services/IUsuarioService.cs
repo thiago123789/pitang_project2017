@@ -8,9 +8,9 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
 {
     public interface IUsuarioService {
-        bool Autenticar(String email, String senha);
+        bool Autenticar(string email, string senha);
         //void DesativarUsuario(String email);
-        void DesativarUsuario(int id);
+        void DesativarUsuario(string email);
         void CriarUsuario(Usuario usuario);
     }
 }
