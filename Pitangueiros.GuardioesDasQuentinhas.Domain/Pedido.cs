@@ -7,7 +7,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
     public class Pedido : EntidadeBase<long> {
         public IList<Prato> Prato { get; set; }
         public Loja Loja { get; set; }
-        public Comentario Comentario { get; set; }
+        public string Comentario { get; set; }
         public double Preco { get; set; }
         public StatusPedido StatusPedido { get; set; }
         public Cliente Cliente { get; set; }

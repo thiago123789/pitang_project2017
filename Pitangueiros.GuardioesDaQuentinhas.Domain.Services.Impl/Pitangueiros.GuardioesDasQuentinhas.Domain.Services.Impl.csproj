@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IoC\DomainServiceInstaller.cs" />
     <Compile Include="ClienteService.cs" />
     <Compile Include="LojaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

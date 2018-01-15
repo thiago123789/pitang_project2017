@@ -21,8 +21,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .WithMany(p => p.Pedido);
             this.HasRequired<Loja>(p => p.Loja)
                 .WithMany(p => p.Pedido);
-            this.HasOptional<Comentario>(p => p.Comentario)
-                .WithRequired();
+            this.Property(p => p.Comentario)
+                .HasColumnName("Comentario");
             this.HasRequired<Pagamento>(p => p.Pagamento)
                 .WithRequiredDependent();
             this.Property(p => p.Preco)

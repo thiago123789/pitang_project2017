@@ -46,7 +46,6 @@
     <Compile Include="StatusEntidade.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Avaliacao.cs" />
-    <Compile Include="Comentario.cs" />
     <Compile Include="EntidadeBase.cs" />
     <Compile Include="OpcaoDePagamento.cs" />
     <Compile Include="Loja.cs" />
