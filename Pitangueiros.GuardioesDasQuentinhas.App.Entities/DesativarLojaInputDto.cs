@@ -11,6 +11,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
     {
         [Required]
         [Display(Name = "Nome da Loja")]
-        public string Login { get; set; }
+        public string Nome { get; set; }
     }
 }

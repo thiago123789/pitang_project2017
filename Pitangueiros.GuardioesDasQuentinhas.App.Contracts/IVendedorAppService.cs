@@ -7,9 +7,9 @@ using Pitangueiros.GuardioesDasQuentinhas.App.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
 {
-    interface IVendedorAppService : IApplicationService
+    public interface IVendedorAppService : IApplicationService
     {
-        void CadastrarLoja(LojaInputDto lojas);
+        void CadastrarLoja(LojaInputDto loja);
         void DesativarLoja(DesativarLojaInputDto nomeLoja);
     }
 }
