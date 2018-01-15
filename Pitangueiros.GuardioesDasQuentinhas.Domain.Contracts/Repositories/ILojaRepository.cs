@@ -9,5 +9,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories
 {
     public interface ILojaRepository: IRepository<Loja, int>
     {
+        Loja ObterPorNome(string nomeLoja);
     }
 }

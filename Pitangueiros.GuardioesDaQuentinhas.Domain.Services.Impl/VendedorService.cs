@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
+using System.Collections;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 {
@@ -16,13 +17,20 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         {
             this.lojaRepository = lojaRepository;
         }
+
+        //public void CadastrarAreaEntrega(IList CEPs)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
         public void CadastrarLoja(Loja loja)
         {
             if (loja != null) this.lojaRepository.Save(loja);
         }
-        public void RemoverLoja(int id)
+        public void DesativarLoja(string nomeLoja)
         {
-            this.lojaRepository.Delete(id);
+            Loja loja = this.lojaRepository.ObterPorNome(nomeLoja);
+            this.lojaRepository.Delete(loja.Id);
         }
     }
 }

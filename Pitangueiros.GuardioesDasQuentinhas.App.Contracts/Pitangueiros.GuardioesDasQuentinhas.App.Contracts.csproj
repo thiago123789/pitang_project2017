@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="IApplicationService.cs" />
     <Compile Include="IUsuarioAppService.cs" />
+    <Compile Include="IVendedorAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
