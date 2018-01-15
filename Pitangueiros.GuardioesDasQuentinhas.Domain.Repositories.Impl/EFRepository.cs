@@ -27,9 +27,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
                          where entity.Id.Equals(entityId)
                          select entity).SingleOrDefault();
 
-            if (entity_rtn != null)
+            if (entity_rtn.GetType() == typeof(IDeleteLogico))
             {
-                entity_rtn.StatusEntidade = StatusEntidade.Desativado;
+                IDeleteLogico i = (IDeleteLogico) entity_rtn;
+                if (!i.IsDeleted) i.IsDeleted = false;
             }
           
             this.Context.SaveChanges();

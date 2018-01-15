@@ -19,6 +19,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
     public interface IDeleteLogico
     {
         bool IsDeleted { get; set; }
+
     }
 
 }
