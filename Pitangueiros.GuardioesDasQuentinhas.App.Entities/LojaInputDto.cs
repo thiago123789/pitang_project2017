@@ -14,6 +14,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         public IList Lojas { get; set; }
 
         [Required]
+        [Display(Name = "CEP da Loja")]
+        public string CEP { get; set; }
+
+        [Required]
         [Display(Name = "Area de entrega")]
         public IList CEPs { get; set; }
     }

@@ -31,12 +31,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             {
                 entity_rtn.StatusEntidade = StatusEntidade.Desativado;
             }
-
-            using(var dbContext = new GuardioesDasQuentinhasDbContext())
-            {
-                dbContext.Entry(entity_rtn).State = EntityState.Modified;
-                dbContext.SaveChanges();
-            }
+          
+            this.Context.SaveChanges();
+          
         }
 
         public T GetOne(TId entityId)
