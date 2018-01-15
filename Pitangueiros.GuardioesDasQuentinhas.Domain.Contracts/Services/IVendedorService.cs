@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +9,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
 {
     public interface IVendedorService {
         void CadastrarLoja(Loja loja);
-        void RemoverLoja(int id);
+        void DesativarLoja(string nomeLoja);
+        //void CadastrarAreaEntrega(IList CEPs);
     }
 }

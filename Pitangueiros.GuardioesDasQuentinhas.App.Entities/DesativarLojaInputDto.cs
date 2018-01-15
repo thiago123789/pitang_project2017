@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
+namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
 {
-    public class PratoInputDto
+    public class DesativarLojaInputDto
     {
         [Required]
-        [Display(Name = "Porcoes")]
-        public List<PorcoesInputDto> Porcoes { get; set; }
+        [Display(Name = "Nome da Loja")]
+        public string Login { get; set; }
     }
 }
