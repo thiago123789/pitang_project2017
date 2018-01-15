@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
-    public class Cliente : Usuario {
+    public class Cliente : Usuario, IDeleteLogico {
         
         public IList<Cartao> Cartao { get; set; }
 

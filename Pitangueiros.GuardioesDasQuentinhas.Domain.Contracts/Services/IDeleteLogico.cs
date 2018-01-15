@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities
-{ 
-    public enum StatusEntidade
+{
+    class IDeleteLogico
     {
-        Ativado = 1,
-        Desativado
     }
 }

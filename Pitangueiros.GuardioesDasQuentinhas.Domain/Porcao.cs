@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
-    public class Porcao : EntidadeBase<long> {
+    public class Porcao : EntidadeBase<long>, IDeleteLogico{
         public string Item { get; set; }
         public int Quantidade { get; set; }
         public int Preco { get; set; }
         public CategoriaPorcao CategoriaPorcao { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }
