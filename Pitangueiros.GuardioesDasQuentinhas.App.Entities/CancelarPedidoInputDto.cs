@@ -7,8 +7,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
 {
-    public class FazerPedidoInputDto
+    public class CancelarPedidoInputDto
     {
-       
+        [Required]
+        [Display(Name = "Id do Pedido")]
+        public long Id { get; set; }
     }
 }

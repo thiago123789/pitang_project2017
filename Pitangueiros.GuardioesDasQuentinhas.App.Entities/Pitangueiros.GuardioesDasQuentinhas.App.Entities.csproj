@@ -46,7 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutenticacaoInputDto.cs" />
-    <Compile Include="FazerPedidoInputDto.cs" />
+    <Compile Include="CancelarPedidoInputDto.cs" />
+    <Compile Include="CartaoInputDto.cs" />
+    <Compile Include="ComentarioInputDto.cs" />
+    <Compile Include="PedidoInputDto.cs" />
     <Compile Include="LojaInputDto.cs" />
     <Compile Include="DesativarLojaInputDto.cs" />
     <Compile Include="DesativarUsuarioInputDto.cs" />
@@ -56,6 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain\Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.csproj">
+      <Project>{c1f0217c-f4ce-44af-92d6-ff91bde9aa12}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

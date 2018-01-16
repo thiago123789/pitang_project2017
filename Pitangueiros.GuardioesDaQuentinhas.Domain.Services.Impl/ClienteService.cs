@@ -21,7 +21,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         }
         public void AdicionarUmCartao(Cartao cartao)
         {
-            cartaoRepository.Save(cartao);
+            this.cartaoRepository.Save(cartao);
         }
 
         public void AvaliarLoja(Loja loja, Avaliacao avaliacao)
@@ -29,19 +29,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             avaliacao.Loja = loja;
         }
 
-        public void CancelarPedido(Pedido pedido)
+        public void CancelarPedido(long id)
         {
+            Pedido pedido = this.pedidoRepository.GetOne(id);
             pedido.StatusPedido = StatusPedido.Cancelado;
-        }
-
-        public void FazerComentarioEmPedido(Pedido pedido, Comentario comentario)
-        {
-            pedido.Comentario = comentario;
         }
 
         public void FazerPedido(Pedido pedido)
         {
-            pedidoRepository.Save(pedido);
+            this.pedidoRepository.Save(pedido);
         }
 
         public void RealizarPagamento(Pedido pedido, Pagamento pagamento)
@@ -53,20 +49,20 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             if (pagamento != null) pagamento.OpcaoDePagamento = opcaoDePagamento;
         }
 
-        public void EscolherLoja(Loja loja)
-        {
-            throw new NotImplementedException();
-        }
+        //public void EscolherLoja(Loja loja)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public void EscolherPrato(Prato prato)
-        {
-            throw new NotImplementedException();
-        }
+        //public void EscolherPrato(Prato prato)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public void PersonalizarPrato(Prato prato)
-        {
-            throw new NotImplementedException();
-        }
+        //public void PersonalizarPrato(Prato prato)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public void FazerComentarioEmPedido(Pedido pedido, string comentario)
         {

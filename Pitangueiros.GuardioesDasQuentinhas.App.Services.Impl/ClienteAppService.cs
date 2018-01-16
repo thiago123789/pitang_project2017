@@ -13,70 +13,49 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
 {
     class ClienteAppService : IClienteAppService
     {
-        IClienteService clienteService;
+        private readonly IClienteService clienteService;
         public ClienteAppService(IClienteService clienteService)
         {
             this.clienteService = clienteService;
         }
 
-        public void EscolherLoja(LojaInputDto loja)
+        public void AdicionarUmCartao(CartaoInputDto cartao)
         {
-            throw new NotImplementedException();
-            //this.clienteService.EscolherLoja(); 
-        }
-        public void FazerPedido(FazerPedidoInputDto fazerPedido) {
-            throw new NotImplementedException();
-        }
-
-        void CancelarPedido(Pedido pedido) {
-            throw new NotImplementedException();
-        }
-
-        void AdicionarUmCartao(Cartao cartao) {
-            throw new NotImplementedException();
-        }
-
-        void FazerComentarioEmPedido(Pedido pedido, string comentario) {
-            throw new NotImplementedException();
-        }
-        void RealizarPagamento(Pedido pedido, Pagamento pagamento) {
-            throw new NotImplementedException();
-        }
-        void AvaliarLoja(Loja loja, Avaliacao avaliacao) {
-            throw new NotImplementedException();
-        }
-
-        public void EscolherPrato()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void PersonalizarPrato()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CancelarPedido(CancelarPedidoInputDto cancelarPedido)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AdicionarUmCartao(CartaoInputDto cartaoInput)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void FazerComentarioEmPedido(FazerComentarioInputDto comentario)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RealizarPagamento(RealizarPagamentoInputDto pagar)
-        {
-            throw new NotImplementedException();
+            this.clienteService.AdicionarUmCartao(new Cartao
+            {
+                NomeTitular = cartao.NomeTitular,
+                Bandeira = cartao.Bandeira,
+                CodSeg = cartao.CodSeg,
+                Validade = cartao.Validade,
+                Numero = cartao.Numero
+            });
         }
 
         public void AvaliarLoja(AvaliarLojaInputDto avaliacao)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CancelarPedido(CancelarPedidoInputDto id)
+        {
+            this.clienteService.CancelarPedido(id.Id);
+        }
+
+        public void FazerComentarioEmPedido(ComentarioInputDto comentario)
+        {
+            this.clienteService.FazerComentarioEmPedido(comentario.Pedido, comentario.Comentario);
+        }
+
+        public void FazerPedido(PedidoInputDto pedido)
+        {
+            this.clienteService.FazerPedido(new Pedido
+            {
+                Loja = pedido.Loja,
+                Pratos = pedido.Pratos
+            });
+        }
+
+        public void RealizarPagamento(PagamentoInputDto pagamento)
         {
             throw new NotImplementedException();
         }

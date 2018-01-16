@@ -10,14 +10,14 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
 {
     public interface IClienteAppService : IApplicationService
     {
-        void EscolherLoja(LojaInputDto loja);
-        void EscolherPrato();
-        void PersonalizarPrato();
-        void FazerPedido(FazerPedidoInputDto fazerPedido);
-        void CancelarPedido(CancelarPedidoInputDto cancelarPedido);
-        void AdicionarUmCartao(CartaoInputDto cartaoInput);
-        void FazerComentarioEmPedido(FazerComentarioInputDto comentario);
-        void RealizarPagamento(RealizarPagamentoInputDto pagar);
+        //void EscolherLoja(LojaInputDto loja);
+        //void EscolherPrato();
+        //void PersonalizarPrato();
+        void FazerPedido(PedidoInputDto pedido);
+        void CancelarPedido(CancelarPedidoInputDto id);
+        void AdicionarUmCartao(CartaoInputDto cartao);
+        void FazerComentarioEmPedido(ComentarioInputDto comentario);
+        void RealizarPagamento(PagamentoInputDto pagamento);
         void AvaliarLoja(AvaliarLojaInputDto avaliacao);
 
     }

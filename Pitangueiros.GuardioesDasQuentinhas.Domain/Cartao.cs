@@ -6,11 +6,11 @@ using System.Text;
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities
 {
     public class Cartao : EntidadeBase<int>, IDeleteLogico {
-        public int Numero { get; set; }
-        public int Validade { get; set; }
-        public int Bandeira { get; set; }
-        public int CodSeg { get; set; }
-        public int NomeTitular { get; set; }
+        public string Numero { get; set; }
+        public string Validade { get; set; }
+        public string Bandeira { get; set; }
+        public string CodSeg { get; set; }
+        public string NomeTitular { get; set; }
         public Cliente Cliente { get; set; }
         public bool IsDeleted { get; set; }
     }
