@@ -27,10 +27,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
                          where entity.Id.Equals(entityId)
                          select entity).SingleOrDefault();
 
-            if (entity_rtn.GetType() == typeof(IDeleteLogico))
+            if (entity_rtn is IDeleteLogico)
             {
-                IDeleteLogico i = (IDeleteLogico) entity_rtn;
-                if (!i.IsDeleted) i.IsDeleted = false;
+                ((IDeleteLogico) entity_rtn).IsDeleted  = true;
             }
           
             this.Context.SaveChanges();
@@ -54,7 +53,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         public ICollection<T> ListActive()
         {
             var list = (from entity in Context.Set<T>()
-                       where entity.StatusEntidade.Equals(StatusEntidade.Ativado)
+                       where ((IDeleteLogico)entity).IsDeleted
                        select entity).ToList();
             return list;
         }
