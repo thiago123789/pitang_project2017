@@ -52,5 +52,25 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         {
             if (pagamento != null) pagamento.OpcaoDePagamento = opcaoDePagamento;
         }
+
+        public void EscolherLoja(Loja loja)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EscolherPrato(Prato prato)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PersonalizarPrato(Prato prato)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FazerComentarioEmPedido(Pedido pedido, string comentario)
+        {
+            pedido.Comentario = comentario;
+        }
     }
 }

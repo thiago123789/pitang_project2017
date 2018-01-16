@@ -9,17 +9,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
 {
     public interface IClienteService 
     {
-        //Nesse metodo ele poderá adicinar observação definindo modificações no pedido
         void FazerPedido(Pedido pedido);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="pedido"></param>
+        void EscolherLoja(Loja loja);
+        void EscolherPrato(Prato prato);
+        void PersonalizarPrato(Prato prato);
         void CancelarPedido(Pedido pedido);
         //Precisa ser criada uma nova entidade para armazenar a forma de pagamento de cada usuário (Numero do cartao, Bandeira)
         void AdicionarUmCartao(Cartao cartao);
         //Após feita a compra ele poderá avaliar baseado na qualidade do serviço
-        void FazerComentarioEmPedido(Pedido pedido, Comentario comentario);
+        void FazerComentarioEmPedido(Pedido pedido, string comentario);
         void RealizarPagamento(Pedido pedido, Pagamento pagamento);
         void AvaliarLoja(Loja loja, Avaliacao avaliacao);
     }
