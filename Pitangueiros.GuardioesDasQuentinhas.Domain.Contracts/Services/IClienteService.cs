@@ -19,6 +19,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
         //Após feita a compra ele poderá avaliar baseado na qualidade do serviço
         void FazerComentarioEmPedido(Pedido pedido, string comentario);
         void RealizarPagamento(Pedido pedido, Pagamento pagamento);
-        void AvaliarLoja(Loja loja, Avaliacao avaliacao);
+        void AvaliarPedido(Pedido pedido, Avaliacao avaliacao);
     }
 }

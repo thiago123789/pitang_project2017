@@ -12,6 +12,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public StatusPedido StatusPedido { get; set; }
         public Cliente Cliente { get; set; }
         public Pagamento Pagamento { get; set; }
+        public Avaliacao Avaliacao { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

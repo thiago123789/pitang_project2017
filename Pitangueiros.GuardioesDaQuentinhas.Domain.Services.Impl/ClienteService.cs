@@ -13,20 +13,23 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
     {
         private readonly ICartaoRepository cartaoRepository;
         private readonly IPedidoRepository pedidoRepository;
+        private readonly IAvaliacaoRepository avaliacaoRepository;
 
-        public ClienteService(ICartaoRepository cartaoRepository, IPedidoRepository pedidoRepository)
+        public ClienteService(ICartaoRepository cartaoRepository, IPedidoRepository pedidoRepository, IAvaliacaoRepository avaliacaoRepository)
         {
             this.cartaoRepository = cartaoRepository;
             this.pedidoRepository = pedidoRepository;
+            this.avaliacaoRepository = avaliacaoRepository;
         }
         public void AdicionarUmCartao(Cartao cartao)
         {
             this.cartaoRepository.Save(cartao);
         }
 
-        public void AvaliarLoja(Loja loja, Avaliacao avaliacao)
+        public void AvaliarPedido(Pedido pedido, Avaliacao avaliacao)
         {
-            avaliacao.Loja = loja;
+            this.avaliacaoRepository.Save(avaliacao);
+            pedido.Avaliacao = avaliacao;
         }
 
         public void CancelarPedido(long id)
@@ -68,5 +71,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         {
             pedido.Comentario = comentario;
         }
+
     }
 }

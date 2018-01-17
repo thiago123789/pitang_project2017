@@ -18,7 +18,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
         void AdicionarUmCartao(CartaoInputDto cartao);
         void FazerComentarioEmPedido(ComentarioInputDto comentario);
         void RealizarPagamento(PagamentoInputDto pagamento);
-        void AvaliarLoja(AvaliarLojaInputDto avaliacao);
+        void AvaliarPedido(AvaliacaoInputDto avaliacao);
 
     }
 }

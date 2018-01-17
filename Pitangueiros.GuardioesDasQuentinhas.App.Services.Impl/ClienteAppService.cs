@@ -31,9 +31,13 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             });
         }
 
-        public void AvaliarLoja(AvaliarLojaInputDto avaliacao)
+        public void AvaliarPedido(AvaliacaoInputDto avaliacao)
         {
-            throw new NotImplementedException();
+            this.clienteService.AvaliarPedido(avaliacao.Pedido, new Avaliacao
+            {
+                Nota = avaliacao.Nota,
+                Comentario = avaliacao.Comentario
+            });
         }
 
         public void CancelarPedido(CancelarPedidoInputDto id)

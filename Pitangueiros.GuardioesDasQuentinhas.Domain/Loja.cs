@@ -9,5 +9,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public IList<string> BairrosDeEntrega { get; set; }
         public IList<Pedido> Pedido { get; set; }
         public bool IsDeleted { get; set; }
+        public double MediaAvaliacoes { get; set; }
     }
 }
