@@ -50,6 +50,7 @@
     <Compile Include="CancelarPedidoInputDto.cs" />
     <Compile Include="CartaoInputDto.cs" />
     <Compile Include="ComentarioInputDto.cs" />
+    <Compile Include="PagamentoInputDto.cs" />
     <Compile Include="PedidoInputDto.cs" />
     <Compile Include="LojaInputDto.cs" />
     <Compile Include="DesativarLojaInputDto.cs" />
