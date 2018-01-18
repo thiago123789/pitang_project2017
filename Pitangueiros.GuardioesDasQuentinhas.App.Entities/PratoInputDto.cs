@@ -16,5 +16,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         [Required]
         [Display(Name = "Categoria")]
         public int Preco { get; set; }
+        [Required]
+        [Display(Name = "Id Loja")]
+        public int IdLoja { get; set; }
     }
 }

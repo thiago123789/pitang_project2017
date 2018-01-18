@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration.Configuration;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
 {
@@ -17,18 +18,25 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
             this.HasKey(p => p.Id);
             this.Property(p => p.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            this.HasRequired<Cliente>(p => p.Cliente)
-                .WithMany(p => p.Pedido);
-            this.HasRequired<Loja>(p => p.Loja)
+            this.HasMany(p => p.Pratos)
+                .WithRequired();
+            this.HasRequired(p => p.Loja)
                 .WithMany();
             this.Property(p => p.Comentario)
                 .HasColumnName("Comentario");
-            this.HasRequired<Pagamento>(p => p.Pagamento)
-                .WithRequiredDependent();
             this.Property(p => p.Preco)
                 .HasColumnName("Preco");
             this.Property(p => p.StatusPedido)
                 .HasColumnName("Status");
+            this.HasRequired<Cliente>(p => p.Cliente)
+                .WithMany(p => p.Pedido);
+            this.HasRequired<Pagamento>(p => p.Pagamento)
+                .WithRequiredDependent();
+            this.HasRequired(p => p.Avaliacao)
+                .WithOptional();
+            this.Property(p => p.IsDeleted)
+                .HasColumnName("IsDeleted")
+                .IsRequired();
         }
     }
 }

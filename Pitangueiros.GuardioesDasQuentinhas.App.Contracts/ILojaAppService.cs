@@ -12,13 +12,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
     {
         void AtualizarStatusDoPedido(AtualizarStatusInputDto atualizar);
         void CriarNovaPorcao(int idLoja, PorcaoInputDto porcaoInput);
-        void CriarNovoPrato(int idLoja, PratoInputDto pratoInput);
-        /*
-        void DefinirAreaDeEntrega(DefinirAreaDeEntregaDto areas)
-        {
-           this.lojaService.DefinirAreaDeEntrega(areas.idLoja,areas.Bairros);
-        }
-        */
+        void CriarNovoPrato(PratoInputDto pratoInput);
         void ExcluirPratoDaLoja(int id);
     }
 }

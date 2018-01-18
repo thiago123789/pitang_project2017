@@ -19,8 +19,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             this.Property(p => p.OpcaoDePagamento)
                 .HasColumnName("OpcaoPagamento");
-            this.HasRequired<Pedido>(p => p.Pedido)
-                .WithRequired();
         }
     }
 }
