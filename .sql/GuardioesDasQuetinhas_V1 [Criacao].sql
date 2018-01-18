@@ -5,11 +5,16 @@ create table Usuario(
 	[UsuarioType] nvarchar(20) not null,
 	[Nome] nvarchar(100) not null,
 	[Senha] nvarchar(20) not null,
-	[Email] nvarchar(50) not null
+	[Email] nvarchar(50) not null,
+	[IsDeleted] bool not null
 )
 
 create table Cliente(
 	[Id] bigint not null primary key foreign key references Usuario(Id)
+)
+
+create table Vendedor(
+	[Id] bigint not null primary key Foreign key references Usuario(Id)
 )
 
 create table Cartao(
@@ -19,18 +24,29 @@ create table Cartao(
 	[NomeTitular] nvarchar(100) not null,
 	[NumeroCartao] nvarchar(20) not null,
 	[Validade] Date not null,
-	[ClienteId] bigint not null foreign key references Cliente(Id)	 
-)
+	[IsDeleted] bool not null,
+	[ClienteId] bigint not null foreign key references Cliente(Id)
 
-create table Vendedor(
-	[Id] bigint not null primary key Foreign key references Usuario(Id)
 )
 
 create table Loja (
 	[Id] int not null primary key,
 	[Nome] nvarchar(50) not null,
-	[CEP] nvarchar(10) not null,
+	[EnderecoDaLoja] nvarchar(10) not null,
+	[IsDeleted] bool not null,
+	[MediaAvaliacoes] float not null,
 	[VendedorId] bigint not null foreign key references Vendedor(Id)
+)
+
+create table Pedido(
+	[Id] bigint not null primary key,
+	[Comentario] nvarchar(500),
+	[Preco] smallmoney not null,
+	[IsDeleted] bool not null,
+	[ClienteId] bigint not null foreign key references Cliente(Id),
+	[LojaId] int not null foreign key references Loja(Id),
+	[PagamentoId] bigint foreign key references Pagamento(Id),
+	[Preco] smallmoney not null 
 )
 
 create table Porcao(
@@ -38,43 +54,31 @@ create table Porcao(
 	[Item] nvarchar(30) not null,
 	[Preco] smallmoney not null,
 	[Quantidade] int not null,
+	[IsDeleted] bool not null,
+	[PratoId] int not null foreign key references Prato(Id),
 )
 
-
-create table Comentario(
-	[Id] bigint not null primary key,
-	[Texto] nvarchar(500) not null
+create table Prato(
+	[Id] int primary key,
+	[Preco] smallmoney not null,
+	[IsDeleted] bool not null,
+	[LojaId] int not null foreign key references Loja(Id),
+	[PedidoId] bigint not null foreign key references Pedido(Id)
 )
 
-create table Pagamento(
-	[Id] bigint not null primary key,
-	[OpcaoPagamento] nvarchar(20) not null
-)
 
 create table Avaliacao(
 	[Id] int not null primary key,
 	[Nota] int not null,
 	[Comentario] nvarchar(500),
 	[DataAvaliacao] DateTime not null,
-	[LojaId] int not null foreign key references Loja(Id),
-	[ClienteId] bigint not null foreign key references Cliente(Id)
+	[PedidoId] int not null foreign key references Pedido(Id),
 )
 
-create table Pedido(
+
+create table Pagamento(
 	[Id] bigint not null primary key,
-	[ClienteId] bigint not null foreign key references Cliente(Id),
-	[LojaId] int not null foreign key references Loja(Id),
-	[ComentarioId] bigint foreign key references Comentario(Id),
-	[PagamentoId] bigint foreign key references Pagamento(Id),
-	[Preco] smallmoney not null,
-	[StatusPedido] nvarchar(20) not null 
-)
-
-create table Prato(
-	[Id] int primary key,
-	[Preco] smallmoney not null,
-	[LojaId] int not null foreign key references Loja(Id),
-	-- Tem que ver se é mesmo not null \/
+	[OpcaoPagamento] nvarchar(20) not null,
 	[PedidoId] bigint not null foreign key references Pedido(Id)
 )
 
