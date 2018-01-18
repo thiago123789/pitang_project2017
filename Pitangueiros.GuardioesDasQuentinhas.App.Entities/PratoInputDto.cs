@@ -11,7 +11,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
     public class PratoInputDto
     {
         [Required]
-        [Display(Name = "Categoria")]
+        [Display(Name = "Lista de Porcoes")]
         public IList<Porcao> Porcoes { get; set; }
         [Required]
         [Display(Name = "Categoria")]

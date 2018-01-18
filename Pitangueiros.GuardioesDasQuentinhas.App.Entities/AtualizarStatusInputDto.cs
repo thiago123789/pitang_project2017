@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
 {
@@ -14,7 +15,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         public int IdPedido { get; set; }
         [Required]
         [Display(Name = "Status do pedido")]
-        public string Status { get; set; }
+        public StatusPedido Status { get; set; }
 
     }
 }
