@@ -17,8 +17,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.porcaoRepository = porcaoRepository;
         }
 
-        public void AtualizarStatusDoPedido(Pedido pedido, StatusPedido status) {
-            if (pedido!= null) pedido.StatusPedido = status;
+        public void AtualizarStatusDoPedido(long idPedido, string status) {
+            //if (pedido!= null) pedido.StatusPedido = status;
         }
 
         public void CriarNovaPorcao(Porcao porcao)
