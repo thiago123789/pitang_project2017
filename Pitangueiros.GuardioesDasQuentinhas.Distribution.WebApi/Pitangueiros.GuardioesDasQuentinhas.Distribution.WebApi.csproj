@@ -79,7 +79,7 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -120,17 +120,25 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Pitangueiros.GuardioesDaQuentinhas.Domain.Services.Impl\Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl.csproj">
-      <Project>{fa7393e6-da98-4c91-8c90-d287efb18498}</Project>
-      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl</Name>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC\Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC.csproj">
+      <Project>{7d43e77b-f33e-4744-9013-c8902291a267}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Cross.IoC\Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.csproj">
       <Project>{3b982ca9-944f-47ff-ab75-9bc5e1fde87f}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.Cross.IoC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl\Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.csproj">
-      <Project>{1b0b88e7-9cb2-4ce7-8231-c86f68d3b864}</Project>
-      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl</Name>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.csproj">
+      <Project>{e968a184-60bf-413f-b602-78f5cdbd2a32}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Io\Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC.csproj">
+      <Project>{a1ef83e9-756e-4841-a76b-175f84bb8a60}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC\Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC.csproj">
+      <Project>{ad9dd1ef-6a5f-4113-8f04-eec065db9165}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

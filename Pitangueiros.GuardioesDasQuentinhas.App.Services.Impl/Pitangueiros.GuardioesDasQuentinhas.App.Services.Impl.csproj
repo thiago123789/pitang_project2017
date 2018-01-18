@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+    <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -53,10 +53,9 @@
     <Compile Include="VendedorAppService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Pitangueiros.GuardioesDaQuentinhas.Domain.Services.Impl\Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl.csproj">
-      <Project>{FA7393E6-DA98-4C91-8C90-D287EFB18498}</Project>
-      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.App.Contracts\Pitangueiros.GuardioesDasQuentinhas.App.Contracts.csproj">
       <Project>{cb9ada96-65d4-490c-958b-ede7c934e141}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.App.Contracts</Name>
@@ -70,16 +69,13 @@
       <Name>Pitangueiros.GuardioesDasQuentinhas.Cross.IoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.csproj">
-      <Project>{E968A184-60BF-413F-B602-78F5CDBD2A32}</Project>
+      <Project>{e968a184-60bf-413f-b602-78f5cdbd2a32}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain\Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.csproj">
-      <Project>{C1F0217C-F4CE-44AF-92D6-FF91BDE9AA12}</Project>
+      <Project>{c1f0217c-f4ce-44af-92d6-ff91bde9aa12}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

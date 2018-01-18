@@ -2,6 +2,7 @@
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using System.Reflection;
+using Castle.Core;
 using Pitangueiros.GuardioesDasQuentinhas.App.Contracts;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC
@@ -18,7 +19,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC
             if (typeof(IApplicationService).GetTypeInfo()
                 .IsAssignableFrom(handler.ComponentModel.Implementation))
             {
-                handler.ComponentModel.Interceptors.Add(new InterceptorReference(typeof(ValidationInterceptor)));
+                handler.ComponentModel.Interceptors.Add(new InterceptorReference(typeof(IntercptorValidacao)));
             }
         }
     }

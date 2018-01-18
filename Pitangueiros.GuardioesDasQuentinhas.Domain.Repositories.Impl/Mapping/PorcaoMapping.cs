@@ -23,8 +23,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .HasColumnName("Preco");
             this.Property(p => p.Quantidade)
                 .HasColumnName("Quantidade");
-            this.Property(p => p.StatusEntidade)
-                .HasColumnName("StatusEntidade").IsRequired();
+            this.Property(p => p.IsDeleted)
+                .HasColumnName("IsDeleted").IsRequired();
         }
     }
 }

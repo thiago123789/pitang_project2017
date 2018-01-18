@@ -11,7 +11,7 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
 {
-    public class ClienteAppService : IClienteAppService
+    public class ClienteAppService : Pitangueiros.GuardioesDasQuentinhas.App.Contracts.IClienteAppService
     {
         private readonly IClienteService clienteService;
         public ClienteAppService(IClienteService clienteService)

@@ -27,8 +27,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .HasColumnName("CodSeg").IsRequired();
             this.Property(p => p.Bandeira)
                 .HasColumnName("Bandeira").IsRequired();
-            this.Property(p => p.StatusEntidade)
-                .HasColumnName("StatusEntidade").IsRequired();
+            this.Property(p => p.IsDeleted)
+                .HasColumnName("IsDeleted").IsRequired();
             this.HasRequired<Cliente>(s => s.Cliente)
                 .WithMany(c => c.Cartao);
         }

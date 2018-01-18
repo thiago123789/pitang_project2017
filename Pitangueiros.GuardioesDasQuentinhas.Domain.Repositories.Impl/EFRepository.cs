@@ -53,9 +53,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 
         public void Update(T entity)
         {
-            this.Context.Set<T>().Update(entity);
             this.Context.SaveChanges();
-
         }
 
         public ICollection<T> ListActive()

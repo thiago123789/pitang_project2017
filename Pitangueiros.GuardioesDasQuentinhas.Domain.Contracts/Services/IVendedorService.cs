@@ -8,7 +8,7 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
 {
     public interface IVendedorService {
-        void CadastrarLoja(Loja loja);
+        void CadastrarLoja(long idVendedor, Loja loja);
         void DesativarLoja(string nomeLoja);
         //void CadastrarAreaEntrega(IList CEPs);
     }

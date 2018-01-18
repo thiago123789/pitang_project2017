@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1046268E-99D6-4D8C-9543-05F26023141B}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Pitangueiros.GuardioesDasQuentinhas.App.Entities</RootNamespace>
     <AssemblyName>Pitangueiros.GuardioesDasQuentinhas.App.Entities</AssemblyName>
@@ -49,6 +49,7 @@
     <Compile Include="AutenticacaoInputDto.cs" />
     <Compile Include="AvaliacaoInputDto.cs" />
     <Compile Include="CartaoInputDto.cs" />
+    <Compile Include="DefinirAreaDeEntregaDto.cs" />
     <Compile Include="PagamentoInputDto.cs" />
     <Compile Include="PedidoInputDto.cs" />
     <Compile Include="LojaInputDto.cs" />

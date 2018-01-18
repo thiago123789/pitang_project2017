@@ -19,7 +19,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
         }
         public void CadastrarLoja(LojaInputDto loja)
         {
-            this.vendedorService.CadastrarLoja(new Loja
+            this.vendedorService.CadastrarLoja(loja.IdVendedor, new Loja
             {
                 Nome = loja.Nome,
                 EnderecoDaLoja = loja.Endereco,
