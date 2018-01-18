@@ -5,8 +5,9 @@ using System.Reflection;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
+using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts;
 
-namespace Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts
+namespace Pitangueiros.GuardioesDasQuentinhas.Cross.IoC
 {
     public class GerenciadorIoC : IGerenciadorIoC { 
 

@@ -25,7 +25,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             modelBuilder.Configurations.Add(new PedidoMapping());
             modelBuilder.Configurations.Add(new PagamentoMapping());
             modelBuilder.Configurations.Add(new LojaMapping());
-            modelBuilder.Configurations.Add(new ComentarioMapping());
             modelBuilder.Configurations.Add(new ClienteMapping());
             modelBuilder.Configurations.Add(new CartaoMapping());
             modelBuilder.Configurations.Add(new AvaliacaoMapping());

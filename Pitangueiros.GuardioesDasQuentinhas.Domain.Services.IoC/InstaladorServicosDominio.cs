@@ -4,7 +4,7 @@ using Castle.Windsor;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC
 {
-    class InstaladorServicosDominio : IWindsorInstaller
+    public class InstaladorServicosDominio : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {

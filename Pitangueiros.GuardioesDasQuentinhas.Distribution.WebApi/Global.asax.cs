@@ -7,10 +7,11 @@ using System.Web.Http;
 using System.Web.Routing;
 using AutoMapper;
 using Pitangueiros.GuardioesDasQuentinhas;
+using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC;
 using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts;
 using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts.Mapeador;
-using Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.IoC;
-using Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl.IoC;
+using Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC;
+using Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi
 {
@@ -25,9 +26,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi
             //      .AdicionarConvencaoDeRegistro(new )
             //GlobalConfiguration.Configure(WebApiConfig.Register);
             GerenciadorIoC.Instancia
-                .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(RepositoryInstaller)));
+                .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(InstaladorRepositorios)));
             GerenciadorIoC.Instancia
-                .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(DomainServiceInstaller)));
+                .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(InstaladorServicosDominio)));
             //Vai ser o Initializer de AppDomain?
             //GerenciadorIoC.Instancia
             //    .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(AppDomainInitializer)));

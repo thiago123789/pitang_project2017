@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi
@@ -14,9 +15,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+            config.Formatters.Remove(new XmlMediaTypeFormatter());
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }

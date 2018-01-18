@@ -20,5 +20,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         [Required]
         [Display(Name = "Bairros de entrega")]
         public IList<string> Bairros { get; set; }
+
+        [Required]
+        [Display(Name = "Id Do Vendedor")]
+        public long IdVendedor { get; set; }
+
     }
 }
