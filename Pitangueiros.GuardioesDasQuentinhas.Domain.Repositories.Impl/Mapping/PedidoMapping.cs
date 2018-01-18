@@ -20,7 +20,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
             this.HasRequired<Cliente>(p => p.Cliente)
                 .WithMany(p => p.Pedido);
             this.HasRequired<Loja>(p => p.Loja)
-                .WithMany(p => p.Pedido);
+                .WithMany();
             this.Property(p => p.Comentario)
                 .HasColumnName("Comentario");
             this.HasRequired<Pagamento>(p => p.Pagamento)

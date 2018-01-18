@@ -49,7 +49,6 @@
     <Compile Include="AutenticacaoInputDto.cs" />
     <Compile Include="AvaliacaoInputDto.cs" />
     <Compile Include="CartaoInputDto.cs" />
-    <Compile Include="ComentarioInputDto.cs" />
     <Compile Include="DefinirAreaDeEntregaDto.cs" />
     <Compile Include="PagamentoInputDto.cs" />
     <Compile Include="PedidoInputDto.cs" />
