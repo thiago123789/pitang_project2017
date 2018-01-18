@@ -11,13 +11,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
     public class AvaliacaoInputDto
     {
         [Required]
-        [Display(Name = "Pedido")]
-        public Pedido Pedido { get; set; }
-
+        [Display(Name = "Id do Pedido")]
+        public long IdPedido { get; set; }
         [Required]
         [Display(Name = "Comentario")]
         public string Comentario { get; set; }
-       
         [Required]
         [Display(Name = "Nota")]
         public int Nota { get; set; }

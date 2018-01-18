@@ -48,7 +48,6 @@
     <Compile Include="AtualizarStatusInputDto.cs" />
     <Compile Include="AutenticacaoInputDto.cs" />
     <Compile Include="AvaliacaoInputDto.cs" />
-    <Compile Include="CancelarPedidoInputDto.cs" />
     <Compile Include="CartaoInputDto.cs" />
     <Compile Include="ComentarioInputDto.cs" />
     <Compile Include="DefinirAreaDeEntregaDto.cs" />

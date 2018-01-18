@@ -16,5 +16,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories
         ICollection<T> ListActive();
         ICollection<T> ListAll();
         void Delete(TId entityId);
+        void Update(T entity);
     }
 }
