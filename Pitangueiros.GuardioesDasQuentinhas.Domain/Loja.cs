@@ -5,9 +5,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public string Nome { get; set; }
         public string EnderecoDaLoja { get; set; }
         public Vendedor Vendedor { get; set; }
-        public IList<Prato> Prato { get; set; }
+        public IList<Prato> Pratos { get; set; }
         public IList<string> BairrosDeEntrega { get; set; }
-        public IList<Pedido> Pedido { get; set; }
+        public IList<Pedido> Pedidos { get; set; }
+        public IList<Porcao> Porcoes { get; set; }
         public bool IsDeleted { get; set; }
         public double MediaAvaliacoes { get; set; }
     }

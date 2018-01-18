@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="IApplicationService.cs" />
     <Compile Include="IClienteAppService.cs" />
+    <Compile Include="ILojaAppService.cs" />
     <Compile Include="IUsuarioAppService.cs" />
     <Compile Include="IVendedorAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,6 +56,10 @@
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Cross.IoC\Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.csproj">
       <Project>{3b982ca9-944f-47ff-ab75-9bc5e1fde87f}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.Cross.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.csproj">
+      <Project>{E968A184-60BF-413F-B602-78F5CDBD2A32}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
