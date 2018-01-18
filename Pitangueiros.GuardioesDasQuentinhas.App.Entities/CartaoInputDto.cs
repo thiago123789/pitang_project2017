@@ -10,6 +10,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
     public class CartaoInputDto
     {
         [Required]
+        [Display(Name = "Id do Cliente")]
+        public long IdCliente { get; set; }
+        [Required]
         [Display(Name = "Nome do Titular")]
         public string NomeTitular { get; set; }
 
