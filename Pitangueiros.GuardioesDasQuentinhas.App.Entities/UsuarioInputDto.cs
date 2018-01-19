@@ -20,7 +20,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         [Required]
         [Compare(nameof(Senha), ErrorMessage = "A senha e a confirmação são diferentes.")]
         [Display(Name = "Confirmação de Senha")]
-
         public string ConfirmacaoSenha { get; set; }
 
         [Required]

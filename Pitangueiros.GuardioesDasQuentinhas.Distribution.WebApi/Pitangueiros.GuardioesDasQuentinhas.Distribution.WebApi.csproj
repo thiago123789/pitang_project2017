@@ -48,6 +48,12 @@
     <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -63,6 +69,7 @@
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -104,6 +111,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IoC\AtivadorControladorApi.cs" />
+    <Compile Include="IoC\RegistradorConvencionalApiController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +129,14 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.App.Contracts\Pitangueiros.GuardioesDasQuentinhas.App.Contracts.csproj">
+      <Project>{CB9ADA96-65D4-490C-958B-EDE7C934E141}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.App.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.App.Entities\Pitangueiros.GuardioesDasQuentinhas.App.Entities.csproj">
+      <Project>{1046268E-99D6-4D8C-9543-05F26023141B}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.App.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC\Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC.csproj">
       <Project>{7d43e77b-f33e-4744-9013-c8902291a267}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC</Name>

@@ -10,6 +10,7 @@ using Pitangueiros.GuardioesDasQuentinhas;
 using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC;
 using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts;
 using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts.Mapeador;
+using Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.IoC;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC;
 
@@ -22,8 +23,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi
             GerenciadorIoC.Instancia
                 .AdicionarConvencaoDeRegistro(new ConvecaoBasicaRegistrador());
             //Esperando implementar coisas da API para descomentar
-            //  GerenciadorIoC.Instancia
-            //      .AdicionarConvencaoDeRegistro(new )
+            GerenciadorIoC.Instancia
+                .AdicionarConvencaoDeRegistro(new RegistradorConvencionalApiController());
             //GlobalConfiguration.Configure(WebApiConfig.Register);
             GerenciadorIoC.Instancia
                 .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(InstaladorRepositorios)));
