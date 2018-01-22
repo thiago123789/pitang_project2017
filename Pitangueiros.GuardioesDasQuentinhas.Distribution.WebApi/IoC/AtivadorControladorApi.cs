@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts;
+using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Extensions;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.IoC
 {
@@ -17,10 +18,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.IoC
 
         public IHttpController Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
         {
-            //var controllerWrapper = _solucionadorIoC.Solucionar<IHttpController>(controllerType);
-            //request.RegisterForDispose(controllerWrapper);
-            //return controllerWrapper.Object;
-            return null;
+            var controllerWrapper = _solucionadorIoC.ResolveAsDisposable<IHttpController>(controllerType);
+            request.RegisterForDispose(controllerWrapper);
+            return controllerWrapper.Objeto;
         }
     }
 }

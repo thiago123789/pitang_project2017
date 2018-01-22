@@ -71,6 +71,8 @@
     <Compile Include="Contracts\IInicializadorIoC.cs" />
     <Compile Include="Contracts\IRegistradorIoC.cs" />
     <Compile Include="Contracts\ISolucionadorIoC.cs" />
+    <Compile Include="Extensions\ExtensoesRegistradorIoC.cs" />
+    <Compile Include="Extensions\ExtensoesSolucionadorIoC.cs" />
     <Compile Include="GerenciadorIoC.cs" />
     <Compile Include="Mapeador\IPerfilMapeador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

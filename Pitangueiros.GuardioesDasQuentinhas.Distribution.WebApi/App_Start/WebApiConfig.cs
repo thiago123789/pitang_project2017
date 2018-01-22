@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;
+using System.Web.Http.Dispatcher;
+using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC;
+using Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.IoC;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi
 {
@@ -15,7 +18,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            config.Formatters.Remove(new XmlMediaTypeFormatter());
+            config.Services.Replace(typeof(IHttpControllerActivator), new AtivadorControladorApi(GerenciadorIoC.Instancia));
+
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

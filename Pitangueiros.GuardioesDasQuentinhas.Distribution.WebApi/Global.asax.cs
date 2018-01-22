@@ -13,6 +13,7 @@ using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts.Mapeador;
 using Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.IoC;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC;
+using Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi
 {
@@ -31,8 +32,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi
             GerenciadorIoC.Instancia
                 .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(InstaladorServicosDominio)));
             //Vai ser o Initializer de AppDomain?
-            //GerenciadorIoC.Instancia
-            //    .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(AppDomainInitializer)));
+            GerenciadorIoC.Instancia
+                .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(InstaladorAppService)));
 
             GerenciadorIoC.Instancia.RegistrarAssemblyPorConvencao(Assembly.GetExecutingAssembly());
 
@@ -52,6 +53,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi
             //Temos que dar uma olhada no Register do Blog para conseguir replicar.
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
+        }
+
+
+        protected void Application_End()
+        {
+            GerenciadorIoC.Instancia.Dispose();
         }
     }
 }
