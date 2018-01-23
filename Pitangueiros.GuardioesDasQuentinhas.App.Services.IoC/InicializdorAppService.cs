@@ -13,7 +13,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC
     {
         public void Inicializar(IGerenciadorIoC gerenciadorIoC)
         {
-            gerenciadorIoC.RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(UsuarioAppService)));
+            gerenciadorIoC.RegistrarAssemblyPorConvencao(Assembly.GetExecutingAssembly());
 
         }
     }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC
 {
-    class InicializadorRepositorios : IInicializadorIoC
+    public class InicializadorRepositorios : IInicializadorIoC
     {
         public void Inicializar(IGerenciadorIoC gerenciadorIoC)
         {

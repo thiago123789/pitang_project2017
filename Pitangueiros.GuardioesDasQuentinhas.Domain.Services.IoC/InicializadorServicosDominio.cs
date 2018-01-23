@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC
 {
-    class InicializadorServicosDominio : IInicializadorIoC
+    public class InicializadorServicosDominio : IInicializadorIoC
     {
         public void Inicializar(IGerenciadorIoC gerenciadorIoC)
         {
