@@ -7,7 +7,7 @@ using Pitangueiros.GuardioesDasQuentinhas.App.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
 {
-    public interface IUsuarioAppService : IApplicationService
+    public interface IUsuarioAppService : IAppService
     {
         bool Autenticar(AutenticacaoInputDto login);
 

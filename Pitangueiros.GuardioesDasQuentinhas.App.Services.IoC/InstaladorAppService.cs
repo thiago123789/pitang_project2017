@@ -16,7 +16,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC
 
         private void Kernel_ComponentRegistered(string key, Castle.MicroKernel.IHandler handler)
         {
-            if (typeof(IApplicationService).GetTypeInfo()
+            if (typeof(IAppService).GetTypeInfo()
                 .IsAssignableFrom(handler.ComponentModel.Implementation))
             {
                 handler.ComponentModel.Interceptors.Add(new InterceptorReference(typeof(IntercptorValidacao)));

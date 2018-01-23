@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InicializadorRepositorios.cs" />
+    <Compile Include="RepositorioInicializadorIoC.cs" />
     <Compile Include="InstaladorRepositorios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +58,10 @@
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Cross.IoC\Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.csproj">
       <Project>{3b982ca9-944f-47ff-ab75-9bc5e1fde87f}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.Cross.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.csproj">
+      <Project>{e968a184-60bf-413f-b602-78f5cdbd2a32}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl\Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.csproj">
       <Project>{1b0b88e7-9cb2-4ce7-8231-c86f68d3b864}</Project>

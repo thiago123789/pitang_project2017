@@ -7,7 +7,7 @@ using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
 {
-    public interface IApplicationService : IDependenciaTransient
+    public interface IAppService : IDependenciaTransient
     {
     }
 }

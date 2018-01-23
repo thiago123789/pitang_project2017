@@ -27,13 +27,19 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi
             //GlobalConfiguration.Configure(WebApiConfig.Register);
             GerenciadorIoC.Instancia
                 .AdicionarConvencaoDeRegistro(new RegistradorMapeadorAutomanticoConvencional());
+
+
+
             GerenciadorIoC.Instancia
-                .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(InicializadorRepositorios)));
+                .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(RepositorioInicializadorIoC)));
             GerenciadorIoC.Instancia
-                .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(InicializadorServicosDominio)));
+                .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(ServicosDominioInicializadorIoC)));
             //Vai ser o Initializer de AppDomain?
             GerenciadorIoC.Instancia
-                .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(InicializdorAppService)));
+                .RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(AppServiceInicializadorIoC)));
+
+
+
 
             GerenciadorIoC.Instancia.RegistrarAssemblyPorConvencao(Assembly.GetExecutingAssembly());
 

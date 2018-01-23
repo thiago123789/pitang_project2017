@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC
 {
-    public class InicializadorRepositorios : IInicializadorIoC
+    public class RepositorioInicializadorIoC : IInicializadorIoC
     {
         public void Inicializar(IGerenciadorIoC gerenciadorIoC)
         {
+            //gerenciadorIoC.RegistrarAssemblyPorConvencao(Assembly.GetExecutingAssembly());
             gerenciadorIoC.RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(UsuarioRepository)));
         }
     }

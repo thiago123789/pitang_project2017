@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InicializdorAppService.cs" />
+    <Compile Include="AppServiceInicializadorIoC.cs" />
     <Compile Include="InstaladorAppService.cs" />
     <Compile Include="IntercptorValidacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -130,24 +130,24 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.App.Contracts\Pitangueiros.GuardioesDasQuentinhas.App.Contracts.csproj">
-      <Project>{CB9ADA96-65D4-490C-958B-EDE7C934E141}</Project>
+      <Project>{cb9ada96-65d4-490c-958b-ede7c934e141}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.App.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.App.Entities\Pitangueiros.GuardioesDasQuentinhas.App.Entities.csproj">
-      <Project>{1046268E-99D6-4D8C-9543-05F26023141B}</Project>
+      <Project>{1046268e-99d6-4d8c-9543-05f26023141b}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.App.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC\Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC.csproj">
       <Project>{7d43e77b-f33e-4744-9013-c8902291a267}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Cross.Core\Pitangueiros.GuardioesDasQuentinhas.Cross.Core.csproj">
+      <Project>{ba893a70-581d-4d0c-84bd-c6d48495efb7}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.Cross.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Cross.IoC\Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.csproj">
       <Project>{3b982ca9-944f-47ff-ab75-9bc5e1fde87f}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.Cross.IoC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts\Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.csproj">
-      <Project>{e968a184-60bf-413f-b602-78f5cdbd2a32}</Project>
-      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Io\Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC.csproj">
       <Project>{a1ef83e9-756e-4841-a76b-175f84bb8a60}</Project>

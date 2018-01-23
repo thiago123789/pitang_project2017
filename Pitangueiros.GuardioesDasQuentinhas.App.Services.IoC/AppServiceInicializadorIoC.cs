@@ -9,11 +9,11 @@ using Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.IoC
 {
-    public class InicializdorAppService : IInicializadorIoC
+    public class AppServiceInicializadorIoC : IInicializadorIoC
     {
         public void Inicializar(IGerenciadorIoC gerenciadorIoC)
         {
-            gerenciadorIoC.RegistrarAssemblyPorConvencao(Assembly.GetExecutingAssembly());
+            gerenciadorIoC.RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(ClienteAppService)));
 
         }
     }

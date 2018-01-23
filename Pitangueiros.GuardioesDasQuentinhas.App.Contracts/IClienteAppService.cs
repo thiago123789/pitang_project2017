@@ -8,7 +8,7 @@ using Pitangueiros.GuardioesDasQuentinhas.App.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
 {
-    public interface IClienteAppService : IApplicationService
+    public interface IClienteAppService : IAppService
     {
 
         void FazerPedido(PedidoInputDto pedido);

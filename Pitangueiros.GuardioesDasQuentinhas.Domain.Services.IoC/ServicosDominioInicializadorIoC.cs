@@ -9,10 +9,11 @@ using System.Reflection;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC
 {
-    public class InicializadorServicosDominio : IInicializadorIoC
+    public class ServicosDominioInicializadorIoC : IInicializadorIoC
     {
         public void Inicializar(IGerenciadorIoC gerenciadorIoC)
         {
+            //gerenciadorIoC.RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(UsuarioService)));
             gerenciadorIoC.RegistrarAssemblyPorConvencao(Assembly.GetAssembly(typeof(UsuarioService)));
         }
     }

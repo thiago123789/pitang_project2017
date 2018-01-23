@@ -34,7 +34,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts
                     .BasedOn<IInterceptor>()
                     .If(type => !type.GetTypeInfo().IsGenericTypeDefinition)
                     .WithService.Self()
-                    .WithService.DefaultInterfaces()
+                    //.WithService.DefaultInterfaces()
                     .LifestyleTransient()
             );
 
