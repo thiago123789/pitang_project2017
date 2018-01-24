@@ -19,6 +19,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi
     {
         protected void Application_Start()
         {
+
+            
+
             GerenciadorIoC.Instancia
                 .AdicionarConvencaoDeRegistro(new ConvecaoBasicaRegistrador());
             //Esperando implementar coisas da API para descomentar

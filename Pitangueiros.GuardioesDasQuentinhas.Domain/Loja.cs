@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
-    public class Loja : EntidadeBase<int>, IDeleteLogico {
+    public class Loja : EntidadeBase<int>, IDeleteLogico, IAuditoria {
         public string Nome { get; set; }
         public string EnderecoDaLoja { get; set; }
         public Vendedor Vendedor { get; set; }
@@ -11,5 +12,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public IList<Porcao> Porcoes { get; set; }
         public bool IsDeleted { get; set; }
         public double MediaAvaliacoes { get; set; }
+        public DateTime DataCriacao { get; set; }
+        public DateTime UltimaModificacao { get; set; }
     }
 }

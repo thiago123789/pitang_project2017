@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
-    public class Prato : EntidadeBase<int>,IDeleteLogico {
+    public class Prato : EntidadeBase<int>, IDeleteLogico, IAuditoria {
         public IList<Porcao> Porcoes { get; set; }
         public double Preco { get; set; }
         public bool IsDeleted { get; set; }
+        public DateTime DataCriacao { get; set; }
+        public DateTime UltimaModificacao { get; set; }
     }
 }

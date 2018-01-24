@@ -31,6 +31,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .HasColumnName("IsDeleted").IsRequired();
             this.HasRequired<Cliente>(s => s.Cliente)
                 .WithMany(c => c.Cartao);
+            this.Property(p => p.DataCriacao)
+                .HasColumnName("DataCriacao")
+                .IsRequired();
+            this.Property(p => p.UltimaModificacao)
+                .HasColumnName("UltimaModificacao")
+                .IsOptional();
         }
     }
 }

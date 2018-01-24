@@ -5,21 +5,22 @@ using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
     public class EntidadeBase<TId> : IEntidadeBase<TId>
-        where TId: IEquatable<TId>, IComparable<TId>
-    {
+        where TId: IEquatable<TId>, IComparable<TId> {
         public TId Id { get; set; }
     }
 
 
-   public interface IEntidadeBase<TId> where TId: IEquatable<TId>, IComparable<TId>
-   {
+   public interface IEntidadeBase<TId> where TId: IEquatable<TId>, IComparable<TId> {
         TId Id { get; set; }
     }
 
-    public interface IDeleteLogico
-    {
+    public interface IDeleteLogico {
         bool IsDeleted { get; set; }
+    }
 
+    public interface IAuditoria {
+        DateTime DataCriacao { get; set; }
+        DateTime UltimaModificacao { get; set; }
     }
 
 }

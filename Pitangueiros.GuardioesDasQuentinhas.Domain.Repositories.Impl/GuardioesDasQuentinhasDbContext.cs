@@ -12,12 +12,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     public class GuardioesDasQuentinhasDbContext : DbContext{
 
-        public GuardioesDasQuentinhasDbContext() {
-
+        public GuardioesDasQuentinhasDbContext() : base("ConnIQuentinhas") {
+            Database.SetInitializer<GuardioesDasQuentinhasDbContext>(null);
         }
  
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.Configurations.Add(new VendedorMapping());
             modelBuilder.Configurations.Add(new UsuarioMapping());
             modelBuilder.Configurations.Add(new PratoMapping());
