@@ -23,7 +23,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
             this.Property(p => p.Senha)
                 .HasColumnName("Senha").IsRequired();
             this.Property(p => p.IsDeleted)
-                .HasColumnName("StatusEntidade").IsRequired();
+                .HasColumnName("IsDeleted").IsRequired();
             this.Property(p => p.DataCriacao)
                 .HasColumnName("DataCriacao")
                 .IsRequired();
