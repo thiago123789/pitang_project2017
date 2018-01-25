@@ -10,6 +10,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
     public interface IVendedorAppService : IAppService
     {
         void CadastrarLoja(LojaInputDto loja);
-        void DesativarLoja(DesativarLojaInputDto nomeLoja);
+        void DesativarLoja(int idLoja);
     }
 }

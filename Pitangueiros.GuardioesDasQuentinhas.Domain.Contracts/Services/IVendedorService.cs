@@ -11,7 +11,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
     public interface IVendedorService : IDependenciaTransient
     {
         void CadastrarLoja(long idVendedor, Loja loja);
-        void DesativarLoja(string nomeLoja);
+        void DesativarLoja(int idLoja);
         //void CadastrarAreaEntrega(IList CEPs);
     }
 }

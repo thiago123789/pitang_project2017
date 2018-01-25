@@ -22,17 +22,20 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.usuarioRepository = usuarioRepository;
         }
 
-        public void CadastrarLoja(long id, Loja loja)
+        public void CadastrarLoja(long idVendedor, Loja loja)
         {
-            if (loja != null) this.lojaRepository.Save(loja);
-            Usuario vendedor = this.usuarioRepository.GetOne(id);
-            vendedor.Lojas.Add(loja);
-            this.usuarioRepository.Save(vendedor);
+            if (loja != null)
+            {
+                this.lojaRepository.Save(loja);
+                Usuario vendedor = this.usuarioRepository.GetOne(idVendedor);
+                vendedor.Lojas.Add(loja);
+                this.usuarioRepository.Update(vendedor);
+            }
         }
 
-        public void DesativarLoja(string nomeLoja)
+        public void DesativarLoja(int idLoja)
         {
-            Loja loja = this.lojaRepository.ObterPorNome(nomeLoja);
+            Loja loja = this.lojaRepository.GetOne(idLoja);
             this.lojaRepository.Delete(loja.Id);
         }
     }

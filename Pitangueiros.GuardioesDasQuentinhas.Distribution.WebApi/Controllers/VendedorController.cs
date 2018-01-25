@@ -9,10 +9,16 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
 {
     public class VendedorController: ApiController
     {
-        private readonly IVendedorAppService appServiceVendedor;
-        public VendedorController(IVendedorAppService appServiceVendedor)
+        private readonly IVendedorAppService vendedorAppService;
+        public VendedorController(IVendedorAppService vendedorAppService)
         {
-            this.appServiceVendedor = appServiceVendedor;
+            this.vendedorAppService = vendedorAppService;
+        }
+
+        [HttpPost]
+        public void CadrastarLoja(LojaInputDto loja)
+        {
+            this.vendedorAppService.CadastrarLoja(loja);
         }
     }
 }

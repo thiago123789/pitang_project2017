@@ -27,9 +27,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             });
         }
 
-        public void DesativarLoja(DesativarLojaInputDto nomeLoja)
+        public void DesativarLoja(int IdLoja)
         {
-            this.vendedorService.DesativarLoja(nomeLoja.Nome);
+            this.vendedorService.DesativarLoja(IdLoja);
         }
     }
 }
