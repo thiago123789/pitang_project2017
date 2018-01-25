@@ -11,7 +11,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public bool IsDeleted { get; set; }
         public DateTime DataCriacao { get; set; }
         public DateTime UltimaModificacao { get; set; }
-        public IList<Permissao> Permissoes;
+        public IList<Permissao> Permissoes { get; set; }
         public IList<Cartao> Cartao { get; set; }
         public IList<Pedido> Pedido { get; set; }
         public IList<Loja> Lojas { get; set; }
