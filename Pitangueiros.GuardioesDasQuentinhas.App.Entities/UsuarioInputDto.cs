@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
 {
@@ -16,6 +17,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         [Required]
         [Display(Name = "Senha")]
         public string Senha { get; set; }
+
+        [Required]
+        [Display(Name = "Tipo de conta")]
+        public IList<String> Papeis { get; set; }
 
         [Required]
         [Compare(nameof(Senha), ErrorMessage = "A senha e a confirmação são diferentes.")]

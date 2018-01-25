@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Pitangueiros.GuardioesDasQuentinhas.App.Contracts;
@@ -25,13 +26,21 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
 
         public void CriarUsuario(UsuarioInputDto usuario)
         {
-            this.usuarioService.CriarUsuario(new Usuario
+            //IList<PapelUsuario> x = new List<PapelUsuario>();
+            //foreach (var papel in usuario.Papeis)
+            //{
+            //    PapelUsuario interno;
+            //    Enum.TryParse(papel, out interno);
+            //    x.Add(interno);
+            //}
+            Usuario user = new Usuario
             {
                 Email = usuario.Email,
                 Nome = usuario.Nome,
-                Senha = usuario.Senha
-
-            });
+                Senha = usuario.Senha,
+            };
+            
+            this.usuarioService.CriarUsuario(user, usuario.Papeis);
         }
   
         public void DesativarUsuario(DesativarUsuarioInputDto login)

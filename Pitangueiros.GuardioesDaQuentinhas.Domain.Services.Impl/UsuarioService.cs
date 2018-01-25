@@ -29,7 +29,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             return autenticado;
         }
 
-        public void CriarUsuario(Usuario usuario)
+        public void CriarUsuario(Usuario usuario,IList<string> papeis)
         {
             this.usuarioRepository.Save(usuario);
         }
