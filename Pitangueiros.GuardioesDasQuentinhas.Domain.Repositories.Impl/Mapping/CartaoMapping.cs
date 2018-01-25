@@ -29,7 +29,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .HasColumnName("Bandeira").IsRequired();
             this.Property(p => p.IsDeleted)
                 .HasColumnName("IsDeleted").IsRequired();
-            this.HasRequired<Cliente>(s => s.Cliente)
+            this.HasRequired<Usuario>(s => s.Cliente)
                 .WithMany(c => c.Cartao);
             this.Property(p => p.DataCriacao)
                 .HasColumnName("DataCriacao")

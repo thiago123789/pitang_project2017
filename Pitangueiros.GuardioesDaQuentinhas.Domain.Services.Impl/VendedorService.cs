@@ -13,21 +13,21 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
     public class VendedorService : IVendedorService
     {
         private readonly ILojaRepository lojaRepository;
-        private readonly IVendedorRepository vendedorRepository;
+        private readonly IUsuarioRepository usuarioRepository;
 
-        public VendedorService(ILojaRepository lojaRepository, 
-            IVendedorRepository vendedorRepository)
+        public VendedorService(ILojaRepository lojaRepository,
+            IUsuarioRepository usuarioRepository)
         {
             this.lojaRepository = lojaRepository;
-            this.vendedorRepository = vendedorRepository;
+            this.usuarioRepository = usuarioRepository;
         }
 
         public void CadastrarLoja(long id, Loja loja)
         {
             if (loja != null) this.lojaRepository.Save(loja);
-            Vendedor vendedor = this.vendedorRepository.GetOne(id);
+            Usuario vendedor = this.usuarioRepository.GetOne(id);
             vendedor.Lojas.Add(loja);
-            this.vendedorRepository.Save(vendedor);
+            this.usuarioRepository.Save(vendedor);
         }
 
         public void DesativarLoja(string nomeLoja)

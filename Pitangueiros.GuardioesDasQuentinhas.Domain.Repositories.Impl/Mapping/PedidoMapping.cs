@@ -28,7 +28,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .HasColumnName("Preco");
             this.Property(p => p.StatusPedido)
                 .HasColumnName("Status");
-            this.HasRequired<Cliente>(p => p.Cliente)
+            this.HasRequired<Usuario>(p => p.Cliente)
                 .WithMany(p => p.Pedido);
             this.HasRequired<Pagamento>(p => p.Pagamento)
                 .WithRequiredDependent();

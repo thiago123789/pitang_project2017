@@ -11,14 +11,6 @@ create table Usuario (
 	[UltimaModificacao] DateTime2 null
 )
 
-create table Cliente(
-	[Id] bigint not null primary key foreign key references Usuario(Id) identity(0,1)
-)
-
-create table Vendedor(
-	[Id] bigint not null primary key Foreign key references Usuario(Id) identity(0,1)
-)
-
 create table Cartao(
 	[Id] int not null primary key identity(0,1),
 	[Bandeira] nvarchar(30) not null,
@@ -29,7 +21,7 @@ create table Cartao(
 	[IsDeleted] tinyint not null,
 	[DataCriacao] DateTime2 null,
 	[UltimaModificacao] DateTime2 null,
-	[ClienteId] bigint not null foreign key references Cliente(Id)
+	[ClienteId] bigint not null foreign key references Usuario(Id)
 )
 
 create table Loja (
@@ -40,8 +32,19 @@ create table Loja (
 	[MediaAvaliacoes] float not null,
 	[DataCriacao] DateTime2 null,
 	[UltimaModificacao] DateTime2 null,
-	[VendedorId] bigint not null foreign key references Vendedor(Id)
+	[VendedorId] bigint not null foreign key references Usuario(Id)
 )
+
+create table PermissaoUsuario (
+	[UsuarioId] bigint not null, 
+	[PermissaoId] int not null,
+	CONSTRAINT PK_Permissao_Usuario UNIQUE (UsuarioId, PermissaoId)  
+)
+
+create table Permissao (
+	[Id] int not null primary key identity(0,1),
+	[Papel] nvarchar(20) not null unique
+)	
 
 create table Pagamento(
 	[Id] bigint not null primary key identity(0,1),
@@ -103,7 +106,7 @@ create table PratoPorcao(
 
 create table AreaEntregaLoja (
 	[Id] bigint primary key identity(0,1),
-	[CEP] nvarchar(10) not null,
+	[Bairro] nvarchar(10) not null,
 	[LojaId] int not null foreign key references Loja(Id)
 )
 

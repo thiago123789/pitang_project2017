@@ -14,21 +14,21 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         private readonly ICartaoRepository cartaoRepository;
         private readonly IPedidoRepository pedidoRepository;
         private readonly IAvaliacaoRepository avaliacaoRepository;
-        private readonly IClienteRepository clienteRepository;
+        private readonly IUsuarioRepository usuarioRepository;
 
-        public ClienteService(ICartaoRepository cartaoRepository, IPedidoRepository pedidoRepository, IAvaliacaoRepository avaliacaoRepository, IClienteRepository clienteRepository)
+        public ClienteService(ICartaoRepository cartaoRepository, IPedidoRepository pedidoRepository, IAvaliacaoRepository avaliacaoRepository, IUsuarioRepository usuarioRepository)
         {
             this.cartaoRepository = cartaoRepository;
             this.pedidoRepository = pedidoRepository;
             this.avaliacaoRepository = avaliacaoRepository;
-            this.clienteRepository = clienteRepository;
+            this.usuarioRepository = usuarioRepository;
         }
         public void AdicionarUmCartao(long idCliente, Cartao cartao)
         {
-            Cliente cliente = this.clienteRepository.GetOne(idCliente);
+            Usuario cliente = this.usuarioRepository.GetOne(idCliente);
             cliente.Cartao.Add(cartao);
             cartao.Cliente = cliente;
-            this.clienteRepository.Update(cliente);
+            this.usuarioRepository.Update(cliente);
             this.cartaoRepository.Save(cartao);
         }
 
@@ -49,10 +49,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 
         public void FazerPedido(long idCliente, Pedido pedido)
         {
-            Cliente cliente = this.clienteRepository.GetOne(idCliente);
+            Usuario cliente = this.usuarioRepository.GetOne(idCliente);
             cliente.Pedido.Add(pedido);
             pedido.Cliente = cliente;
-            this.clienteRepository.Update(cliente);
+            this.usuarioRepository.Update(cliente);
             this.pedidoRepository.Save(pedido);
 
         }

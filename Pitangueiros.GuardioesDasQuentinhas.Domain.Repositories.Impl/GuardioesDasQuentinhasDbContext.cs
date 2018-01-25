@@ -15,19 +15,18 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         public GuardioesDasQuentinhasDbContext() : base("ConnIQuentinhas") {
             Database.SetInitializer<GuardioesDasQuentinhasDbContext>(null);
         }
- 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder) {
-            modelBuilder.Configurations.Add(new VendedorMapping());
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
             modelBuilder.Configurations.Add(new UsuarioMapping());
             modelBuilder.Configurations.Add(new PratoMapping());
             modelBuilder.Configurations.Add(new PorcaoMapping());
             modelBuilder.Configurations.Add(new PedidoMapping());
             modelBuilder.Configurations.Add(new PagamentoMapping());
             modelBuilder.Configurations.Add(new LojaMapping());
-            modelBuilder.Configurations.Add(new ClienteMapping());
             modelBuilder.Configurations.Add(new CartaoMapping());
             modelBuilder.Configurations.Add(new AvaliacaoMapping());
-
+            modelBuilder.Configurations.Add(new PermissaoMapping());
             base.OnModelCreating(modelBuilder);
         }
     }

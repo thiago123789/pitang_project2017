@@ -44,14 +44,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IAvaliacaoRepository.cs" />
     <Compile Include="Repositories\ICartaoRepository.cs" />
-    <Compile Include="Repositories\IClienteRepository.cs" />
     <Compile Include="Repositories\ILojaRepository.cs" />
     <Compile Include="Repositories\IPedidoRepository.cs" />
     <Compile Include="Repositories\IPorcaoRepository.cs" />
     <Compile Include="Repositories\IPratoRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\IUsuarioRepository.cs" />
-    <Compile Include="Repositories\IVendedorRepository.cs" />
     <Compile Include="Services\IClienteService.cs" />
     <Compile Include="Services\ILojaService.cs" />
     <Compile Include="Services\IUsuarioService.cs" />
