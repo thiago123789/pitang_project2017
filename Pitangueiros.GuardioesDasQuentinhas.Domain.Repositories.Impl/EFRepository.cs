@@ -31,7 +31,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             {
                 ((IDeleteLogico) entity_rtn).IsDeleted  = true;
             }
-          
+
+            this.Context.Set<T>().Attach(entity_rtn);
             this.Context.SaveChanges();
           
         }

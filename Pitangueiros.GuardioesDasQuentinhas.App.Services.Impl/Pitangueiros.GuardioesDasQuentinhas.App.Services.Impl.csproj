@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="ClienteAppService.cs" />
     <Compile Include="LojaAppService.cs" />
+    <Compile Include="Mappers\LojaMapperProfile.cs" />
     <Compile Include="Mappers\UsuarioMapperProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioAppService.cs" />
