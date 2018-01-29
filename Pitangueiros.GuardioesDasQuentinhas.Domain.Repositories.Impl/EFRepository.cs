@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
-    public class EFRepository<T, TId> : IRepository<T, TId> 
+    public class EFRepository<T, TId> : IRepository<T, TId>
         where T : class, IEntidadeBase<TId>, new()
         where TId : IComparable<TId>, IEquatable<TId> 
     {
@@ -42,14 +42,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             var query = from entity in Context.Set<T>()
                         where entity.Id.Equals(entityId)
                         select entity;
+            this.Context.SaveChanges();
             return query.SingleOrDefault();
         }
 
         public void Save(T entity)
         {
+            //this.Context.Set<T>().Attach(entity);
             this.Context.Set<T>().Add(entity);
             this.Context.SaveChanges();
-
         }
 
         public void Update(T entity)
@@ -71,6 +72,23 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             var list = (from entity in Context.Set<T>()
                         select entity).ToList();
             return list;
+        }
+
+        public void Detache(T entity)
+        {
+            //this.Context.Set(entity.GetType()).Attach(entity);
+            this.Context.Entry(entity).State = EntityState.Detached;
+        }
+
+
+        public void Dispose()
+        {
+            this.Context.Dispose();
+        }
+
+        public void Save()
+        {
+            this.Context.SaveChanges();
         }
     }
 }

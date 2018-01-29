@@ -29,8 +29,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
                 Usuario vendedor = this.usuarioRepository.GetOne(idVendedor);
                 loja.Vendedor = vendedor;
                 vendedor.Lojas.Add(loja);
+                this.usuarioRepository.Save();
+                this.usuarioRepository.Dispose();
                 this.lojaRepository.Save(loja);
-                this.usuarioRepository.Update(vendedor);
+                //this.usuarioRepository.Update(vendedor);
             }
         }
 
