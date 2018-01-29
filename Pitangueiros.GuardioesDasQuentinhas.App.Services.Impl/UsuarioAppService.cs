@@ -43,9 +43,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             this.usuarioService.CriarUsuario(user, usuario.Papeis);
         }
   
-        public void DesativarUsuario(DesativarUsuarioInputDto login)
+        public void DesativarUsuario(long idUsuario)
         {
-            this.usuarioService.DesativarUsuario(login.Login);
+            this.usuarioService.DesativarUsuario(idUsuario);
         }
     }
 }

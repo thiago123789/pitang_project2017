@@ -29,7 +29,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             cliente.Cartao.Add(cartao);
             cartao.Cliente = cliente;
             this.usuarioRepository.Update(cliente);
-            this.cartaoRepository.Save(cartao);
+            this.cartaoRepository.Add(cartao);
         }
 
         public void AvaliarPedido(long idPedido, Avaliacao avaliacao)
@@ -37,7 +37,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             Pedido pedido = this.pedidoRepository.GetOne(idPedido);
             pedido.Avaliacao = avaliacao;
             this.pedidoRepository.Update(pedido);
-            this.avaliacaoRepository.Save(avaliacao);
+            this.avaliacaoRepository.Add(avaliacao);
         }
 
         public void CancelarPedido(long idPedido)
@@ -53,7 +53,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             cliente.Pedido.Add(pedido);
             pedido.Cliente = cliente;
             this.usuarioRepository.Update(cliente);
-            this.pedidoRepository.Save(pedido);
+            this.pedidoRepository.Add(pedido);
 
         }
 

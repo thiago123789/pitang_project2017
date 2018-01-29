@@ -83,7 +83,7 @@ create table Porcao(
 	[IsDeleted] tinyint not null,
 	[DataCriacao] DateTime2 null,
 	[UltimaModificacao] DateTime2 null,
-	[PratoId] int not null foreign key references Prato(Id),
+	[LojaId] int not null foreign key references Loja(Id),
 )
 
 create table Avaliacao(

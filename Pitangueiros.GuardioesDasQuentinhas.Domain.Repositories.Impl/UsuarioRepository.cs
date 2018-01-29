@@ -19,7 +19,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             var query = from usuario in Table
                         where usuario.Email == email
                         select usuario;
-
+        
             return query.SingleOrDefault();
         }
     }

@@ -21,19 +21,16 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         {
             this.Context = context;
         }
-        public void Delete(TId entityId)
+        public void Desativar(T entity)
         {
-            var entity_rtn = (from entity in Context.Set<T>()
-                         where entity.Id.Equals(entityId)
-                         select entity).SingleOrDefault();
+            //var entity_rtn = (from entity in Context.Set<T>()
+                         //where entity.Id.Equals(entityId)
+                         //select entity).SingleOrDefault();
 
-            if (entity_rtn is IDeleteLogico)
+            if (entity is IDeleteLogico)
             {
-                ((IDeleteLogico) entity_rtn).IsDeleted  = true;
+                ((IDeleteLogico) entity).IsDeleted  = true;
             }
-
-            this.Context.Set<T>().Attach(entity_rtn);
-            this.Context.SaveChanges();
           
         }
 
@@ -42,15 +39,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             var query = from entity in Context.Set<T>()
                         where entity.Id.Equals(entityId)
                         select entity;
-            this.Context.SaveChanges();
             return query.SingleOrDefault();
         }
 
-        public void Save(T entity)
+        public void Add(T entity)
         {
-            //this.Context.Set<T>().Attach(entity);
             this.Context.Set<T>().Add(entity);
-            this.Context.SaveChanges();
         }
 
         public void Update(T entity)
@@ -74,21 +68,14 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             return list;
         }
 
-        public void Detache(T entity)
-        {
-            //this.Context.Set(entity.GetType()).Attach(entity);
-            this.Context.Entry(entity).State = EntityState.Detached;
-        }
-
-
-        public void Dispose()
-        {
-            this.Context.Dispose();
-        }
-
         public void Save()
         {
             this.Context.SaveChanges();
+        }
+
+        public T Find(TId entityId)
+        {
+            return this.Context.Set<T>().Find(entityId);
         }
     }
 }

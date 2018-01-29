@@ -32,6 +32,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
             this.Property(p => p.UltimaModificacao)
                 .HasColumnName("UltimaModificacao")
                 .IsOptional();
+            this.HasMany<Porcao>(s => s.Porcoes)
+                .WithRequired(s => s.Loja);
         }
     }
 }

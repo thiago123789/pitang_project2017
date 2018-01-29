@@ -31,13 +31,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 
         public void CriarUsuario(Usuario usuario,IList<string> papeis)
         {
-            this.usuarioRepository.Save(usuario);
+            this.usuarioRepository.Add(usuario);
+            this.usuarioRepository.Save();
         }
 
-        public void DesativarUsuario(string email)
+        public void DesativarUsuario(long idUsuario)
         {
-            Usuario usuario = this.usuarioRepository.ObterPorLogin(email);
-            this.usuarioRepository.Delete(usuario.Id);
+            Usuario usuario = this.usuarioRepository.Find(idUsuario);
+            this.usuarioRepository.Desativar(usuario);
+            this.usuarioRepository.Save();
         }
     }
 }

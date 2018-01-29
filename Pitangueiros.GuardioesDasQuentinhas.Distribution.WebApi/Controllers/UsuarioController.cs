@@ -12,10 +12,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
     public class UsuarioController : ApiController
     {
 
-        private readonly IUsuarioAppService servicoDeUsuario;
+        private readonly IUsuarioAppService usuarioAppService;
 
-        public UsuarioController(IUsuarioAppService servico){
-            this.servicoDeUsuario = servico;
+        public UsuarioController(IUsuarioAppService usuarioAppService)
+        {
+            this.usuarioAppService = usuarioAppService;
         }
 
         // GET: api/Usuario
@@ -25,24 +26,31 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
         //}
 
         // POST: api/Usuario
-        public UsuarioOutputDto Post(UsuarioInputDto value)
+        [HttpPost]
+        public UsuarioOutputDto CriarUsuario(UsuarioInputDto usuario)
         {
-            this.servicoDeUsuario.CriarUsuario(value);
+            this.usuarioAppService.CriarUsuario(usuario);
             return new UsuarioOutputDto
             {
-                Nome = value.Nome,
-                Email = value.Email
+                Nome = usuario.Nome,
+                Email = usuario.Email
             };
         }
 
-        // PUT: api/Usuario/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        public void DesativarUsuario(int idLoja)
         {
+            this.usuarioAppService.DesativarUsuario(idLoja);
         }
 
+        // PUT: api/Usuario/5
+        //public void Put(int id, [FromBody]string value)
+        //{
+        //}
+
         // DELETE: api/Usuario/5
-        public void Delete(int id)
-        {
-        }
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

@@ -23,14 +23,14 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             this.lojaService.AtualizarStatusDoPedido(atualizar.IdPedido, atualizar.Status);
         }
 
-        public void CriarNovaPorcao(int idLoja,PorcaoInputDto porcaoInput)
+        public void CriarNovaPorcao(PorcaoInputDto porcao)
         {
-            this.lojaService.CriarNovaPorcao(idLoja,new Porcao
+            this.lojaService.CriarNovaPorcao(porcao.IdLoja,new Porcao
             {
-                Item = porcaoInput.Item,
-                Preco = porcaoInput.Preco,
-                Quantidade = porcaoInput.Quantidade,
-                CategoriaPorcao = porcaoInput.Categoria,
+                Item = porcao.Item,
+                Preco = porcao.Preco,
+                Quantidade = porcao.Quantidade,
+                CategoriaPorcao = porcao.Categoria,
             });
         }
 

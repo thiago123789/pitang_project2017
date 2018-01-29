@@ -12,7 +12,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
     { 
         void CriarNovoPrato(Prato prato, int lojaId);
         void CriarNovaPorcao(int idLoja, Porcao porcao);
-        void ExcluirPratoDaLoja(int id);
+        void ExcluirPratoDaLoja(int idLoja);
         void AdicionarBairroDeEntrega(string nomeLoja, string bairro);
         void ExcluirBairroDeEntrega(string nomeLoja, string bairro);
         void AtualizarStatusDoPedido(long idPedido, StatusPedido status);

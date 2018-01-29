@@ -25,42 +25,44 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         {
             Pedido pedido = pedidoRepository.GetOne(idPedido);
             pedido.StatusPedido = status;
-            pedidoRepository.Save(pedido);
+            pedidoRepository.Add(pedido);
 
         }
 
         public void CriarNovaPorcao(int idLoja, Porcao porcao)
         {
-            Loja loja = lojaRepository.GetOne(idLoja);
-            if (porcao != null) this.porcaoRepository.Save(porcao);
-            loja.Porcoes.Add(porcao);
-            lojaRepository.Save(loja);
+            if (porcao != null)
+            {
+                Loja loja = lojaRepository.Find(idLoja);
+                loja.Porcoes.Add(porcao);
+                this.lojaRepository.Save();
+            }
         }
 
         public void CriarNovoPrato(Prato prato, int lojaId)
         {
             Loja loja = this.lojaRepository.GetOne(lojaId);
-            if (prato != null) this.pratoRepository.Save(prato);
+            if (prato != null) this.pratoRepository.Add(prato);
             loja.Pratos.Add(prato);
-            lojaRepository.Save(loja);
+            lojaRepository.Add(loja);
         }
 
         public void AdicionarBairroDeEntrega(string nomeLoja, string bairro) {
             if (nomeLoja != null || bairro != null)
             {
-                lojaRepository.ObterPorNome(nomeLoja);
-                lojaRepository.ObterPorNome(nomeLoja).BairrosDeEntrega.Add(bairro);
+                //lojaRepository.ObterPorNome(nomeLoja);
+                //lojaRepository.ObterPorNome(nomeLoja).BairrosDeEntrega.Add(bairro);
 
             }
         }
 
         public void ExcluirBairroDeEntrega(string nomeLoja, string bairro)
         {
-            lojaRepository.ObterPorNome(nomeLoja).BairrosDeEntrega.Remove(bairro);
+            //lojaRepository.ObterPorNome(nomeLoja).BairrosDeEntrega.Remove(bairro);
         }
 
         public void ExcluirPratoDaLoja(int id) {
-            pratoRepository.Delete(id);
+            //pratoRepository.Desativar(id);
         }
     }
 }

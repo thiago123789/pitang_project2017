@@ -10,7 +10,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
 {
     public interface IUsuarioService : IDependenciaTransient {
         bool Autenticar(string email, string senha);
-        void DesativarUsuario(string email);
+        void DesativarUsuario(long idUsuario);
         void CriarUsuario(Usuario usuario, IList<string> papeis);
     }
 }

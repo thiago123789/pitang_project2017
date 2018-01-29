@@ -8,17 +8,17 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories
 {
-    public interface IRepository<T, TId> : IDependenciaTransient, IDisposable
+    public interface IRepository<T, TId> : IDependenciaTransient
         where T: IEntidadeBase<TId>
         where TId: IEquatable<TId>, IComparable<TId> 
     {
-        void Save(T entity);
+        void Add(T entity);
         void Save();
         T GetOne(TId entityId);
         ICollection<T> ListActive();
         ICollection<T> ListAll();
-        void Delete(TId entityId);
+        void Desativar(T entity);
         void Update(T entity);
-        void Detache(T entity);
+        T Find(TId entityId);
     }
 }

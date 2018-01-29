@@ -13,6 +13,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
 
         void CriarUsuario(UsuarioInputDto usuario);
 
-        void DesativarUsuario(DesativarUsuarioInputDto login);
+        void DesativarUsuario(long idUsuario);
     }
 }

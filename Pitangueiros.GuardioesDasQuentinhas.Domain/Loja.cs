@@ -9,10 +9,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public IList<Prato> Pratos { get; set; }
         public IList<string> BairrosDeEntrega { get; set; }
         public IList<Pedido> Pedidos { get; set; }
-        public IList<Porcao> Porcoes { get; set; }
+        public virtual IList<Porcao> Porcoes { get; set; }
         public bool IsDeleted { get; set; }
         public double MediaAvaliacoes { get; set; }
         public DateTime DataCriacao { get; set; }
         public DateTime UltimaModificacao { get; set; }
+
+        public Loja()
+        {
+            this.Porcoes = new List<Porcao>();
+        }
     }
 }
