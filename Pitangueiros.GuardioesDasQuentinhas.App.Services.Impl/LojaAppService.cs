@@ -39,7 +39,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
 
             this.lojaService.CriarNovoPrato(prato.IdLoja, prato.IdPorcoes, new Prato
             {
-                Preco = prato.Preco
+                Preco = prato.Preco,
+                CriadoPorVendedor = prato.CriadoPorVendedor
             });
         }
        /* 

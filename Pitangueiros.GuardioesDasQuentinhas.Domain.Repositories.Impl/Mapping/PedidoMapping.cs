@@ -18,10 +18,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
             this.HasKey(p => p.Id);
             this.Property(p => p.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            this.HasMany(p => p.Pratos)
-                .WithRequired();
-            this.HasRequired(p => p.Loja)
-                .WithMany();
+            this.HasMany<Prato>(p => p.Pratos)
+                .WithOptional(p => p.Pedido);
+            this.HasRequired<Loja>(p => p.Loja)
+                .WithMany(p => p.Pedidos)
+                .Map(a => a.MapKey("LojaId")); ;
             this.Property(p => p.Comentario)
                 .HasColumnName("Comentario");
             this.Property(p => p.Preco)

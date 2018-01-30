@@ -27,5 +27,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
         {
             this.lojaAppService.ExcluirPratoDaLoja(idLoja);
         }
+
+        [HttpPost]
+        public void CriarNovaPrato(PratoInputDto prato)
+        {
+            this.lojaAppService.CriarNovoPrato(prato);
+        }
     }
 }

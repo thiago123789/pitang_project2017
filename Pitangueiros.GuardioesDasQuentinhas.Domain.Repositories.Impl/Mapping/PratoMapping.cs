@@ -17,12 +17,20 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
             this.HasKey(p => p.Id);
             this.Property(p => p.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            this.HasOptional<Pedido>(p => p.Pedido)
+                .WithMany(p => p.Pratos)
+                .Map(a => a.MapKey("PedidoId"));
             this.Property(p => p.Preco)
-                .HasColumnName("Preco").IsRequired();
+                .HasColumnName("Preco")
+                .IsRequired();
             this.Property(p => p.IsDeleted)
-                .HasColumnName("IsDeleted").IsRequired();
+                .HasColumnName("IsDeleted")
+                .IsRequired();
             this.Property(p => p.DataCriacao)
                 .HasColumnName("DataCriacao")
+                .IsRequired();
+            this.Property(p => p.CriadoPorVendedor)
+                .HasColumnName("CriadoPorVendedor")
                 .IsRequired();
             this.Property(p => p.UltimaModificacao)
                 .HasColumnName("UltimaModificacao")
@@ -35,6 +43,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                     cs.MapRightKey("PorcaoId");
                     cs.ToTable("PratoPorcao");
                 });
+            this.HasRequired<Loja>(s => s.Loja)
+                .WithMany(s => s.Pratos)
+                .Map(a => a.MapKey("LojaId"));
         }
             
     }

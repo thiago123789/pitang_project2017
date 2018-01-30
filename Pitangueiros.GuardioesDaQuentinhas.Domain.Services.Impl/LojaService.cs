@@ -45,13 +45,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             if (prato != null)
             {
                 Loja loja = this.lojaRepository.Find(idLoja);
-                //foreach (long idPorcao in idPorcoes)
-                {
-                    Porcao porcao = 
-                    prato.Porcoes.Add(porcao);
-                }
+                IList<Porcao> porcoes = this.porcaoRepository.FindList(idPorcoes);
+                prato.Porcoes = porcoes;
+                prato.Loja = loja;
                 loja.Pratos.Add(prato);
-                this.lojaRepository.Save();
+                this.porcaoRepository.Save();
             }
         }
 

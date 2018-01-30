@@ -34,6 +34,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .IsOptional();
             this.HasMany<Porcao>(s => s.Porcoes)
                 .WithRequired(s => s.Loja);
+            this.HasMany<Prato>(s => s.Pratos)
+                .WithRequired(s => s.Loja);
+            this.HasMany<Pedido>(s => s.Pedidos)
+                .WithRequired(s => s.Loja);
         }
     }
 }

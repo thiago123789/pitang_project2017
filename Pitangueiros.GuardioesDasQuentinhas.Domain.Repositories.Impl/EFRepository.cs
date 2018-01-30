@@ -74,11 +74,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 
         public IList<T> FindList(IList<TId> listEntityId)
         {
-            var query = from entity in Context.Set<T>()
-                        where usuario.Email == email
-                        select usuario;
-
-            return query.SingleOrDefault();
+            var query = (from entity in Context.Set<T>()
+                         where listEntityId.Contains(entity.Id)
+                         select entity).ToList();
+            
+            return query;
         }
     }
 }

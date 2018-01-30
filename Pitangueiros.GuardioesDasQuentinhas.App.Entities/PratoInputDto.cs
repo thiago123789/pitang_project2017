@@ -19,5 +19,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         [Required]
         [Display(Name = "Id Loja")]
         public int IdLoja { get; set; }
+        [Required]
+        [Display(Name = "Criado Por Vendedor")]
+        public bool CriadoPorVendedor { get; set; }
     }
 }

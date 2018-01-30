@@ -28,7 +28,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             Usuario cliente = this.usuarioRepository.GetOne(idCliente);
             cliente.Cartao.Add(cartao);
             cartao.Cliente = cliente;
-            this.usuarioRepository.Update(cliente);
             this.cartaoRepository.Add(cartao);
         }
 
@@ -36,7 +35,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         {
             Pedido pedido = this.pedidoRepository.GetOne(idPedido);
             pedido.Avaliacao = avaliacao;
-            this.pedidoRepository.Update(pedido);
             this.avaliacaoRepository.Add(avaliacao);
         }
 
@@ -44,7 +42,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         {
             Pedido pedido = this.pedidoRepository.GetOne(idPedido);
             pedido.StatusPedido = StatusPedido.Cancelado;
-            this.pedidoRepository.Update(pedido);
         }
 
         public void FazerPedido(long idCliente, Pedido pedido)
@@ -52,7 +49,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             Usuario cliente = this.usuarioRepository.GetOne(idCliente);
             cliente.Pedido.Add(pedido);
             pedido.Cliente = cliente;
-            this.usuarioRepository.Update(cliente);
             this.pedidoRepository.Add(pedido);
 
         }
@@ -61,7 +57,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         {
             Pedido pedido = this.pedidoRepository.GetOne(idPedido);
             pedido.Pagamento = pagamento;
-            this.pedidoRepository.Update(pedido);
         }
 
     }
