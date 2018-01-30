@@ -75,7 +75,9 @@
     <Compile Include="Mapping\PorcaoMapping.cs" />
     <Compile Include="Mapping\PratoMapping.cs" />
     <Compile Include="Mapping\UsuarioMapping.cs" />
+    <Compile Include="PedidoRepository.cs" />
     <Compile Include="PorcaoRepository.cs" />
+    <Compile Include="PratoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioRepository.cs" />
   </ItemGroup>

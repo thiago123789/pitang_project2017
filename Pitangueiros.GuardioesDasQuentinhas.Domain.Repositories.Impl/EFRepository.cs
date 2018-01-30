@@ -47,12 +47,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             this.Context.Set<T>().Add(entity);
         }
 
-        public void Update(T entity)
-        {
-            this.Context.Set<T>().Attach(entity);
-            this.Context.SaveChanges();
-        }
-
         public ICollection<T> ListActive()
         {
             var list = (from entity in Context.Set<T>()
@@ -76,6 +70,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         public T Find(TId entityId)
         {
             return this.Context.Set<T>().Find(entityId);
+        }
+
+        public IList<T> FindList(IList<TId> listEntityId)
+        {
+            var query = from entity in Context.Set<T>()
+                        where usuario.Email == email
+                        select usuario;
+
+            return query.SingleOrDefault();
         }
     }
 }

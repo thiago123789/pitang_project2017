@@ -8,11 +8,11 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
 {
-    public interface ILojaAppService
+    public interface ILojaAppService: IAppService
     {
         void AtualizarStatusDoPedido(AtualizarStatusInputDto atualizar);
-        void CriarNovaPorcao(PorcaoInputDto porcaoInput);
-        void CriarNovoPrato(PratoInputDto pratoInput);
+        void CriarNovaPorcao(PorcaoInputDto porcao);
+        void CriarNovoPrato(PratoInputDto prato);
         void ExcluirPratoDaLoja(int id);
     }
 }

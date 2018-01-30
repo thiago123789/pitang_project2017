@@ -34,17 +34,25 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             if (porcao != null)
             {
                 Loja loja = lojaRepository.Find(idLoja);
+                porcao.Loja = loja;
                 loja.Porcoes.Add(porcao);
                 this.lojaRepository.Save();
             }
         }
 
-        public void CriarNovoPrato(Prato prato, int lojaId)
+        public void CriarNovoPrato(int idLoja, IList<long> idPorcoes, Prato prato)
         {
-            Loja loja = this.lojaRepository.GetOne(lojaId);
-            if (prato != null) this.pratoRepository.Add(prato);
-            loja.Pratos.Add(prato);
-            lojaRepository.Add(loja);
+            if (prato != null)
+            {
+                Loja loja = this.lojaRepository.Find(idLoja);
+                //foreach (long idPorcao in idPorcoes)
+                {
+                    Porcao porcao = 
+                    prato.Porcoes.Add(porcao);
+                }
+                loja.Pratos.Add(prato);
+                this.lojaRepository.Save();
+            }
         }
 
         public void AdicionarBairroDeEntrega(string nomeLoja, string bairro) {

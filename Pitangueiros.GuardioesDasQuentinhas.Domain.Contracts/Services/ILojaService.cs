@@ -10,7 +10,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
 {
     public interface ILojaService : IDependenciaTransient
     { 
-        void CriarNovoPrato(Prato prato, int lojaId);
+        void CriarNovoPrato(int idLoja, IList<long> idPorcoes, Prato prato);
         void CriarNovaPorcao(int idLoja, Porcao porcao);
         void ExcluirPratoDaLoja(int idLoja);
         void AdicionarBairroDeEntrega(string nomeLoja, string bairro);

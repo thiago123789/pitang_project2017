@@ -34,14 +34,13 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             });
         }
 
-        public void CriarNovoPrato(PratoInputDto pratoInput)
+        public void CriarNovoPrato(PratoInputDto prato)
         {
 
-            this.lojaService.CriarNovoPrato(new Prato
+            this.lojaService.CriarNovoPrato(prato.IdLoja, prato.IdPorcoes, new Prato
             {
-                Porcoes = pratoInput.Porcoes,
-                Preco = pratoInput.Preco
-            }, pratoInput.IdLoja);
+                Preco = prato.Preco
+            });
         }
        /* 
         public void DefinirAreaDeEntrega(DefinirAreaDeEntregaDto areas)

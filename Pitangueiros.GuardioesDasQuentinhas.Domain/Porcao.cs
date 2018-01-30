@@ -13,5 +13,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public DateTime DataCriacao { get; set; }
         public DateTime UltimaModificacao { get; set; }
         public Loja Loja { get; set; }
+        public virtual IList<Prato> Pratos { get; set; }
+
+        public Porcao()
+        {
+            this.Pratos = new List<Prato>();
+        }
     }
 }

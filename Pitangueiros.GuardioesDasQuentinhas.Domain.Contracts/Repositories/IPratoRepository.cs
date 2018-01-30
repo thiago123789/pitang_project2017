@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
-
+using Pitangueiros.GuardioesDasQuentinhas.Cross.IoC.Contracts;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories
 {
-    public interface IPratoRepository: IRepository<Prato, int>
+    public interface IPratoRepository: IRepository<Prato, int>, IDependenciaTransient
     {
     }
 }

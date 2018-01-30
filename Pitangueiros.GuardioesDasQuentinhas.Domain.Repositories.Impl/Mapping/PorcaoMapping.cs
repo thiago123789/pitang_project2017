@@ -25,6 +25,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .HasColumnName("Quantidade");
             this.Property(p => p.IsDeleted)
                 .HasColumnName("IsDeleted").IsRequired();
+            this.Property(p => p.CategoriaPorcao)
+                .HasColumnName("CategoriaPorcao")
+                .IsRequired();
             this.Property(p => p.DataCriacao)
                 .HasColumnName("DataCriacao")
                 .IsRequired();

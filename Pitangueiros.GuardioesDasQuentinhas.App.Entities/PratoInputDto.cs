@@ -12,9 +12,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
     {
         [Required]
         [Display(Name = "Lista de Porcoes")]
-        public IList<Porcao> Porcoes { get; set; }
+        public IList<long> IdPorcoes { get; set; }
         [Required]
-        [Display(Name = "Categoria")]
+        [Display(Name = "Preco")]
         public int Preco { get; set; }
         [Required]
         [Display(Name = "Id Loja")]
