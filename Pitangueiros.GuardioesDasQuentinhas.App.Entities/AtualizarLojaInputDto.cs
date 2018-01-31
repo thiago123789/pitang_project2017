@@ -20,9 +20,5 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         [Display(Name = "Endereco da Loja")]
         [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "[Null]")]
         public string Endereco { get; set; }
-
-        [Display(Name = "Bairros de entrega")]
-        [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "[Null]")]
-        public IList<string> Bairros { get; set; }
     }
 }

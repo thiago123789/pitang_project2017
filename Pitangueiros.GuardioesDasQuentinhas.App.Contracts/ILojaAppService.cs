@@ -13,9 +13,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
         void AtualizarStatusDoPedido(AtualizarStatusInputDto atualizarStatus);
         void CriarNovaPorcao(PorcaoInputDto porcao);
         void CriarNovoPrato(PratoInputDto prato);
-        void CadastrarBairro(BairroInputDto bairro);
-        void AdicionarBairroDeEntrega(int idLoja, int idbairro);
-        void ExcluirBairroDeEntrega(int idLoja, int idbairro);
+        void AdicionarBairroDeEntrega(BairroInputDto bairro);
+        void ExcluirBairroDeEntrega(int idBairro);
         void ExcluirPratoDaLoja(int idPrato);
+        void ExcluirPorcaoDaLoja(int idPorcao);
     }
 }

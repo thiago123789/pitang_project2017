@@ -21,6 +21,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
             this.vendedorAppService.CadastrarLoja(loja);
         }
 
+        [HttpPost]
+        public void AtualizarLoja(AtualizarLojaInputDto atualizarLoja)
+        {
+            this.vendedorAppService.AtualizarLoja(atualizarLoja);
+        }
+
         [HttpPut]
         public void DesativarLoja(int idLoja)
         {

@@ -45,23 +45,18 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             });
         }
 
-        public void CadastrarBairro(BairroInputDto bairro)
+        public void AdicionarBairroDeEntrega(BairroInputDto bairro)
         {
-            this.lojaService.CadastrarBairro(bairro.IdLoja, new Bairro
+            this.lojaService.AdicionarBairroDeEntrega(bairro.IdLoja, new Bairro
             {
                 Nome = bairro.Nome
             });
 
         }
 
-        public void AdicionarBairroDeEntrega(int idLoja, int idbairro)
+        public void ExcluirBairroDeEntrega(int idBairro)
         {
-           this.lojaService.AdicionarBairroDeEntrega(idLoja, idbairro);
-        }
-
-        public void ExcluirBairroDeEntrega(int idLoja, int idbairro)
-        {
-            this.lojaService.ExcluirBairroDeEntrega(idLoja, idbairro);
+            this.lojaService.ExcluirBairroDeEntrega(idBairro);
         }
        
         public void ExcluirPratoDaLoja(int idPrato)
@@ -69,5 +64,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             this.lojaService.ExcluirPratoDaLoja(idPrato);
         }
 
+        public void ExcluirPorcaoDaLoja(int idPorcao)
+        {
+            this.lojaService.ExcluirPorcaoDaLoja(idPorcao);
+        }
     }
 }

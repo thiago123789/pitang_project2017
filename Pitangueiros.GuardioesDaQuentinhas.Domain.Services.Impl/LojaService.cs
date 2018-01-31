@@ -57,7 +57,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             }
         }
 
-        public void CadastrarBairro(int idLoja, Bairro bairro)
+        public void AdicionarBairroDeEntrega(int idLoja, Bairro bairro)
         {
             if (bairro != null)
             {
@@ -69,34 +69,24 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             }
         }
 
-        public void AdicionarBairroDeEntrega(int idLoja, int idbairro)
+        public void ExcluirBairroDeEntrega(int idBairro)
         {
-            Bairro bairro = this.bairroRepository.Find(idbairro);
+            Bairro bairro = this.bairroRepository.Find(idBairro);
+            this.bairroRepository.Desativar(bairro);
             this.bairroRepository.Save();
-            Loja loja = lojaRepository.Find(idLoja);
-            if (!loja.Bairros.Contains(bairro))
-            {
-                loja.Bairros.Add(bairro);
-                this.lojaRepository.Save();
-            }
-        }
-
-        public void ExcluirBairroDeEntrega(int idLoja, int idbairro)
-        {
-            Bairro bairro = this.bairroRepository.Find(idbairro);
-            this.bairroRepository.Save();
-            Loja loja = lojaRepository.Find(idLoja);
-            if (loja.Bairros.Contains(bairro))
-            {
-                loja.Bairros.Remove(bairro);
-                this.lojaRepository.Save();
-            }
         }
 
         public void ExcluirPratoDaLoja(int idPrato) {
             Prato prato = this.pratoRepository.Find(idPrato);
             this.pratoRepository.Desativar(prato);
             this.pratoRepository.Save();
+        }
+
+        public void ExcluirPorcaoDaLoja(int idPorcao)
+        {
+            Porcao porcao = this.porcaoRepository.Find(idPorcao);
+            this.porcaoRepository.Desativar(porcao);
+            this.porcaoRepository.Save();
         }
     }
 }

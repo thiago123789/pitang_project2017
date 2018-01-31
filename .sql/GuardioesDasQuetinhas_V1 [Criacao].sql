@@ -111,6 +111,15 @@ create table AreaEntregaLoja (
 	[LojaId] int not null foreign key references Loja(Id)
 )
 
+create table Bairro(
+	[Id] int not null primary key identity(0,1),
+	[Nome] nvarchar(20) not null,
+	[IsDeleted] bit not null,
+	[DataCriacao] DateTime2 null,
+	[UltimaModificacao] DateTime2 null,
+	[LojaId] int not null foreign key references Loja(Id), 
+)
+
 -- ALTER TABLE Pagamento NOCHECK CONSTRAINT ALL;
 -- ALTER TABLE Pagamento ADD PedidoId bigint not null foreign key references Pedido(Id);
 -- ALTER TABLE Pagamento WITH CHECK CHECK CONSTRAINT all;

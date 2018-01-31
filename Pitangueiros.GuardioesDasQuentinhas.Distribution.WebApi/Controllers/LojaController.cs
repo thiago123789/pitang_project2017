@@ -29,15 +29,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
         }
 
         [HttpPut]
-        public void AdicionarBairroDeEntrega(int idLoja, int idBairro)
+        public void ExcluirPorcaoDaLoja(int idPorcao)
         {
-            this.lojaAppService.AdicionarBairroDeEntrega(idLoja, idBairro);
+            this.lojaAppService.ExcluirPorcaoDaLoja(idPorcao);
         }
 
         [HttpPut]
-        public void ExcluirBairroDeEntrega(int idLoja, int idBairro)
+        public void ExcluirBairroDeEntrega(int idBairro)
         {
-            this.lojaAppService.ExcluirBairroDeEntrega(idLoja, idBairro);
+            this.lojaAppService.ExcluirBairroDeEntrega(idBairro);
         }
 
         [HttpPost]
@@ -47,9 +47,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
         }
 
         [HttpPost]
-        public void CadastrarBairro(BairroInputDto bairro)
+        public void AdicionarBairroDeEntrega(BairroInputDto bairro)
         {
-            this.lojaAppService.CadastrarBairro(bairro);
+            this.lojaAppService.AdicionarBairroDeEntrega(bairro);
         }
     }
 }
