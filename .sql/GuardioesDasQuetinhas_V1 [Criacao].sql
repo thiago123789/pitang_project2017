@@ -55,7 +55,8 @@ create table Pagamento(
 create table Pedido(
 	[Id] bigint not null primary key identity(0,1),
 	[Comentario] nvarchar(500),
-	[Preco] smallmoney not null,
+	[Preco] float null,
+	[StatusPedido] int null,
 	[IsDeleted] bit not null,
 	[DataCriacao] DateTime2 null,
 	[UltimaModificacao] DateTime2 null,

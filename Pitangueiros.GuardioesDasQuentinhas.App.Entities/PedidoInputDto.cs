@@ -14,13 +14,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         [Display(Name = "Id do Cliente")]
         public long IdCliente { get; set; }
         [Required]
-        [Display(Name = "Loja")]
-        public Loja Loja { get; set; }
-        [Required]
-        [Display(Name = "Pratos")]
-        public IList<Prato> Pratos { get; set; }
-        [Display(Name = "Comentario")]
-        public string Comentario { get; set; }
+        [Display(Name = "Id da Loja")]
+        public int IdLoja { get; set; }
 
     }
 }

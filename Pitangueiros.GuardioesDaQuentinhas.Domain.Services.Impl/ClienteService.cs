@@ -12,14 +12,16 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
     public class ClienteService : IClienteService
     {
         private readonly ICartaoRepository cartaoRepository;
+        private readonly ILojaRepository lojaRepository;
         private readonly IPedidoRepository pedidoRepository;
         private readonly IAvaliacaoRepository avaliacaoRepository;
         private readonly IUsuarioRepository usuarioRepository;
         private readonly IPagamentoRepository pagamentoRepository;
 
-        public ClienteService(ICartaoRepository cartaoRepository, IPedidoRepository pedidoRepository, IAvaliacaoRepository avaliacaoRepository, IUsuarioRepository usuarioRepository)
+        public ClienteService(ICartaoRepository cartaoRepository, ILojaRepository lojaRepository, IPedidoRepository pedidoRepository, IAvaliacaoRepository avaliacaoRepository, IUsuarioRepository usuarioRepository)
         {
             this.cartaoRepository = cartaoRepository;
+            this.lojaRepository = lojaRepository;
             this.pedidoRepository = pedidoRepository;
             this.avaliacaoRepository = avaliacaoRepository;
             this.usuarioRepository = usuarioRepository;
@@ -47,12 +49,20 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.pedidoRepository.Save();
         }
 
-        public void FazerPedido(long idCliente, Pedido pedido)
+        public void IniciarPedido(long idCliente, int idLoja)
         {
+            Pedido pedido = new Pedido();
+
             Usuario cliente = this.usuarioRepository.Find(idCliente);
-            cliente.Pedido.Add(pedido);
             pedido.Cliente = cliente;
+            cliente.Pedidos.Add(pedido);
             this.usuarioRepository.Save();
+
+            Loja loja = this.lojaRepository.Find(idLoja);
+            pedido.Loja = loja;
+            loja.Pedidos.Add(pedido);
+            this.lojaRepository.Save();
+
         }
 
         public void RealizarPagamento(long idPedido, Pagamento pagamento)

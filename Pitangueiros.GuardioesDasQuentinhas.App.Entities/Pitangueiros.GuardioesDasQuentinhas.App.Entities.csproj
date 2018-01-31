@@ -57,6 +57,7 @@
     <Compile Include="LojaInputDto.cs" />
     <Compile Include="PorcaoInputDto.cs" />
     <Compile Include="PratoInputDto.cs" />
+    <Compile Include="PratoPedidoInputDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioInputDto.cs" />
     <Compile Include="UsuarioOutputDto.cs" />

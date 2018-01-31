@@ -63,7 +63,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AvaliacaoRepository.cs" />
     <Compile Include="BairroRepository.cs" />
+    <Compile Include="CartaoRepository.cs" />
     <Compile Include="LojaRepository.cs" />
     <Compile Include="EFRepository.cs" />
     <Compile Include="GuardioesDasQuentinhasDbContext.cs" />

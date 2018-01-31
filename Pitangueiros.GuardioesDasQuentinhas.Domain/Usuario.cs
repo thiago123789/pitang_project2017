@@ -13,7 +13,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public DateTime UltimaModificacao { get; set; }
         public virtual IList<Permissao> Permissoes { get; set; }
         public virtual IList<Cartao> Cartao { get; set; }
-        public virtual IList<Pedido> Pedido { get; set; }
+        public virtual IList<Pedido> Pedidos { get; set; }
         public virtual IList<Loja> Lojas { get; set; }
 
         public Usuario()

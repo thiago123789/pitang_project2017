@@ -11,7 +11,7 @@ using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
 {
-    public class ClienteAppService : Pitangueiros.GuardioesDasQuentinhas.App.Contracts.IClienteAppService
+    public class ClienteAppService : IClienteAppService
     {
         private readonly IClienteService clienteService;
         public ClienteAppService(IClienteService clienteService)
@@ -45,14 +45,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             this.clienteService.CancelarPedido(idPedido);
         }
 
-        public void FazerPedido(PedidoInputDto pedido)
+        public void IniciarPedido(PedidoInputDto pedido)
         {
-            this.clienteService.FazerPedido(pedido.IdCliente, new Pedido
-            {
-                Loja = pedido.Loja,
-                Pratos = pedido.Pratos,
-                Comentario = pedido.Comentario
-            });
+            this.clienteService.IniciarPedido(pedido.IdCliente, pedido.IdLoja);
         }
 
         public void RealizarPagamento(PagamentoInputDto pagamento)

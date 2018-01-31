@@ -26,9 +26,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 
         public void AtualizarStatusDoPedido(long idPedido, StatusPedido status)
         {
-            Pedido pedido = pedidoRepository.GetOne(idPedido);
+            Pedido pedido = this.pedidoRepository.Find(idPedido);
             pedido.StatusPedido = status;
-            pedidoRepository.Add(pedido);
+            this.pedidoRepository.Save();
 
         }
 

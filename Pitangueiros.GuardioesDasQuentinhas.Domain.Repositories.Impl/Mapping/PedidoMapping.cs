@@ -22,19 +22,20 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .WithOptional(p => p.Pedido);
             this.HasRequired<Loja>(p => p.Loja)
                 .WithMany(p => p.Pedidos)
-                .Map(a => a.MapKey("LojaId")); ;
+                .Map(a => a.MapKey("LojaId")); 
             this.Property(p => p.Comentario)
                 .HasColumnName("Comentario");
+            this.Property(p => p.StatusPedido)
+                .HasColumnName("StatusPedido");
             this.Property(p => p.Preco)
                 .HasColumnName("Preco");
-            this.Property(p => p.StatusPedido)
-                .HasColumnName("Status");
             this.HasRequired<Usuario>(p => p.Cliente)
-                .WithMany(p => p.Pedido);
+                .WithMany(p => p.Pedidos)
+                .Map(a => a.MapKey("ClienteId"));
             this.HasRequired<Pagamento>(p => p.Pagamento)
                 .WithRequiredDependent();
-            this.HasRequired(p => p.Avaliacao)
-                .WithOptional();
+            this.HasOptional<Avaliacao>(p => p.Avaliacao)
+                .WithRequired(p => p.Pedido);
             this.Property(p => p.IsDeleted)
                 .HasColumnName("IsDeleted")
                 .IsRequired();
