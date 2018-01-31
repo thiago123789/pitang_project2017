@@ -14,12 +14,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         public int IdLoja { get; set; }
 
         [Display(Name = "Nome da Loja")]
+        [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "[Null]")]
         public string Nome { get; set; }
 
         [Display(Name = "Endereco da Loja")]
+        [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "[Null]")]
         public string Endereco { get; set; }
 
         [Display(Name = "Bairros de entrega")]
+        [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "[Null]")]
         public IList<string> Bairros { get; set; }
     }
 }

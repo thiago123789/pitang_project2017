@@ -17,6 +17,17 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
         {
             this.vendedorService = vendedorService;
         }
+
+        public void AtualizarLoja(AtualizarLojaInputDto loja)
+        {
+            this.vendedorService.CadastrarLoja(loja.IdLoja, new Loja
+            {
+                Nome = loja.Nome,
+                EnderecoDaLoja = loja.Endereco,
+                BairrosDeEntrega = loja.Bairros
+            });
+        }
+
         public void CadastrarLoja(LojaInputDto loja)
         {
             this.vendedorService.CadastrarLoja(loja.IdVendedor, new Loja

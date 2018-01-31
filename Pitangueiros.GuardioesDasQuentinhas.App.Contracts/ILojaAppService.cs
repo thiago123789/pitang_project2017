@@ -11,7 +11,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
     public interface ILojaAppService: IAppService
     {
         void AtualizarStatusDoPedido(AtualizarStatusInputDto atualizarStatus);
-        void AtualizarLoja(AtualizarLojaInputDto atualizaLojar);
         void CriarNovaPorcao(PorcaoInputDto porcao);
         void CriarNovoPrato(PratoInputDto prato);
         void ExcluirPratoDaLoja(int idPrato);

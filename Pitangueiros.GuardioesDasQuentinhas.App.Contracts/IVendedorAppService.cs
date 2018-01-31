@@ -11,5 +11,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
     {
         void CadastrarLoja(LojaInputDto loja);
         void DesativarLoja(int idLoja);
+        void AtualizarLoja(AtualizarLojaInputDto loja);
     }
 }

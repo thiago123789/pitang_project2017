@@ -22,11 +22,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.usuarioRepository = usuarioRepository;
         }
 
+        public void AtualizarLoja(int idLoja, Loja lojaAtualizada)
+        {
+            throw new NotImplementedException();
+        }
+
         public void CadastrarLoja(long idVendedor, Loja loja)
         {
             if (loja != null)
             {
-                //Usuario vendedor = this.usuarioRepository.GetOne(idVendedor);
                 Usuario vendedor = this.usuarioRepository.Find(idVendedor);
                 loja.Vendedor = vendedor;
                 vendedor.Lojas.Add(loja);

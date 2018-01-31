@@ -19,11 +19,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             this.lojaService = lojaService;
         }
 
-        public void AtualizarLoja(AtualizarLojaInputDto atualizarLoja)
-        {
-            this.lojaService.AtualizarLoja(atualizarLoja.IdLoja, atualizarLoja.Nome, atualizarLoja.Endereco, atualizarLoja.Bairros);
-        }
-
         public void AtualizarStatusDoPedido(AtualizarStatusInputDto atualizarStatus)
         {
             this.lojaService.AtualizarStatusDoPedido(atualizarStatus.IdPedido, atualizarStatus.Status);

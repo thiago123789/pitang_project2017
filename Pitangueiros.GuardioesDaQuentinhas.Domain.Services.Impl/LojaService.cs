@@ -21,23 +21,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.pedidoRepository = pedidoRepository;
         }
 
-        public void AtualizarLoja(int idLoja, string nome, string endereco, IList<string> bairros)
-        {
-            Loja loja = this.lojaRepository.Find(idLoja);
-            if (nome != null)
-            {
-                loja.Nome = nome;
-            }
-            if (endereco != null)
-            {
-                loja.EnderecoDaLoja = endereco;
-            }
-            if (nome != null)
-            {
-                loja.BairrosDeEntrega = bairros;
-            }
-            this.lojaRepository.Save();
-        }
 
         public void AtualizarStatusDoPedido(long idPedido, StatusPedido status)
         {
