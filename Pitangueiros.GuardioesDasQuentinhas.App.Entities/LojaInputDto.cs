@@ -17,9 +17,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         [Display(Name = "Endereco da Loja")]
         public string Endereco { get; set; }
 
-        [Required]
-        [Display(Name = "Bairros de entrega")]
-        public IList<string> Bairros { get; set; }
+        //[Required]
+        //[Display(Name = "Bairros de entrega")]
+        //public IList<string> Bairros { get; set; }
 
         [Required]
         [Display(Name = "Id Do Vendedor")]

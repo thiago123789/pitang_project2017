@@ -33,7 +33,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             {
                 Nome = loja.Nome,
                 EnderecoDaLoja = loja.Endereco,
-                BairrosDeEntrega = loja.Bairros
+                //BairrosDeEntrega = loja.Bairros
             });
         }
 

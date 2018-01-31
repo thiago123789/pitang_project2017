@@ -12,13 +12,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         private readonly IPorcaoRepository porcaoRepository;
         private readonly ILojaRepository lojaRepository;
         private readonly IPedidoRepository pedidoRepository;
+        private readonly IBairroRepository bairroRepository;
 
-        public LojaService(IPratoRepository pratoRepository, IPorcaoRepository porcaoRepository, ILojaRepository lojaRepository, IPedidoRepository pedidoRepository)
+        public LojaService(IPratoRepository pratoRepository, IPorcaoRepository porcaoRepository, ILojaRepository lojaRepository, IPedidoRepository pedidoRepository, IBairroRepository bairroRepository)
         {
             this.pratoRepository = pratoRepository;
             this.porcaoRepository = porcaoRepository;
             this.lojaRepository = lojaRepository;
             this.pedidoRepository = pedidoRepository;
+            this.bairroRepository = bairroRepository;
         }
 
 
@@ -55,29 +57,39 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             }
         }
 
-        public void AdicionarBairroDeEntrega(int idLoja, string bairro)
+        public void CadastrarBairro(int idLoja, Bairro bairro)
         {
             if (bairro != null)
             {
-                Loja loja = lojaRepository.Find(idLoja);
-                if (!loja.BairrosDeEntrega.Contains(bairro))
-                {
-                    loja.BairrosDeEntrega.Add(bairro);
-                    lojaRepository.Save();
-                }
+                Loja loja = this.lojaRepository.Find(idLoja);
+                bairro.Loja = loja;
+                loja.Bairros.Add(bairro);
+                this.lojaRepository.Save();
+
             }
         }
 
-        public void ExcluirBairroDeEntrega(int idLoja, string bairro)
+        public void AdicionarBairroDeEntrega(int idLoja, int idbairro)
         {
-            if (bairro != null)
+            Bairro bairro = this.bairroRepository.Find(idbairro);
+            this.bairroRepository.Save();
+            Loja loja = lojaRepository.Find(idLoja);
+            if (!loja.Bairros.Contains(bairro))
             {
-                Loja loja = lojaRepository.Find(idLoja);
-                if (loja.BairrosDeEntrega.Contains(bairro))
-                {
-                    lojaRepository.Find(idLoja).BairrosDeEntrega.Remove(bairro);
-                    lojaRepository.Save();
-                }
+                loja.Bairros.Add(bairro);
+                this.lojaRepository.Save();
+            }
+        }
+
+        public void ExcluirBairroDeEntrega(int idLoja, int idbairro)
+        {
+            Bairro bairro = this.bairroRepository.Find(idbairro);
+            this.bairroRepository.Save();
+            Loja loja = lojaRepository.Find(idLoja);
+            if (loja.Bairros.Contains(bairro))
+            {
+                loja.Bairros.Remove(bairro);
+                this.lojaRepository.Save();
             }
         }
 

@@ -9,37 +9,28 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
 {
-    class LojaMapping : EntityTypeConfiguration<Loja>
+    public class BairroMapping : EntityTypeConfiguration<Bairro>
     {
-        public LojaMapping()
+        public BairroMapping()
         {
-            ToTable("Loja");
+            ToTable("Bairro");
             this.HasKey(p => p.Id);
             this.Property(p => p.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             this.Property(p => p.Nome)
-                .HasColumnName("Nome");
-            this.Property(p => p.EnderecoDaLoja)
-                .HasColumnName("EnderecoDaLoja");
+                .HasColumnName("Nome").IsRequired();
             this.Property(p => p.IsDeleted)
-                .HasColumnName("IsDeleted").IsRequired();
-            this.HasRequired<Usuario>(s => s.Vendedor)
-                .WithMany(c => c.Lojas)
-                .Map(a => a.MapKey("VendedorId"));
+                .HasColumnName("IsDeleted")
+                 .IsRequired();
             this.Property(p => p.DataCriacao)
                 .HasColumnName("DataCriacao")
                 .IsRequired();
             this.Property(p => p.UltimaModificacao)
                 .HasColumnName("UltimaModificacao")
                 .IsOptional();
-            this.HasMany<Porcao>(s => s.Porcoes)
-                .WithRequired(s => s.Loja);
-            this.HasMany<Prato>(s => s.Pratos)
-                .WithRequired(s => s.Loja);
-            this.HasMany<Pedido>(s => s.Pedidos)
-                .WithRequired(s => s.Loja);
-            this.HasMany<Bairro>(s => s.Bairros)
-                .WithRequired(s => s.Loja);
+            this.HasRequired<Loja>(s => s.Loja)
+                .WithMany(s => s.Bairros)
+                .Map(a => a.MapKey("LojaId"));
         }
     }
 }

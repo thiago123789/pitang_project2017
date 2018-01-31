@@ -63,10 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BairroRepository.cs" />
     <Compile Include="LojaRepository.cs" />
     <Compile Include="EFRepository.cs" />
     <Compile Include="GuardioesDasQuentinhasDbContext.cs" />
     <Compile Include="Mapping\AvaliacaoMapping.cs" />
+    <Compile Include="Mapping\BairroMapping.cs" />
     <Compile Include="Mapping\CartaoMapping.cs" />
     <Compile Include="Mapping\LojaMapping.cs" />
     <Compile Include="Mapping\PagamentoMapping.cs" />

@@ -29,21 +29,27 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
         }
 
         [HttpPut]
-        public void AdicionarBairroDeEntrega(int idLoja, string bairro)
+        public void AdicionarBairroDeEntrega(int idLoja, int idBairro)
         {
-            this.lojaAppService.AdicionarBairroDeEntrega(idLoja, bairro);
+            this.lojaAppService.AdicionarBairroDeEntrega(idLoja, idBairro);
         }
 
         [HttpPut]
-        public void ExcluirBairroDeEntrega(int idLoja, string bairro)
+        public void ExcluirBairroDeEntrega(int idLoja, int idBairro)
         {
-            this.lojaAppService.ExcluirBairroDeEntrega(idLoja, bairro);
+            this.lojaAppService.ExcluirBairroDeEntrega(idLoja, idBairro);
         }
 
         [HttpPost]
         public void CriarNovaPrato(PratoInputDto prato)
         {
             this.lojaAppService.CriarNovoPrato(prato);
+        }
+
+        [HttpPost]
+        public void CadastrarBairro(BairroInputDto bairro)
+        {
+            this.lojaAppService.CadastrarBairro(bairro);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public string EnderecoDaLoja { get; set; }
         public Usuario Vendedor { get; set; }
         public virtual IList<Prato> Pratos { get; set; }
-        public virtual IList<string> BairrosDeEntrega { get; set; }
+        public virtual IList<Bairro> Bairros { get; set; }
         public virtual IList<Pedido> Pedidos { get; set; }
         public virtual IList<Porcao> Porcoes { get; set; }
         public bool IsDeleted { get; set; }
@@ -20,7 +20,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
             this.Porcoes = new List<Porcao>();
             this.Pratos = new List<Prato>();
             this.Pedidos = new List<Pedido>();
-            this.BairrosDeEntrega = new List<string>();
+            this.Bairros = new List<Bairro>();
         }
     }
 }

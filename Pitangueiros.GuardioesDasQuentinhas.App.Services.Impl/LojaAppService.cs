@@ -44,15 +44,24 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
                 CriadoPorVendedor = prato.CriadoPorVendedor
             });
         }
-       
-        public void AdicionarBairroDeEntrega(int idLoja, string bairro)
+
+        public void CadastrarBairro(BairroInputDto bairro)
         {
-           this.lojaService.AdicionarBairroDeEntrega(idLoja, bairro);
+            this.lojaService.CadastrarBairro(bairro.IdLoja, new Bairro
+            {
+                Nome = bairro.Nome
+            });
+
         }
 
-        public void ExcluirBairroDeEntrega(int idLoja, string bairro)
+        public void AdicionarBairroDeEntrega(int idLoja, int idbairro)
         {
-            this.lojaService.ExcluirBairroDeEntrega(idLoja,bairro);
+           this.lojaService.AdicionarBairroDeEntrega(idLoja, idbairro);
+        }
+
+        public void ExcluirBairroDeEntrega(int idLoja, int idbairro)
+        {
+            this.lojaService.ExcluirBairroDeEntrega(idLoja, idbairro);
         }
        
         public void ExcluirPratoDaLoja(int idPrato)

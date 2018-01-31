@@ -27,6 +27,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             modelBuilder.Configurations.Add(new CartaoMapping());
             modelBuilder.Configurations.Add(new AvaliacaoMapping());
             modelBuilder.Configurations.Add(new PermissaoMapping());
+            modelBuilder.Configurations.Add(new BairroMapping());
             base.OnModelCreating(modelBuilder);
         }
     }
