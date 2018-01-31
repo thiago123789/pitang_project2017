@@ -44,12 +44,17 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
                 CriadoPorVendedor = prato.CriadoPorVendedor
             });
         }
-       /* 
-        public void DefinirAreaDeEntrega(DefinirAreaDeEntregaDto areas)
+       
+        public void AdicionarBairroDeEntrega(int idLoja, string bairro)
         {
-           this.lojaService.DefinirAreaDeEntrega(areas.idLoja,areas.Bairros);
+           this.lojaService.AdicionarBairroDeEntrega(idLoja, bairro);
         }
-       */ 
+
+        public void ExcluirBairroDeEntrega(int idLoja, string bairro)
+        {
+            this.lojaService.ExcluirBairroDeEntrega(idLoja,bairro);
+        }
+       
         public void ExcluirPratoDaLoja(int idPrato)
         {
             this.lojaService.ExcluirPratoDaLoja(idPrato);

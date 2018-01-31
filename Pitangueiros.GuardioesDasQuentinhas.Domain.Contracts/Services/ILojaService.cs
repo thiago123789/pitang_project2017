@@ -13,9 +13,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
         void CriarNovoPrato(int idLoja, IList<long> idPorcoes, Prato prato);
         void CriarNovaPorcao(int idLoja, Porcao porcao);
         void ExcluirPratoDaLoja(int idPrato);
-        //void AdicionarBairroDeEntrega(string nomeLoja, string bairro);
-        //void ExcluirBairroDeEntrega(string nomeLoja, string bairro);
-        //void AtualizarLoja(int idLoja, string nome, string endereco, IList<string> bairros);
+        void AdicionarBairroDeEntrega(int idLoja, string bairro);
+        void ExcluirBairroDeEntrega(int idLoja, string bairro);
         void AtualizarStatusDoPedido(long idPedido, StatusPedido status);
     }
 }

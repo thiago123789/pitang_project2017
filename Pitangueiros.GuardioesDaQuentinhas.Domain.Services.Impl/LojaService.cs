@@ -55,19 +55,31 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             }
         }
 
-        //public void AdicionarBairroDeEntrega(string nomeLoja, string bairro) {
-        //    if (nomeLoja != null || bairro != null)
-        //    {
-        //        //lojaRepository.ObterPorNome(nomeLoja);
-        //        //lojaRepository.ObterPorNome(nomeLoja).BairrosDeEntrega.Add(bairro);
-        //
-        //    }
-        //}
+        public void AdicionarBairroDeEntrega(int idLoja, string bairro)
+        {
+            if (bairro != null)
+            {
+                Loja loja = lojaRepository.Find(idLoja);
+                if (!loja.BairrosDeEntrega.Contains(bairro))
+                {
+                    loja.BairrosDeEntrega.Add(bairro);
+                    lojaRepository.Save();
+                }
+            }
+        }
 
-        //public void ExcluirBairroDeEntrega(string nomeLoja, string bairro)
-        //{
-            //lojaRepository.ObterPorNome(nomeLoja).BairrosDeEntrega.Remove(bairro);
-        //}
+        public void ExcluirBairroDeEntrega(int idLoja, string bairro)
+        {
+            if (bairro != null)
+            {
+                Loja loja = lojaRepository.Find(idLoja);
+                if (loja.BairrosDeEntrega.Contains(bairro))
+                {
+                    lojaRepository.Find(idLoja).BairrosDeEntrega.Remove(bairro);
+                    lojaRepository.Save();
+                }
+            }
+        }
 
         public void ExcluirPratoDaLoja(int idPrato) {
             Prato prato = this.pratoRepository.Find(idPrato);
