@@ -57,7 +57,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
 
         public void RealizarPagamento(PagamentoInputDto pagamento)
         {
-            throw new NotImplementedException();
+            this.clienteService.RealizarPagamento(pagamento.IdPedido, new Pagamento
+            {
+                DataCriacao = pagamento.DataDeCriacao,
+                OpcaoDePagamento = pagamento.OpcaoPagamento,
+                UltimaModificacao = pagamento.UltimaModificacao
+            }); 
         }
     }
 }

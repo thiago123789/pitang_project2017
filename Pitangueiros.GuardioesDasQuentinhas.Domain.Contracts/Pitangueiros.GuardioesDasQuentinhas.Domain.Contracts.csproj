@@ -46,6 +46,7 @@
     <Compile Include="Repositories\IBairroRepository.cs" />
     <Compile Include="Repositories\ICartaoRepository.cs" />
     <Compile Include="Repositories\ILojaRepository.cs" />
+    <Compile Include="Repositories\IPagamentoRepository.cs" />
     <Compile Include="Repositories\IPedidoRepository.cs" />
     <Compile Include="Repositories\IPorcaoRepository.cs" />
     <Compile Include="Repositories\IPratoRepository.cs" />

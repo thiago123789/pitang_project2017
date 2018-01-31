@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
 {
@@ -12,5 +13,17 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         [Required]
         [Display(Name = "Id do Pedido")]
         public long IdPedido { get; set; }
+
+        [Required]
+        [Display(Name = "Data de criacao")]
+        public DateTime DataDeCriacao { get; set; }
+
+        [Required]
+        [Display(Name = "Data da última modificação")]
+        public DateTime UltimaModificacao { get; set; }
+
+        [Required]
+        [Display(Name = "Opção de pagamento")]
+        public OpcaoDePagamento OpcaoPagamento { get; set; }
     }
 }
