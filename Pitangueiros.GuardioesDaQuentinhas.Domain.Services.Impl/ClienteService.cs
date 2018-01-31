@@ -15,6 +15,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         private readonly IPedidoRepository pedidoRepository;
         private readonly IAvaliacaoRepository avaliacaoRepository;
         private readonly IUsuarioRepository usuarioRepository;
+        private readonly IPagamentoRepository pagamentoRepository;
 
         public ClienteService(ICartaoRepository cartaoRepository, IPedidoRepository pedidoRepository, IAvaliacaoRepository avaliacaoRepository, IUsuarioRepository usuarioRepository)
         {
@@ -25,38 +26,41 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         }
         public void AdicionarUmCartao(long idCliente, Cartao cartao)
         {
-            Usuario cliente = this.usuarioRepository.GetOne(idCliente);
+            Usuario cliente = this.usuarioRepository.Find(idCliente);
             cliente.Cartao.Add(cartao);
             cartao.Cliente = cliente;
-            this.cartaoRepository.Add(cartao);
+            this.usuarioRepository.Save();
         }
 
         public void AvaliarPedido(long idPedido, Avaliacao avaliacao)
         {
             Pedido pedido = this.pedidoRepository.GetOne(idPedido);
             pedido.Avaliacao = avaliacao;
-            this.avaliacaoRepository.Add(avaliacao);
+            avaliacao.Pedido = pedido;
+            this.pedidoRepository.Save();
         }
 
         public void CancelarPedido(long idPedido)
         {
             Pedido pedido = this.pedidoRepository.GetOne(idPedido);
             pedido.StatusPedido = StatusPedido.Cancelado;
+            this.pedidoRepository.Save();
         }
 
         public void FazerPedido(long idCliente, Pedido pedido)
         {
-            Usuario cliente = this.usuarioRepository.GetOne(idCliente);
+            Usuario cliente = this.usuarioRepository.Find(idCliente);
             cliente.Pedido.Add(pedido);
             pedido.Cliente = cliente;
-            this.pedidoRepository.Add(pedido);
-
+            this.usuarioRepository.Save();
         }
 
         public void RealizarPagamento(long idPedido, Pagamento pagamento)
         {
-            Pedido pedido = this.pedidoRepository.GetOne(idPedido);
+            Pedido pedido = this.pedidoRepository.Find(idPedido);
             pedido.Pagamento = pagamento;
+            pagamento.Pedido = pedido;
+            this.pedidoRepository.Save();
         }
 
     }
