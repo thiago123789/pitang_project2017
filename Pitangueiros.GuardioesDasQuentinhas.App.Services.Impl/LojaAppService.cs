@@ -18,14 +18,20 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
         {
             this.lojaService = lojaService;
         }
-        public void AtualizarStatusDoPedido(AtualizarStatusInputDto atualizar)
+
+        public void AtualizarLoja(AtualizarLojaInputDto atualizarLoja)
         {
-            this.lojaService.AtualizarStatusDoPedido(atualizar.IdPedido, atualizar.Status);
+            this.lojaService.AtualizarLoja(atualizarLoja.IdLoja, atualizarLoja.Nome, atualizarLoja.Endereco, atualizarLoja.Bairros);
+        }
+
+        public void AtualizarStatusDoPedido(AtualizarStatusInputDto atualizarStatus)
+        {
+            this.lojaService.AtualizarStatusDoPedido(atualizarStatus.IdPedido, atualizarStatus.Status);
         }
 
         public void CriarNovaPorcao(PorcaoInputDto porcao)
         {
-            this.lojaService.CriarNovaPorcao(porcao.IdLoja,new Porcao
+            this.lojaService.CriarNovaPorcao(porcao.IdLoja, new Porcao
             {
                 Item = porcao.Item,
                 Preco = porcao.Preco,
@@ -49,9 +55,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
            this.lojaService.DefinirAreaDeEntrega(areas.idLoja,areas.Bairros);
         }
        */ 
-        public void ExcluirPratoDaLoja(int id)
+        public void ExcluirPratoDaLoja(int idPrato)
         {
-            this.lojaService.ExcluirPratoDaLoja(id);
+            this.lojaService.ExcluirPratoDaLoja(idPrato);
         }
 
     }

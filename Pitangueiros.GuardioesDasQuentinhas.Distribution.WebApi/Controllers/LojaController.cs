@@ -23,9 +23,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
         }
 
         [HttpPut]
-        public void ExcluirPratoDaLoja(int idLoja)
+        public void ExcluirPratoDaLoja(int idPrato)
         {
-            this.lojaAppService.ExcluirPratoDaLoja(idLoja);
+            this.lojaAppService.ExcluirPratoDaLoja(idPrato);
+        }
+
+        [HttpPut]
+        public void AtualizarLoja(AtualizarLojaInputDto atualizarLoja)
+        {
+            this.lojaAppService.AtualizarLoja(atualizarLoja);
         }
 
         [HttpPost]

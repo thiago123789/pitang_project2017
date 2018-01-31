@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtualizarLojaInputDto.cs" />
     <Compile Include="AtualizarStatusInputDto.cs" />
     <Compile Include="AutenticacaoInputDto.cs" />
     <Compile Include="AvaliacaoInputDto.cs" />

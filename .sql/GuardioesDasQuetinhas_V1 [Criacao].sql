@@ -73,7 +73,7 @@ create table Prato(
 	[UltimaModificacao] DateTime2 null,
 	[CriadoPorVendedor] bit not null,
 	[LojaId] int not null foreign key references Loja(Id),
-	[PedidoId] int not null foreign key references Pedido(Id),
+	[PedidoId] bigint null foreign key references Pedido(Id)
 )
 
 create table Porcao(

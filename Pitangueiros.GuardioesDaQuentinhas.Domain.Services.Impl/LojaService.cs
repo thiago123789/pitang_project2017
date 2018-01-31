@@ -21,6 +21,24 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.pedidoRepository = pedidoRepository;
         }
 
+        public void AtualizarLoja(int idLoja, string nome, string endereco, IList<string> bairros)
+        {
+            Loja loja = this.lojaRepository.Find(idLoja);
+            if (nome != null)
+            {
+                loja.Nome = nome;
+            }
+            if (endereco != null)
+            {
+                loja.EnderecoDaLoja = endereco;
+            }
+            if (nome != null)
+            {
+                loja.BairrosDeEntrega = bairros;
+            }
+            this.lojaRepository.Save();
+        }
+
         public void AtualizarStatusDoPedido(long idPedido, StatusPedido status)
         {
             Pedido pedido = pedidoRepository.GetOne(idPedido);
@@ -45,30 +63,33 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             if (prato != null)
             {
                 Loja loja = this.lojaRepository.Find(idLoja);
-                IList<Porcao> porcoes = this.porcaoRepository.FindList(idPorcoes);
-                prato.Porcoes = porcoes;
                 prato.Loja = loja;
                 loja.Pratos.Add(prato);
+                this.lojaRepository.Save();
+                IList<Porcao> porcoes = this.porcaoRepository.FindList(idPorcoes);
+                prato.Porcoes = porcoes;
                 this.porcaoRepository.Save();
             }
         }
 
-        public void AdicionarBairroDeEntrega(string nomeLoja, string bairro) {
-            if (nomeLoja != null || bairro != null)
-            {
-                //lojaRepository.ObterPorNome(nomeLoja);
-                //lojaRepository.ObterPorNome(nomeLoja).BairrosDeEntrega.Add(bairro);
+        //public void AdicionarBairroDeEntrega(string nomeLoja, string bairro) {
+        //    if (nomeLoja != null || bairro != null)
+        //    {
+        //        //lojaRepository.ObterPorNome(nomeLoja);
+        //        //lojaRepository.ObterPorNome(nomeLoja).BairrosDeEntrega.Add(bairro);
+        //
+        //    }
+        //}
 
-            }
-        }
-
-        public void ExcluirBairroDeEntrega(string nomeLoja, string bairro)
-        {
+        //public void ExcluirBairroDeEntrega(string nomeLoja, string bairro)
+        //{
             //lojaRepository.ObterPorNome(nomeLoja).BairrosDeEntrega.Remove(bairro);
-        }
+        //}
 
-        public void ExcluirPratoDaLoja(int id) {
-            //pratoRepository.Desativar(id);
+        public void ExcluirPratoDaLoja(int idPrato) {
+            Prato prato = this.pratoRepository.Find(idPrato);
+            this.pratoRepository.Desativar(prato);
+            this.pratoRepository.Save();
         }
     }
 }
