@@ -18,9 +18,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
         }
 
         [HttpPost]
-        public void IniciarPedido(PedidoInputDto pedido)
+        public void FazerPedido(PedidoInputDto pedido)
         {
-            this.clienteAppService.IniciarPedido(pedido);
+            this.clienteAppService.FazerPedido(pedido);
         }
     }
 }
