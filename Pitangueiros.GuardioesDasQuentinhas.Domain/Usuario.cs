@@ -19,6 +19,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public Usuario()
         {
             this.Lojas = new List<Loja>();
+            this.Pedidos = new List<Pedido>();
+            this.Cartao = new List<Cartao>();
+            this.Permissoes = new List<Permissao>();
+
         }
     }
 
