@@ -10,7 +10,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
 {
     public interface IClienteService : IDependenciaTransient
     {
-        void IniciarPedido(long idCliente, int IdLoja);
+        void FazerPedido(long idCliente, int idLoja, Pedido pedido);
         void CancelarPedido(long idPedido);
         void AdicionarUmCartao(long idCliente, Cartao cartao);
         void RealizarPagamento(long idPedido, Pagamento pagamento);

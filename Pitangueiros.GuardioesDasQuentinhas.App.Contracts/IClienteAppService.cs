@@ -11,7 +11,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
     public interface IClienteAppService : IAppService
     {
 
-        void IniciarPedido(PedidoInputDto pedido);
+        void FazerPedido(PedidoInputDto pedido);
         void CancelarPedido(long idPedido);
         void AdicionarUmCartao(CartaoInputDto cartao);
         void RealizarPagamento(PagamentoInputDto pagamento);

@@ -17,6 +17,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         private readonly IAvaliacaoRepository avaliacaoRepository;
         private readonly IUsuarioRepository usuarioRepository;
         private readonly IPagamentoRepository pagamentoRepository;
+        private readonly IPratoRepository pratoRepository;
 
         public ClienteService(ICartaoRepository cartaoRepository, ILojaRepository lojaRepository, IPedidoRepository pedidoRepository, IAvaliacaoRepository avaliacaoRepository, IUsuarioRepository usuarioRepository)
         {
@@ -49,20 +50,13 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.pedidoRepository.Save();
         }
 
-        public void IniciarPedido(long idCliente, int idLoja)
+        public void FazerPedido(long idCliente, int idLoja, Pedido pedido)
         {
-            Pedido pedido = new Pedido();
-
-            Usuario cliente = this.usuarioRepository.Find(idCliente);
-            pedido.Cliente = cliente;
-            cliente.Pedidos.Add(pedido);
+            pedido.Loja = this.lojaRepository.Find(idLoja);
+            pedido.Cliente = this.usuarioRepository.Find(idCliente);
+            this.lojaRepository.Find(idLoja).Pedidos.Add(pedido);
+            this.usuarioRepository.Find(idCliente).Pedidos.Add(pedido);
             this.usuarioRepository.Save();
-            //this.usuarioRepository.Dispose();
-
-            Loja loja = this.lojaRepository.Find(idLoja);
-            pedido.Loja = loja;
-            loja.Pedidos.Add(pedido);
-            this.lojaRepository.Save();
         }
 
         public void RealizarPagamento(long idPedido, Pagamento pagamento)
@@ -75,3 +69,4 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 
     }
 }
+

@@ -45,9 +45,13 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             this.clienteService.CancelarPedido(idPedido);
         }
 
-        public void IniciarPedido(PedidoInputDto pedido)
+        public void FazerPedido(PedidoInputDto pedido)
         {
-            this.clienteService.IniciarPedido(pedido.IdCliente, pedido.IdLoja);
+            this.clienteService.FazerPedido(pedido.IdCliente, pedido.IdLoja, new Pedido
+            {
+                Pratos = pedido.Pratos,
+                Comentario = pedido.Comentario
+            });
         }
 
         public void RealizarPagamento(PagamentoInputDto pagamento)
@@ -57,7 +61,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
                 DataCriacao = pagamento.DataDeCriacao,
                 OpcaoDePagamento = pagamento.OpcaoPagamento,
                 UltimaModificacao = pagamento.UltimaModificacao
-            }); 
+            });
         }
     }
 }
