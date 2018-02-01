@@ -20,5 +20,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Repositories
         void Desativar(T entity);
         T Find(TId entityId);
         IList<T> FindList(IList<TId> listEntityId);
+        void Dispose();
     }
 }

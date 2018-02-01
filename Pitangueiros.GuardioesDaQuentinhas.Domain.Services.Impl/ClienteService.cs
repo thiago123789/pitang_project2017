@@ -57,12 +57,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             pedido.Cliente = cliente;
             cliente.Pedidos.Add(pedido);
             this.usuarioRepository.Save();
+            //this.usuarioRepository.Dispose();
 
             Loja loja = this.lojaRepository.Find(idLoja);
             pedido.Loja = loja;
             loja.Pedidos.Add(pedido);
             this.lojaRepository.Save();
-
         }
 
         public void RealizarPagamento(long idPedido, Pagamento pagamento)

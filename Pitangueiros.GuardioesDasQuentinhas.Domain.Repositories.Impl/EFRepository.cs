@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
-    public class EFRepository<T, TId> : IRepository<T, TId>
+    public class EFRepository<T, TId> : IRepository<T, TId>, IDisposable
         where T : class, IEntidadeBase<TId>, new()
         where TId : IComparable<TId>, IEquatable<TId> 
     {
@@ -79,6 +79,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
                          select entity).ToList();
             
             return query;
+        }
+
+        public void Dispose()
+        {
+            this.Context.Dispose();
         }
     }
 }
