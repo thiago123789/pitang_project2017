@@ -7,6 +7,7 @@ using System.Data.Entity;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 using Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
@@ -28,6 +29,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             modelBuilder.Configurations.Add(new AvaliacaoMapping());
             modelBuilder.Configurations.Add(new PermissaoMapping());
             modelBuilder.Configurations.Add(new BairroMapping());
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             base.OnModelCreating(modelBuilder);
         }
     }

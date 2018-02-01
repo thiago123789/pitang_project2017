@@ -49,8 +49,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
         {
             this.clienteService.FazerPedido(pedido.IdCliente, pedido.IdLoja, new Pedido
             {
-                Pratos = pedido.Pratos,
-                Comentario = pedido.Comentario
+                //Pratos = pedido.Pratos,
+                //Comentario = pedido.Comentario
             });
         }
 

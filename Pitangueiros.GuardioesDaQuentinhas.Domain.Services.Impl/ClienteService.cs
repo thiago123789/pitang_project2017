@@ -52,11 +52,22 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 
         public void FazerPedido(long idCliente, int idLoja, Pedido pedido)
         {
-            pedido.Loja = this.lojaRepository.Find(idLoja);
-            pedido.Cliente = this.usuarioRepository.Find(idCliente);
-            this.lojaRepository.Find(idLoja).Pedidos.Add(pedido);
-            this.usuarioRepository.Find(idCliente).Pedidos.Add(pedido);
+            //pedido.Loja = this.lojaRepository.Find(idLoja);
+            //pedido.Cliente = this.usuarioRepository.Find(idCliente);
+            //this.lojaRepository.Find(idLoja).Pedidos.Add(pedido);
+            //this.usuarioRepository.Find(idCliente).Pedidos.Add(pedido);
+            //this.usuarioRepository.Save();
+
+            Usuario cliente = this.usuarioRepository.Find(idCliente);
+            pedido.Cliente = cliente;
+            cliente.Pedidos.Add(pedido);
             this.usuarioRepository.Save();
+
+            Loja loja = this.lojaRepository.Find(idLoja);
+            pedido.Loja = loja;
+            loja.Pedidos.Add(pedido);
+            this.lojaRepository.Save();
+
         }
 
         public void RealizarPagamento(long idPedido, Pagamento pagamento)
