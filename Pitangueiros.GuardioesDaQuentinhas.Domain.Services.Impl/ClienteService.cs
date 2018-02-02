@@ -55,16 +55,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 
             Usuario cliente = this.usuarioRepository.Find(idCliente);
             pedido.Cliente = cliente;
-            //cliente.Pedidos.Add(pedido);
+            cliente.Pedidos.Add(pedido);
+            this.usuarioRepository.Save();
             Loja loja = this.lojaRepository.Find(idLoja);
             pedido.Loja = loja;
-
-            //this.usuarioRepository.Save();
-
-          
-            ///loja.Pedidos.Add(pedido);
-
-  
+            loja.Pedidos.Add(pedido);
             this.lojaRepository.Save();
 
         }

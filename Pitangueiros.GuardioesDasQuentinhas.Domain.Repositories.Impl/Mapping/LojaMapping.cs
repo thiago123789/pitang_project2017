@@ -23,7 +23,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .HasColumnName("EnderecoDaLoja");
             this.Property(p => p.IsDeleted)
                 .HasColumnName("IsDeleted").IsRequired();
-            this.HasRequired<Usuario>(s => s.Vendedor)
+            this.HasOptional<Usuario>(s => s.Vendedor)
                 .WithMany(c => c.Lojas)
                 .Map(a => a.MapKey("VendedorId"));
             this.Property(p => p.DataCriacao)
