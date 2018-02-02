@@ -48,7 +48,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                     cs.MapRightKey("PorcaoId");
                     cs.ToTable("PratoPorcao");
                 });
-            this.HasRequired<Loja>(s => s.Loja)
+            this.HasOptional<Loja>(s => s.Loja)
                 .WithMany(s => s.Pratos)
                 .Map(a => a.MapKey("LojaId"));
         }

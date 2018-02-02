@@ -12,10 +12,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
     {
         [Required]
         [Display(Name = "Id do pedido")]
-        public int IdPedido { get; set; }
+        public long IdPedido { get; set; }
         [Required]
         [Display(Name = "Status do pedido")]
-        public StatusPedido Status { get; set; }
+        public StatusPedido StatusPedido { get; set; }
 
     }
 }

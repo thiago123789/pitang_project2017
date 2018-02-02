@@ -11,6 +11,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
     public interface IClienteService : IDependenciaTransient
     {
         void FazerPedido(long idCliente, int idLoja, Pedido pedido);
+        void InserirPratoNoPedido(IList<int> idPratos, long idPedido);
+        void CriarPratoEmPedido(long idPedido, IList<long> idPorcoes, Prato prato);
         void CancelarPedido(long idPedido);
         void AdicionarUmCartao(long idCliente, Cartao cartao);
         void RealizarPagamento(long idPedido, Pagamento pagamento);

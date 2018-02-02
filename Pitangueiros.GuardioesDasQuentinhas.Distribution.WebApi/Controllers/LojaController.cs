@@ -40,8 +40,14 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
             this.lojaAppService.ExcluirBairroDeEntrega(idBairro);
         }
 
+        [HttpPut]
+        public void AtualizarStatusDoPedido(AtualizarStatusInputDto atualizarStatus)
+        {
+            this.lojaAppService.AtualizarStatusDoPedido(atualizarStatus);
+        }
+
         [HttpPost]
-        public void CriarNovaPrato(PratoInputDto prato)
+        public void CriarNovoPrato(PratoInputDto prato)
         {
             this.lojaAppService.CriarNovoPrato(prato);
         }

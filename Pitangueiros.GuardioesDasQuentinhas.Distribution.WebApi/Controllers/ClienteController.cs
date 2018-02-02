@@ -22,5 +22,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
         {
             this.clienteAppService.FazerPedido(pedido);
         }
+
+        [HttpPost]
+        public void CriarPratoEmPedido(PratoClienteInputDto pratoCliente)
+        {
+            this.clienteAppService.CriarPratoEmPedido(pratoCliente);
+        }
     }
 }

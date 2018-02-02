@@ -18,14 +18,18 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         private readonly IUsuarioRepository usuarioRepository;
         private readonly IPagamentoRepository pagamentoRepository;
         private readonly IPratoRepository pratoRepository;
+        private readonly IPorcaoRepository porcaoRepository;
 
-        public ClienteService(ICartaoRepository cartaoRepository, ILojaRepository lojaRepository, IPedidoRepository pedidoRepository, IAvaliacaoRepository avaliacaoRepository, IUsuarioRepository usuarioRepository)
+        public ClienteService(ICartaoRepository cartaoRepository, ILojaRepository lojaRepository, 
+                              IPedidoRepository pedidoRepository, IAvaliacaoRepository avaliacaoRepository, 
+                              IUsuarioRepository usuarioRepository, IPorcaoRepository porcaoRepository)
         {
             this.cartaoRepository = cartaoRepository;
             this.lojaRepository = lojaRepository;
             this.pedidoRepository = pedidoRepository;
             this.avaliacaoRepository = avaliacaoRepository;
             this.usuarioRepository = usuarioRepository;
+            this.porcaoRepository = porcaoRepository;
         }
         public void AdicionarUmCartao(long idCliente, Cartao cartao)
         {
@@ -50,17 +54,40 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.pedidoRepository.Save();
         }
 
+        public void CriarPratoEmPedido(long idPedido, IList<long> idPorcoes, Prato prato)
+        {
+            Pedido pedido = this.pedidoRepository.Find(idPedido);
+            IList<Porcao> porcoes = this.porcaoRepository.FindList(idPorcoes);
+            prato.Porcoes = porcoes;
+            pedido.Pratos.Add(prato);
+            foreach (Porcao porcao in porcoes)
+            {
+                prato.Preco = prato.Preco + porcao.Preco;
+            }
+            this.porcaoRepository.Save();
+        }
+
+        public void InserirPratoNoPedido(IList<int> idPratos, long idPedido)
+        {
+            Pedido pedido = this.pedidoRepository.Find(idPedido);
+            IList<Prato> pratos = this.pratoRepository.FindList(idPratos);
+            pedido.Pratos = pratos;
+            //foreach (Prato prato in pratos)
+            //{
+
+            //}
+            this.pratoRepository.Save();
+        }
+
         public void FazerPedido(long idCliente, int idLoja, Pedido pedido)
         {
 
             Usuario cliente = this.usuarioRepository.Find(idCliente);
             pedido.Cliente = cliente;
             cliente.Pedidos.Add(pedido);
-            //this.usuarioRepository.Save();
             Loja loja = this.lojaRepository.Find(idLoja);
             pedido.Loja = loja;
             loja.Pedidos.Add(pedido);
-            //this.pedidoRepository.Add(pedido);
             this.lojaRepository.Save();
 
         }

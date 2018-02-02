@@ -13,11 +13,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
         [Required]
         [Display(Name = "Id do Cliente")]
         public long IdCliente { get; set; }
+
         //[Required]
-        //[Display(Name = "Pratos")]
-        //public IList<Prato> Pratos { get; set; }
+        //[Display(Name = "Id dos Pratos")]
+        //public IList<int> IdPratos { get; set; }
+
         //[Display(Name = "Comentario")]
+        //[DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "[Null]")]
         //public string Comentario { get; set; }
+
         [Required]
         [Display(Name = "Id da Loja")]
         public int IdLoja { get; set; }

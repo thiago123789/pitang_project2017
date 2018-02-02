@@ -24,10 +24,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         }
 
 
-        public void AtualizarStatusDoPedido(long idPedido, StatusPedido status)
+        public void AtualizarStatusDoPedido(long idPedido, StatusPedido statusPedido)
         {
             Pedido pedido = this.pedidoRepository.Find(idPedido);
-            pedido.StatusPedido = status;
+            pedido.StatusPedido = statusPedido;
             this.pedidoRepository.Save();
 
         }

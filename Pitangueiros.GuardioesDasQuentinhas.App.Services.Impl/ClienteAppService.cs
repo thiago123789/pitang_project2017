@@ -45,12 +45,19 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             this.clienteService.CancelarPedido(idPedido);
         }
 
+        public void CriarPratoEmPedido(PratoClienteInputDto pratoCliente)
+        {
+            this.clienteService.CriarPratoEmPedido(pratoCliente.IdPedido, pratoCliente.IdPorcoes, new Prato
+            {
+                CriadoPorVendedor = pratoCliente.CriadoPorVendedor
+            });
+        }
+
         public void FazerPedido(PedidoInputDto pedido)
         {
             this.clienteService.FazerPedido(pedido.IdCliente, pedido.IdLoja, new Pedido
             {
-                //Pratos = pedido.Pratos,
-                //Comentario = pedido.Comentario
+                StatusPedido = StatusPedido.Iniciado
             });
         }
 

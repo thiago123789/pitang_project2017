@@ -21,7 +21,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
 
         public void AtualizarStatusDoPedido(AtualizarStatusInputDto atualizarStatus)
         {
-            this.lojaService.AtualizarStatusDoPedido(atualizarStatus.IdPedido, atualizarStatus.Status);
+            this.lojaService.AtualizarStatusDoPedido(atualizarStatus.IdPedido, atualizarStatus.StatusPedido);
         }
 
         public void CriarNovaPorcao(PorcaoInputDto porcao)

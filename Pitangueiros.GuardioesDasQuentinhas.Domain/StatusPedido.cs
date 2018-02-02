@@ -7,7 +7,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities
 {
     public enum StatusPedido
     {
-        Recebido = 1,
+        Iniciado = 1,
+        Recebido,
         Aceito,
         Recusado,
         EmPreparacao,

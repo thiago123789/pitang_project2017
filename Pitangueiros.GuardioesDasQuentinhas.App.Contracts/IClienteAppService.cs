@@ -12,6 +12,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
     {
 
         void FazerPedido(PedidoInputDto pedido);
+        void CriarPratoEmPedido(PratoClienteInputDto pratoCliente);
+        //void IneserirPratoNoPedido(PratoPedidoInputDto pratoPedido);
         void CancelarPedido(long idPedido);
         void AdicionarUmCartao(CartaoInputDto cartao);
         void RealizarPagamento(PagamentoInputDto pagamento);
