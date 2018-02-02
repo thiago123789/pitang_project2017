@@ -73,8 +73,7 @@ create table Prato(
 	[DataCriacao] DateTime2 null,
 	[UltimaModificacao] DateTime2 null,
 	[CriadoPorVendedor] bit not null,
-	[LojaId] int not null foreign key references Loja(Id),
-	[PedidoId] bigint null foreign key references Pedido(Id)
+	[LojaId] int not null foreign key references Loja(Id)
 )
 
 create table Porcao(
@@ -104,6 +103,13 @@ create table PratoPorcao(
 	[PratoId] int not null foreign key references Prato(Id),
 	[PorcaoId] bigint not null foreign key references Porcao(Id),
 	constraint cts_prato_porcao unique (PratoId, PorcaoId) 
+)
+
+create table PedidoPrato(
+	[Id] bigint primary key identity(0,1),
+	[PedidoId] bigint not null foreign key references Pedido(Id),
+	[PratoId] int not null foreign key references Prato(Id),
+	constraint cts_pedido_prato unique (PedidoId, PratoId) 
 )
 
 create table AreaEntregaLoja (

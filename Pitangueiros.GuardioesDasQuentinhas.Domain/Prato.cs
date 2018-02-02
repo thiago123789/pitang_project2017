@@ -12,10 +12,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public DateTime UltimaModificacao { get; set; }
         public Loja Loja { get; set; }
         public bool CriadoPorVendedor { get; set;}
-        public Pedido Pedido { get; set; }
+        public IList<Pedido> Pedidos { get; set; }
         public Prato()
         {
             this.Porcoes = new List<Porcao>();
+            this.Pedidos = new List<Pedido>();
         }
     }
 }

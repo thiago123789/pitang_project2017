@@ -11,7 +11,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     public class EFRepository<T, TId> : IRepository<T, TId>, IDisposable
         where T : class, IEntidadeBase<TId>, new()
-        where TId : IComparable<TId>, IEquatable<TId> 
+        where TId : IComparable<TId>, IEquatable<TId>
     {
         protected DbContext Context { get; }
 
@@ -24,14 +24,14 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         public void Desativar(T entity)
         {
             //var entity_rtn = (from entity in Context.Set<T>()
-                         //where entity.Id.Equals(entityId)
-                         //select entity).SingleOrDefault();
+            //where entity.Id.Equals(entityId)
+            //select entity).SingleOrDefault();
 
             if (entity is IDeleteLogico)
             {
-                ((IDeleteLogico) entity).IsDeleted  = true;
+                ((IDeleteLogico)entity).IsDeleted = true;
             }
-          
+
         }
 
         public T GetOne(TId entityId)
@@ -45,13 +45,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         public void Add(T entity)
         {
             this.Context.Set<T>().Add(entity);
+            //this.Context.Entry(entity).State = EntityState.Added;
+            //this.Context.SaveChanges();
         }
 
         public ICollection<T> ListActive()
         {
             var list = (from entity in Context.Set<T>()
-                       where ((IDeleteLogico)entity).IsDeleted
-                       select entity).ToList();
+                        where ((IDeleteLogico)entity).IsDeleted
+                        select entity).ToList();
             return list;
         }
 
@@ -77,13 +79,23 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
             var query = (from entity in Context.Set<T>()
                          where listEntityId.Contains(entity.Id)
                          select entity).ToList();
-            
+
             return query;
         }
 
         public void Dispose()
         {
             this.Context.Dispose();
+        }
+
+        public void Detach(T entity)
+        {
+            this.Context.Entry(entity).State = EntityState.Detached;
+        }
+
+        public void Attach(T entity)
+        {
+            this.Context.Set(entity.GetType()).Attach(entity);
         }
     }
 }

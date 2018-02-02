@@ -8,7 +8,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            
+            //container.Register(Component.For<DbContext>).implementby
         }
     }
 }
