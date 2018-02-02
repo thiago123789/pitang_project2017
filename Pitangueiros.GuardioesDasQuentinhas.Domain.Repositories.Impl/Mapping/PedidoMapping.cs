@@ -35,8 +35,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
             this.HasRequired<Usuario>(p => p.Cliente)
                 .WithMany(p => p.Pedidos)
                 .Map(a => a.MapKey("ClienteId"));
-            this.HasRequired<Pagamento>(p => p.Pagamento)
-                .WithRequiredDependent();
+            this.HasOptional<Pagamento>(p => p.Pagamento)
+                .WithRequired();
             this.HasOptional<Avaliacao>(p => p.Avaliacao)
                 .WithRequired(p => p.Pedido);
             this.Property(p => p.IsDeleted)

@@ -20,7 +20,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public Pedido()
         {
             this.Pratos = new List<Prato>();
-            this.Loja = new Loja();
+            //this.Loja = new Loja();
         }
     }
 }

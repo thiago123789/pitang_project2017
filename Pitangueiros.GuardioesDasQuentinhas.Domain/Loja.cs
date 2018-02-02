@@ -21,6 +21,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
             this.Pratos = new List<Prato>();
             this.Pedidos = new List<Pedido>();
             this.Bairros = new List<Bairro>();
+            //this.Vendedor = new Usuario();
         }
     }
 }

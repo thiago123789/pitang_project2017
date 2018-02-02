@@ -41,7 +41,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
             this.HasMany(c => c.Cartao)
                 .WithRequired(c => c.Cliente);
             this.HasMany<Loja>(s => s.Lojas)
-                .WithOptional(s => s.Vendedor);
+                .WithRequired(s => s.Vendedor);
         }
     }
 }

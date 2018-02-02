@@ -17,9 +17,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
             this.HasKey(p => p.Id);
             this.Property(p => p.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            //this.HasOptional<Pedido>(p => p.Pedido)
-            //    .WithMany(p => p.Pratos)
-            //    .Map(a => a.MapKey("PedidoId"));
             this.HasMany<Pedido>(s => s.Pedidos)
                 .WithMany(c => c.Pratos)
                 .Map(cs =>
