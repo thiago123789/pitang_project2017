@@ -10,7 +10,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     public class UsuarioRepository : EFRepository<Usuario, long>, IUsuarioRepository
     {
-        public UsuarioRepository() : base(new GuardioesDasQuentinhasDbContext())
+        public UsuarioRepository(GuardioesDasQuentinhasDbContext context) : base(context)
         {
 
         }

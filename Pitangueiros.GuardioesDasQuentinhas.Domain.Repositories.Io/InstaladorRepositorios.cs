@@ -1,6 +1,8 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl;
+using System.Data.Entity;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC
 {
@@ -8,7 +10,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.IoC
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            //container.Register(Component.For<DbContext>).implementby
+            container.Register(Component.For<DbContext>()
+                .ImplementedBy<GuardioesDasQuentinhasDbContext>()
+                .LifeStyle.PerWebRequest);
         }
     }
 }

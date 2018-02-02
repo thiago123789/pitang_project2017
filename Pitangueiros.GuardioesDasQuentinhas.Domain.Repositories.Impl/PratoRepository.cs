@@ -10,7 +10,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     public class PratoRepository : EFRepository<Prato, int>, IPratoRepository
     {
-        public PratoRepository() : base(new GuardioesDasQuentinhasDbContext())
+        public PratoRepository(GuardioesDasQuentinhasDbContext context) : base(context)
         {
 
         }

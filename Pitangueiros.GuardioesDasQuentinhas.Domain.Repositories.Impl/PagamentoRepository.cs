@@ -10,7 +10,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     public class PagamentoRepository : EFRepository<Pagamento, long>, IPagamentoRepository
     {
-        public PagamentoRepository() : base(new GuardioesDasQuentinhasDbContext())
+        public PagamentoRepository(GuardioesDasQuentinhasDbContext context) : base(context)
         {
 
         }

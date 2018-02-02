@@ -11,7 +11,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     public class LojaRepository : EFRepository<Loja, int>, ILojaRepository
     {
-        public LojaRepository() : base(new GuardioesDasQuentinhasDbContext())
+        public LojaRepository(GuardioesDasQuentinhasDbContext context) : base(context)
         {
 
         }

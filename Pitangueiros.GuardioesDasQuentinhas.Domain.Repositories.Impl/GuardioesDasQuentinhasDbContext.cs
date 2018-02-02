@@ -11,7 +11,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
-    public class GuardioesDasQuentinhasDbContext :  DbContext{
+    public class GuardioesDasQuentinhasDbContext :  DbContext {
 
         public GuardioesDasQuentinhasDbContext() : base("ConnIQuentinhas") {
             Database.SetInitializer<GuardioesDasQuentinhasDbContext>(null);
