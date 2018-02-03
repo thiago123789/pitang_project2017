@@ -8,3 +8,5 @@ Fluxo:<br />
 4 - Criar diagrama de classes - em construção<br /><br />
 
 Quadro de atividades e backlog do sistema: https://github.com/thiago123789/pitang_project2017/projects/1<br />
+
+Repositorio Front-End (Angular): https://github.com/thiago123789/guardioesUI
