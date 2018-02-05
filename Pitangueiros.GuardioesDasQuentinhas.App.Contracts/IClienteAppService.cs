@@ -23,6 +23,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
         IList<Prato> ListarPratosDaLoja(int idLoja);
         IList<Porcao> ListarPorcoesDaLoja(int idLoja);
         IList<Loja> ListarLojas();
+        IList<Cartao> ListarCartoesCliente(long idCliente);
+        IList<Bairro> ListarBairrosLoja(int idLoja);
+        IList<Porcao> ListarPorcoesPratos(int idPrato);
 
     }
 }

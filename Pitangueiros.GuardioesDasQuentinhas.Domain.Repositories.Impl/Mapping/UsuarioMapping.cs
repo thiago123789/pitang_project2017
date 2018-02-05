@@ -38,7 +38,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                     cs.MapRightKey("PermissaoId");
                     cs.ToTable("PermissaoUsuario");
                 });
-            this.HasMany(c => c.Cartao)
+            this.HasMany(c => c.Cartoes)
                 .WithRequired(c => c.Cliente);
             this.HasMany<Loja>(s => s.Lojas)
                 .WithRequired(s => s.Vendedor);

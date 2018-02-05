@@ -52,7 +52,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         public ICollection<T> ListActive()
         {
             var list = (from entity in Context.Set<T>()
-                        where (entity).IsDeleted
+                        where !(entity).IsDeleted
                         select entity).ToList();
             return list;
         }

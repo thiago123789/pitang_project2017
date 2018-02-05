@@ -37,7 +37,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         public void AdicionarUmCartao(long idCliente, Cartao cartao)
         {
             Usuario cliente = this.usuarioRepository.Find(idCliente);
-            cliente.Cartao.Add(cartao);
+            cliente.Cartoes.Add(cartao);
             cartao.Cliente = cliente;
             this.usuarioRepository.Save();
         }
@@ -143,15 +143,36 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 
         public IList<Prato> ListarPratosLoja(int idLoja)
         {
-            IList < Prato > pratos = lojaRepository.Find(idLoja).Pratos;
+            IList <Prato> pratos = this.lojaRepository.Find(idLoja).Pratos;
             this.lojaRepository.Save();
             return pratos;
         }
 
         public IList<Porcao> ListarPorcoesLoja(int idLoja)
         {
-            IList<Porcao> porcoes = lojaRepository.Find(idLoja).Porcoes;
+            IList<Porcao> porcoes = this.lojaRepository.Find(idLoja).Porcoes;
             this.lojaRepository.Save();
+            return porcoes;
+        }
+
+        public IList<Cartao> ListarCartoesCliente(long idCliente)
+        {
+            IList<Cartao> cartoes = this.usuarioRepository.Find(idCliente).Cartoes;
+            this.usuarioRepository.Save();
+            return cartoes;
+        }
+
+        public IList<Bairro> ListarBairrosLoja(int idLoja)
+        {
+            IList<Bairro> bairros = this.lojaRepository.Find(idLoja).Bairros;
+            this.usuarioRepository.Save();
+            return bairros;
+        }
+
+        public IList<Porcao> ListarPorcoesPrato(int idPrato)
+        {
+            IList<Porcao> porcoes = this.pratoRepository.Find(idPrato).Porcoes;
+            this.pratoRepository.Save();
             return porcoes;
         }
     }

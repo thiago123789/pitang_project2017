@@ -12,7 +12,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         public DateTime DataCriacao { get; set; }
         public DateTime UltimaModificacao { get; set; }
         public virtual IList<Permissao> Permissoes { get; set; }
-        public virtual IList<Cartao> Cartao { get; set; }
+        public virtual IList<Cartao> Cartoes { get; set; }
         public virtual IList<Pedido> Pedidos { get; set; }
         public virtual IList<Loja> Lojas { get; set; }
 
@@ -20,7 +20,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
         {
             this.Lojas = new List<Loja>();
             this.Pedidos = new List<Pedido>();
-            this.Cartao = new List<Cartao>();
+            this.Cartoes = new List<Cartao>();
             this.Permissoes = new List<Permissao>();
 
         }

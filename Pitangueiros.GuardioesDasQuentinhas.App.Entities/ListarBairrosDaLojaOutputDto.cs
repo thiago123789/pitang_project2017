@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
 {
-    public class ListarPratosDaLojaOutputDto
+    public class ListarBairrosDaLojaOutputDto
     {
         public int IdLoja { get; set; }
-        public IList<PratoOutputDto> Pratos { get; set; }
+        public IList<BairroOutputDto> Bairros { get; set; }
     }
 }

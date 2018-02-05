@@ -108,5 +108,20 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
         {
             return this.clienteService.ListarTodasLojas();
         }
+
+        public IList<Cartao> ListarCartoesCliente(long idCliente)
+        {
+            return this.clienteService.ListarCartoesCliente(idCliente);
+        }
+
+        public IList<Bairro> ListarBairrosLoja(int idLoja)
+        {
+            return this.clienteService.ListarBairrosLoja(idLoja);
+        }
+
+        public IList<Porcao> ListarPorcoesPratos(int idPrato)
+        {
+            return this.clienteService.ListarPorcoesPrato(idPrato);
+        }
     }
 }

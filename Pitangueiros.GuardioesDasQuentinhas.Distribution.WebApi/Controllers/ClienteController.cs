@@ -87,7 +87,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
         }
 
         [HttpGet]
-        public ListarPorcoesDaLojaOutputDto ListarPorcoesDaLojas(int idLoja)
+        public ListarPorcoesDaLojaOutputDto ListarPorcoesDaLoja(int idLoja)
         {
             IList<Porcao> porcoes = this.clienteAppService.ListarPorcoesDaLoja(idLoja);
 
@@ -108,8 +108,107 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
 
             return new ListarPorcoesDaLojaOutputDto
             {
-                idLoja = idLoja,
+                IdLoja = idLoja,
                 Porcoes = porcoesOutput
+            };
+        }
+
+        [HttpGet]
+        public ListarPorcoesDoPratoOutputDto ListarPorcoesPratos(int idPrato)
+        {
+            IList<Porcao> porcoes = this.clienteAppService.ListarPorcoesDaLoja(idPrato);
+
+            IList<PorcaoOutputDto> porcoesOutput = new List<PorcaoOutputDto>();
+
+            foreach (Porcao porcao in porcoes)
+            {
+                PorcaoOutputDto porcaoOutput = new PorcaoOutputDto();
+                porcaoOutput.Item = porcao.Item;
+                porcaoOutput.Quantidade = porcao.Quantidade;
+                porcaoOutput.Preco = porcao.Preco;
+                porcaoOutput.CategoriaPorcao = porcao.CategoriaPorcao;
+                porcaoOutput.DataCriacao = porcao.DataCriacao;
+                porcaoOutput.UltimaModificacao = porcao.UltimaModificacao;
+                porcaoOutput.Id = porcao.Id;
+                porcoesOutput.Add(porcaoOutput);
+            };
+
+            return new ListarPorcoesDoPratoOutputDto
+            {
+                IdPrato = idPrato,
+                Porcoes = porcoesOutput
+            };
+        }
+
+        [HttpGet]
+        public ListarPratosDaLojaOutputDto ListarPratosDaLoja(int idLoja)
+        {
+            IList<Prato> pratos = this.clienteAppService.ListarPratosDaLoja(idLoja);
+
+            IList<PratoOutputDto> pratosOutput = new List<PratoOutputDto>();
+
+            foreach (Prato prato in pratos)
+            {
+                PratoOutputDto pratoOutput = new PratoOutputDto();
+                pratoOutput.Id = prato.Id;
+                pratoOutput.Preco = prato.Preco;
+                pratoOutput.DataCriacao = prato.DataCriacao;
+                pratoOutput.UltimaModificacao = prato.UltimaModificacao;
+                pratosOutput.Add(pratoOutput);
+            }
+            return new ListarPratosDaLojaOutputDto
+            {
+                IdLoja = idLoja,
+                Pratos = pratosOutput
+            };
+        }
+
+        [HttpGet]
+        public ListarBairrosDaLojaOutputDto ListarBairrosDaLoja(int idLoja)
+        {
+            IList<Bairro> bairros = this.clienteAppService.ListarBairrosLoja(idLoja);
+
+            IList<BairroOutputDto> bairrosOutput = new List<BairroOutputDto>();
+
+            foreach (Bairro bairro in bairros)
+            {
+                BairroOutputDto bairroOutput = new BairroOutputDto();
+                bairroOutput.Id = bairro.Id;
+                bairroOutput.Nome = bairro.Nome;
+                bairroOutput.DataCriacao = bairro.DataCriacao;
+                bairroOutput.UltimaModificacao = bairro.UltimaModificacao;
+                bairrosOutput.Add(bairroOutput);
+            }
+            return new ListarBairrosDaLojaOutputDto
+            {
+                IdLoja = idLoja,
+                Bairros = bairrosOutput
+            };
+        }
+
+        [HttpGet]
+        public ListarCartoesDoClienteOutputDto ListarCartoesCliente(int idCliente)
+        {
+            IList<Cartao> cartoes = this.clienteAppService.ListarCartoesCliente(idCliente);
+
+            IList<CartaoOutputDto> cartoesOutput = new List<CartaoOutputDto>();
+
+            foreach (Cartao cartao in cartoes)
+            {
+                CartaoOutputDto cartaoOutput = new CartaoOutputDto();
+                cartaoOutput.Id = cartao.Id;
+                cartaoOutput.NomeTitular = cartao.NomeTitular;
+                cartaoOutput.Numero = cartao.Numero;
+                cartaoOutput.Validade = cartao.Validade;
+                cartaoOutput.CodSeg = cartao.CodSeg;
+                cartaoOutput.DataCriacao = cartao.DataCriacao;
+                cartaoOutput.UltimaModificacao = cartao.UltimaModificacao;
+                cartoesOutput.Add(cartaoOutput);
+            }
+            return new ListarCartoesDoClienteOutputDto
+            {
+                IdCliente = idCliente,
+                Cartoes = cartoesOutput
             };
         }
     }
