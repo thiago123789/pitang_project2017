@@ -17,12 +17,13 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
         private readonly IAvaliacaoRepository avaliacaoRepository;
         private readonly IUsuarioRepository usuarioRepository;
         private readonly IPagamentoRepository pagamentoRepository;
-        private readonly IPratoRepository pratoRepository;
         private readonly IPorcaoRepository porcaoRepository;
+        private readonly IPratoRepository pratoRepository;
 
         public ClienteService(ICartaoRepository cartaoRepository, ILojaRepository lojaRepository, 
                               IPedidoRepository pedidoRepository, IAvaliacaoRepository avaliacaoRepository, 
-                              IUsuarioRepository usuarioRepository, IPorcaoRepository porcaoRepository)
+                              IUsuarioRepository usuarioRepository, IPorcaoRepository porcaoRepository,
+                              IPratoRepository pratoRepository)
         {
             this.cartaoRepository = cartaoRepository;
             this.lojaRepository = lojaRepository;
@@ -30,6 +31,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.avaliacaoRepository = avaliacaoRepository;
             this.usuarioRepository = usuarioRepository;
             this.porcaoRepository = porcaoRepository;
+            this.pratoRepository = pratoRepository;
+
         }
         public void AdicionarUmCartao(long idCliente, Cartao cartao)
         {
@@ -49,7 +52,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 
         public void CancelarPedido(long idPedido)
         {
-            Pedido pedido = this.pedidoRepository.GetOne(idPedido);
+            Pedido pedido = this.pedidoRepository.Find(idPedido);
             pedido.StatusPedido = StatusPedido.Cancelado;
             this.pedidoRepository.Save();
         }
@@ -67,15 +70,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.porcaoRepository.Save();
         }
 
-        public void InserirPratoNoPedido(IList<int> idPratos, long idPedido)
+        public void InserirPratoNoPedido(IList<int> idPratos, long idPedido, string comentario)
         {
             Pedido pedido = this.pedidoRepository.Find(idPedido);
             IList<Prato> pratos = this.pratoRepository.FindList(idPratos);
+            pedido.Comentario = comentario;
             pedido.Pratos = pratos;
-            //foreach (Prato prato in pratos)
-            //{
-
-            //}
             this.pratoRepository.Save();
         }
 
@@ -100,6 +100,39 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.pedidoRepository.Save();
         }
 
+        public void DesativarCartao(int idCartao)
+        {
+            Cartao cartao = this.cartaoRepository.Find(idCartao);
+            this.cartaoRepository.Desativar(cartao);
+            this.cartaoRepository.Save();
+        }
+
+        public void AtualizarCartao(int idCartao, Cartao cartaoAtualizado)
+        {
+            Cartao cartao = cartaoRepository.Find(idCartao);
+            if (cartaoAtualizado.NomeTitular != null)
+            {
+                cartao.NomeTitular = cartaoAtualizado.NomeTitular;
+            }
+
+            if (cartaoAtualizado.Bandeira != null)
+            {
+                cartao.Bandeira = cartaoAtualizado.Bandeira;
+            }
+            if (cartaoAtualizado.CodSeg != null)
+            {
+                cartao.CodSeg = cartaoAtualizado.CodSeg;
+            }
+            if (cartaoAtualizado.Validade != null)
+            {
+                cartao.Validade = cartaoAtualizado.Validade;
+            }
+            if (cartaoAtualizado.Numero != null)
+            {
+                cartao.Numero = cartaoAtualizado.Numero;
+            }
+            this.cartaoRepository.Save();
+        }
     }
 }
 

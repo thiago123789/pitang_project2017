@@ -28,5 +28,35 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
         {
             this.clienteAppService.CriarPratoEmPedido(pratoCliente);
         }
+
+        [HttpPost]
+        public void InserirPratoNoPedido(InserirPratoInputDto inserirPrato)
+        {
+            this.clienteAppService.InserirPratoNoPedido(inserirPrato);
+        }
+
+        [HttpPost]
+        public void AdicionarUmCartao(CartaoInputDto cartao)
+        {
+            this.clienteAppService.AdicionarUmCartao(cartao);
+        }
+
+        [HttpPut]
+        public void CancelarPedido(long idPedido)
+        {
+            this.clienteAppService.CancelarPedido(idPedido);
+        }
+
+        [HttpPut]
+        public void DesativarCartao(int idCartao)
+        {
+            this.clienteAppService.DesativarCartao(idCartao);
+        }
+
+        [HttpPost]
+        public void AtualizarCartao(AtualizarCartaoInputDto atualizarCartao)
+        {
+            this.clienteAppService.AtualizarCartao(atualizarCartao);
+        }
     }
 }

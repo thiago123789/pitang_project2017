@@ -31,6 +31,18 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             });
         }
 
+        public void AtualizarCartao(AtualizarCartaoInputDto atualizarCartao)
+        {
+            this.clienteService.AtualizarCartao(atualizarCartao.IdCartao, new Cartao
+            {
+                NomeTitular = atualizarCartao.NomeTitular,
+                Bandeira = atualizarCartao.Bandeira,
+                CodSeg = atualizarCartao.CodSeg,
+                Validade = atualizarCartao.Validade,
+                Numero = atualizarCartao.Numero
+            });
+        }
+
         public void AvaliarPedido(AvaliacaoInputDto avaliacao)
         {
             this.clienteService.AvaliarPedido(avaliacao.IdPedido, new Avaliacao
@@ -53,12 +65,22 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             });
         }
 
+        public void DesativarCartao(int idCartao)
+        {
+            this.clienteService.DesativarCartao(idCartao);
+        }
+
         public void FazerPedido(PedidoInputDto pedido)
         {
             this.clienteService.FazerPedido(pedido.IdCliente, pedido.IdLoja, new Pedido
             {
                 StatusPedido = StatusPedido.Iniciado
             });
+        }
+
+        public void InserirPratoNoPedido(InserirPratoInputDto inserirPrato)
+        {
+            this.clienteService.InserirPratoNoPedido(inserirPrato.IdPratos, inserirPrato.IdPedido, inserirPrato.Comentario);
         }
 
         public void RealizarPagamento(PagamentoInputDto pagamento)

@@ -13,6 +13,5 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
         void CadastrarLoja(long idVendedor, Loja loja);
         void DesativarLoja(int idLoja);
         void AtualizarLoja(int idLoja, Loja lojaAtualizada);
-        //void CadastrarAreaEntrega(IList CEPs);
     }
 }

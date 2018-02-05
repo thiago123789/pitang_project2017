@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtualizarCartaoInputDto.cs" />
     <Compile Include="AtualizarLojaInputDto.cs" />
     <Compile Include="AtualizarStatusInputDto.cs" />
     <Compile Include="AutenticacaoInputDto.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="BairroInputDto.cs" />
     <Compile Include="CartaoInputDto.cs" />
     <Compile Include="DefinirAreaDeEntregaDto.cs" />
+    <Compile Include="InserirPratoInputDto.cs" />
     <Compile Include="PagamentoInputDto.cs" />
     <Compile Include="PedidoInputDto.cs" />
     <Compile Include="LojaInputDto.cs" />
