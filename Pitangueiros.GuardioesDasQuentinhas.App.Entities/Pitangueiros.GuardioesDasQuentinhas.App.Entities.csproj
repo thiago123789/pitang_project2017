@@ -54,12 +54,15 @@
     <Compile Include="CartaoInputDto.cs" />
     <Compile Include="DefinirAreaDeEntregaDto.cs" />
     <Compile Include="InserirPratoInputDto.cs" />
+    <Compile Include="ListarLojasOutputDto.cs" />
     <Compile Include="ListarPratosDaLojaOutputDto.cs" />
     <Compile Include="ListarPorcoesDaLojaOutputDto.cs" />
+    <Compile Include="LojaOutputDto.cs" />
     <Compile Include="PagamentoInputDto.cs" />
     <Compile Include="PedidoInputDto.cs" />
     <Compile Include="LojaInputDto.cs" />
     <Compile Include="PorcaoInputDto.cs" />
+    <Compile Include="PorcaoOutputDto.cs" />
     <Compile Include="PratoInputDto.cs" />
     <Compile Include="PratoClienteInputDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

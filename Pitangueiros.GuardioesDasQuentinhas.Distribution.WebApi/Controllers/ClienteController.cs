@@ -42,37 +42,74 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
             this.clienteAppService.AdicionarUmCartao(cartao);
         }
 
-        [HttpPost]
+        [HttpPut]
         public void CancelarPedido(long idPedido)
         {
             this.clienteAppService.CancelarPedido(idPedido);
         }
 
-        [HttpPost]
+        [HttpPut]
         public void DesativarCartao(int idCartao)
         {
             this.clienteAppService.DesativarCartao(idCartao);
         }
 
-        [HttpPost]
+        [HttpPut]
         public void AtualizarCartao(AtualizarCartaoInputDto atualizarCartao)
         {
             this.clienteAppService.AtualizarCartao(atualizarCartao);
         }
 
-        [HttpPost]
-        public IList<Loja> ListarLojas()
+        [HttpGet]
+        public ListarLojasOutputDto ListarLojas()
         {
-            return this.clienteAppService.ListarLojas();
+            IList<Loja> lojas = this.clienteAppService.ListarLojas();
+
+            IList<LojaOutputDto> lojasOutput = new List<LojaOutputDto>();
+
+            foreach (Loja loja in lojas)
+            {
+                LojaOutputDto lojaOutput = new LojaOutputDto();
+                lojaOutput.Id = loja.Id;
+                lojaOutput.Nome = loja.Nome;
+                lojaOutput.EnderecoDaLoja = loja.EnderecoDaLoja;
+                lojaOutput.MediaAvaliacoes = loja.MediaAvaliacoes;
+                lojaOutput.DataCriacao = loja.DataCriacao;
+                lojaOutput.UltimaModificacao = loja.UltimaModificacao;
+                lojasOutput.Add(lojaOutput);
+
+            }
+
+            return new ListarLojasOutputDto
+            {
+                Lojas = lojasOutput
+            };
         }
 
-        [HttpPost]
+        [HttpGet]
         public ListarPorcoesDaLojaOutputDto ListarPorcoesDaLojas(int idLoja)
         {
+            IList<Porcao> porcoes = this.clienteAppService.ListarPorcoesDaLoja(idLoja);
+
+            IList<PorcaoOutputDto> porcoesOutput = new List<PorcaoOutputDto>();
+
+            foreach (Porcao porcao in porcoes)
+            {
+                PorcaoOutputDto porcaoOutput = new PorcaoOutputDto();
+                porcaoOutput.Item = porcao.Item;
+                porcaoOutput.Quantidade = porcao.Quantidade;
+                porcaoOutput.Preco = porcao.Preco;
+                porcaoOutput.CategoriaPorcao = porcao.CategoriaPorcao;
+                porcaoOutput.DataCriacao = porcao.DataCriacao;
+                porcaoOutput.UltimaModificacao = porcao.UltimaModificacao;
+                porcaoOutput.Id = porcao.Id;
+                porcoesOutput.Add(porcaoOutput);
+            }; 
+
             return new ListarPorcoesDaLojaOutputDto
             {
                 idLoja = idLoja,
-                Porcoes = this.clienteAppService.ListarPorcoesDaLoja(idLoja)
+                Porcoes = porcoesOutput
             };
         }
     }

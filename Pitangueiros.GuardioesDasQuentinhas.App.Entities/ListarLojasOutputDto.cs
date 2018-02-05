@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
 {
-    public class ListarPorcoesDaLojaOutputDto
+    public class ListarLojasOutputDto
     {
-        public int idLoja { get; set; }
-        public IList<PorcaoOutputDto> Porcoes{ get; set; }
+        public IList<LojaOutputDto> Lojas { get; set; }
     }
 }

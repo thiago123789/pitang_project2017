@@ -7,7 +7,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities
 {
     public enum CategoriaPorcao
     {
-        Grao,
+        Grao = 1,
         Proteina,
         Carboidrato,
         Vegetal

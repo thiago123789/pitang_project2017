@@ -93,15 +93,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             });
         }
 
-        public IList<Prato> ListarPratosDaLoja(int IdLoja)
+        public IList<Prato> ListarPratosDaLoja(int idLoja)
         { 
             
-            return this.clienteService.ListarPratosLoja(IdLoja);
+            return this.clienteService.ListarPratosLoja(idLoja);
         }
 
-        public IList<Porcao> ListarPorcoesDaLoja(int IdLoja)
+        public IList<Porcao> ListarPorcoesDaLoja(int idLoja)
         {
-            return this.clienteService.ListarPorcoesLoja(IdLoja);
+            return this.clienteService.ListarPorcoesLoja(idLoja);
         }
 
         public IList<Loja> ListarLojas()
