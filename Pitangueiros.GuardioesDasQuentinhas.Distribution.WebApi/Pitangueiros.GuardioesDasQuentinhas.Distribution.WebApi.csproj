@@ -166,6 +166,10 @@
       <Project>{ad9dd1ef-6a5f-4113-8f04-eec065db9165}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Services.IoC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain\Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.csproj">
+      <Project>{C1F0217C-F4CE-44AF-92D6-FF91BDE9AA12}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pitangueiros.GuardioesDasQuentinhas.App.Entities;
-
+using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
 {
@@ -20,6 +20,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
         void AtualizarCartao(AtualizarCartaoInputDto atualizarCartao);
         void RealizarPagamento(PagamentoInputDto pagamento);
         void AvaliarPedido(AvaliacaoInputDto avaliacao);
+        IList<Prato> ListarPratosDaLoja(int IdLoja);
+        IList<Porcao> ListarPorcoesDaLoja(int IdLoja);
+        IList<Loja> ListarLojas();
 
     }
 }

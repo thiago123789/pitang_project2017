@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
-    public class Loja : EntidadeBase<int>, IDeleteLogico, IAuditoria {
+    public class Loja : EntidadeBase<int>, IDeleteLogico  {
         public string Nome { get; set; }
         public string EnderecoDaLoja { get; set; }
         public Usuario Vendedor { get; set; }

@@ -10,7 +10,7 @@ using System.Data.Entity;
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
 {
     public class EFRepository<T, TId> : IRepository<T, TId>, IDisposable
-        where T : class, IEntidadeBase<TId>, new()
+        where T : class, IEntidadeBase<TId>, IDeleteLogico, new()
         where TId : IComparable<TId>, IEquatable<TId>
     {
         protected DbContext Context { get; }
@@ -52,7 +52,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl
         public ICollection<T> ListActive()
         {
             var list = (from entity in Context.Set<T>()
-                        where ((IDeleteLogico)entity).IsDeleted
+                        where (entity).IsDeleted
                         select entity).ToList();
             return list;
         }

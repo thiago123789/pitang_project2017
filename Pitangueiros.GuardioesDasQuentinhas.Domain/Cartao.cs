@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities
 {
-    public class Cartao : EntidadeBase<int>, IDeleteLogico, IAuditoria {
+    public class Cartao : EntidadeBase<int>, IDeleteLogico {
         public string Numero { get; set; }
         public string Validade { get; set; }
         public string Bandeira { get; set; }

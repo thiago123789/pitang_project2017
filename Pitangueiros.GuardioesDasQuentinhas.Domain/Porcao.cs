@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
-    public class Porcao : EntidadeBase<long>, IDeleteLogico, IAuditoria{
+    public class Porcao : EntidadeBase<long>, IDeleteLogico {
         public string Item { get; set; }
         public int Quantidade { get; set; }
         public double Preco { get; set; }

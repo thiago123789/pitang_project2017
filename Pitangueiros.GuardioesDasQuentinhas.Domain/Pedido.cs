@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities {
-    public class Pedido : EntidadeBase<long>, IDeleteLogico, IAuditoria {
+    public class Pedido : EntidadeBase<long>, IDeleteLogico {
         public virtual IList<Prato> Pratos { get; set; }
         public Loja Loja { get; set; }
         public string Comentario { get; set; }

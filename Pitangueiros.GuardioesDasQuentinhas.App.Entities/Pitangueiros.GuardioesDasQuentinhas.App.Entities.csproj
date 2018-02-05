@@ -54,6 +54,8 @@
     <Compile Include="CartaoInputDto.cs" />
     <Compile Include="DefinirAreaDeEntregaDto.cs" />
     <Compile Include="InserirPratoInputDto.cs" />
+    <Compile Include="ListarPratosDaLojaOutputDto.cs" />
+    <Compile Include="ListarPorcoesDaLojaOutputDto.cs" />
     <Compile Include="PagamentoInputDto.cs" />
     <Compile Include="PedidoInputDto.cs" />
     <Compile Include="LojaInputDto.cs" />

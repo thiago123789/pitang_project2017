@@ -92,5 +92,21 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
                 UltimaModificacao = pagamento.UltimaModificacao
             });
         }
+
+        public IList<Prato> ListarPratosDaLoja(int IdLoja)
+        { 
+            
+            return this.clienteService.ListarPratosLoja(IdLoja);
+        }
+
+        public IList<Porcao> ListarPorcoesDaLoja(int IdLoja)
+        {
+            return this.clienteService.ListarPorcoesLoja(IdLoja);
+        }
+
+        public IList<Loja> ListarLojas()
+        {
+            return this.clienteService.ListarTodasLojas();
+        }
     }
 }

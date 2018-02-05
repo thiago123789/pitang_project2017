@@ -61,6 +61,10 @@
       <Project>{E968A184-60BF-413F-B602-78F5CDBD2A32}</Project>
       <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pitangueiros.GuardioesDasQuentinhas.Domain\Pitangueiros.GuardioesDasQuentinhas.Domain.Entities.csproj">
+      <Project>{C1F0217C-F4CE-44AF-92D6-FF91BDE9AA12}</Project>
+      <Name>Pitangueiros.GuardioesDasQuentinhas.Domain.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

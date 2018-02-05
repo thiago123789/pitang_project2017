@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using Pitangueiros.GuardioesDasQuentinhas.App.Contracts;
 using Pitangueiros.GuardioesDasQuentinhas.App.Entities;
+using Pitangueiros.GuardioesDasQuentinhas.Domain.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
 {
@@ -41,13 +42,13 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
             this.clienteAppService.AdicionarUmCartao(cartao);
         }
 
-        [HttpPut]
+        [HttpPost]
         public void CancelarPedido(long idPedido)
         {
             this.clienteAppService.CancelarPedido(idPedido);
         }
 
-        [HttpPut]
+        [HttpPost]
         public void DesativarCartao(int idCartao)
         {
             this.clienteAppService.DesativarCartao(idCartao);
@@ -57,6 +58,22 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
         public void AtualizarCartao(AtualizarCartaoInputDto atualizarCartao)
         {
             this.clienteAppService.AtualizarCartao(atualizarCartao);
+        }
+
+        [HttpPost]
+        public IList<Loja> ListarLojas()
+        {
+            return this.clienteAppService.ListarLojas();
+        }
+
+        [HttpPost]
+        public ListarPorcoesDaLojaOutputDto ListarPorcoesDaLojas(int idLoja)
+        {
+            return new ListarPorcoesDaLojaOutputDto
+            {
+                idLoja = idLoja,
+                Porcoes = this.clienteAppService.ListarPorcoesDaLoja(idLoja)
+            };
         }
     }
 }

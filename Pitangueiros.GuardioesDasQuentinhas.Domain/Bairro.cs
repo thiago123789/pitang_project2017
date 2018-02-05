@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities
 {
-    public class Bairro : EntidadeBase<int>, IDeleteLogico, IAuditoria
+    public class Bairro : EntidadeBase<int>, IDeleteLogico
     {
         public bool IsDeleted { get; set; }
         public DateTime DataCriacao { get; set; }

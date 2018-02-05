@@ -2,7 +2,7 @@
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Entities
 {
-    public class Avaliacao : EntidadeBase<int>, IDeleteLogico, IAuditoria
+    public class Avaliacao : EntidadeBase<int>, IDeleteLogico 
     {
         public string Comentario { get; set; }
         public Pedido Pedido { get; set; }

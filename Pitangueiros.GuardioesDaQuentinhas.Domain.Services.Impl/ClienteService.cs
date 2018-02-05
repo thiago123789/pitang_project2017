@@ -133,6 +133,27 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             }
             this.cartaoRepository.Save();
         }
+
+        public IList<Loja> ListarTodasLojas()
+        {
+            IList<Loja> lojas = (IList<Loja>) lojaRepository.ListActive();
+            this.lojaRepository.Save();
+            return lojas;
+        }
+
+        public IList<Prato> ListarPratosLoja(int idLoja)
+        {
+            IList < Prato > pratos = lojaRepository.Find(idLoja).Pratos;
+            this.lojaRepository.Save();
+            return pratos;
+        }
+
+        public IList<Porcao> ListarPorcoesLoja(int idLoja)
+        {
+            IList<Porcao> porcoes = lojaRepository.Find(idLoja).Porcoes;
+            this.lojaRepository.Save();
+            return porcoes;
+        }
     }
 }
 
