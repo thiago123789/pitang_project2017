@@ -45,6 +45,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             });
         }
 
+        public IList<Porcao> ListarPorcoesLoja(int idLoja)
+        {
+            return this.lojaService.ListarPorcoesLoja(idLoja);
+        }
+
         public void AdicionarBairroDeEntrega(BairroInputDto bairro)
         {
             this.lojaService.AdicionarBairroDeEntrega(bairro.IdLoja, new Bairro
@@ -52,6 +57,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
                 Nome = bairro.Nome
             });
 
+        }
+
+        public IList<Pedido> ListarPedidosLoja(int idLoja)
+        {
+            return this.lojaService.ListarPedidosLoja(idLoja);
         }
 
         public void ExcluirBairroDeEntrega(int idBairro)

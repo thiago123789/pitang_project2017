@@ -69,6 +69,16 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             }
         }
 
+        public IList<Pedido> ListarPedidosLoja(int idLoja)
+        {
+            return this.lojaRepository.Find(idLoja).Pedidos;
+        }
+
+        public IList<Porcao> ListarPorcoesLoja(int idLoja)
+        {
+            return this.lojaRepository.Find(idLoja).Porcoes;
+        }
+
         public void ExcluirBairroDeEntrega(int idBairro)
         {
             Bairro bairro = this.bairroRepository.Find(idBairro);
