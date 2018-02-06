@@ -13,10 +13,10 @@ create table Usuario (
 create table Cartao(
 	[Id] int not null primary key identity(0,1),
 	[Bandeira] nvarchar(30) not null,
-	[CodSeg] int not null,
+	[CodSeg] nvarchar(20) not null,
 	[NomeTitular] nvarchar(100) not null,
 	[NumeroCartao] nvarchar(20) not null,
-	[Validade] Date not null,
+	[Validade] nvarchar(20) not null,
 	[IsDeleted] bit not null,
 	[DataCriacao] DateTime2 null,
 	[UltimaModificacao] DateTime2 null,
@@ -56,7 +56,7 @@ create table Pagamento(
 
 create table Pedido(
 	[Id] bigint not null primary key identity(0,1),
-	[Comentario] nvarchar(500),
+	[Comentario] nvarchar(500) null,
 	[Preco] float null,
 	[StatusPedido] int null,
 	[IsDeleted] bit not null,
@@ -92,7 +92,7 @@ create table Porcao(
 create table Avaliacao(
 	[Id] int not null primary key identity(0,1),
 	[Nota] int not null,
-	[Comentario] nvarchar(500),
+	[Comentario] nvarchar(500) null,
 	[IsDeleted] bit not null,
 	[DataCriacao] DateTime2 null,
 	[UltimaModificacao] DateTime2 null,
@@ -113,11 +113,6 @@ create table PedidoPrato(
 	constraint cts_pedido_prato unique (PedidoId, PratoId) 
 )
 
-create table AreaEntregaLoja (
-	[Id] bigint primary key identity(0,1),
-	[Bairro] nvarchar(10) not null,
-	[LojaId] int not null foreign key references Loja(Id)
-)
 
 create table Bairro(
 	[Id] int not null primary key identity(0,1),
