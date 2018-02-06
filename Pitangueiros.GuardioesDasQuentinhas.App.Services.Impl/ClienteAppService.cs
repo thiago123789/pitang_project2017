@@ -87,9 +87,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
         {
             this.clienteService.RealizarPagamento(pagamento.IdPedido, new Pagamento
             {
-                DataCriacao = pagamento.DataDeCriacao,
-                OpcaoDePagamento = pagamento.OpcaoPagamento,
-                UltimaModificacao = pagamento.UltimaModificacao
+                OpcaoDePagamento = pagamento.OpcaoPagamento
             });
         }
 
@@ -119,7 +117,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             return this.clienteService.ListarBairrosLoja(idLoja);
         }
 
-        public IList<Porcao> ListarPorcoesPratos(int idPrato)
+        public IList<Porcao> ListarPorcoesPrato(int idPrato)
         {
             return this.clienteService.ListarPorcoesPrato(idPrato);
         }

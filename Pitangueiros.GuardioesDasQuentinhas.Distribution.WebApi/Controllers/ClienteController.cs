@@ -42,6 +42,18 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
             this.clienteAppService.AdicionarUmCartao(cartao);
         }
 
+        [HttpPost]
+        public void RealizarPagamento(PagamentoInputDto pagamento)
+        {
+            this.clienteAppService.RealizarPagamento(pagamento);
+        }
+
+        [HttpPost]
+        public void AvaliarPedido(AvaliacaoInputDto avaliacao)
+        {
+            this.clienteAppService.AvaliarPedido(avaliacao);
+        }
+
         [HttpPut]
         public void CancelarPedido(long idPedido)
         {
@@ -114,9 +126,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
         }
 
         [HttpGet]
-        public ListarPorcoesDoPratoOutputDto ListarPorcoesPratos(int idPrato)
+        public ListarPorcoesDoPratoOutputDto ListarPorcoesPrato(int idPrato)
         {
-            IList<Porcao> porcoes = this.clienteAppService.ListarPorcoesDaLoja(idPrato);
+            IList<Porcao> porcoes = this.clienteAppService.ListarPorcoesPrato(idPrato);
 
             IList<PorcaoOutputDto> porcoesOutput = new List<PorcaoOutputDto>();
 

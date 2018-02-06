@@ -49,7 +49,9 @@ create table Pagamento(
 	[Id] bigint not null primary key identity(0,1),
 	[OpcaoPagamento] nvarchar(20) not  null,
 	[DataCriacao] DateTime2 null,
-	[UltimaModificacao] DateTime2 null
+	[IsDeleted] bit not null,
+	[UltimaModificacao] DateTime2 null,
+	[PedidoId] bigint not null foreign key references Pedido(Id)
 )
 
 create table Pedido(
@@ -61,8 +63,7 @@ create table Pedido(
 	[DataCriacao] DateTime2 null,
 	[UltimaModificacao] DateTime2 null,
 	[ClienteId] bigint not null foreign key references Usuario(Id),
-	[LojaId] int not null foreign key references Loja(Id),
-	[PagamentoId] bigint null foreign key references Pagamento(Id) 
+	[LojaId] int not null foreign key references Loja(Id), 
 )
 
 
@@ -92,10 +93,10 @@ create table Avaliacao(
 	[Id] int not null primary key identity(0,1),
 	[Nota] int not null,
 	[Comentario] nvarchar(500),
-	[DataAvaliacao] DateTime not null,
+	[IsDeleted] bit not null,
 	[DataCriacao] DateTime2 null,
 	[UltimaModificacao] DateTime2 null,
-	[PedidoId] bigint not null foreign key references Pedido(Id),
+	[PedidoId] bigint not null foreign key references Pedido(Id)
 )
 
 create table PratoPorcao(

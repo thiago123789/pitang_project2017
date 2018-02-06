@@ -18,14 +18,9 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
             this.HasKey(p => p.Id);
             this.Property(p => p.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            //this.HasMany<Prato>(p => p.Pratos)
-            //    .WithOptional(p => p.Pedido);
             this.HasRequired<Loja>(p => p.Loja)
                 .WithMany(p => p.Pedidos)
                 .Map(a => a.MapKey("LojaId"));
-            //this.HasRequired<Loja>(p => p.Loja)
-            //    .WithMany()
-            //    .Map(a => a.MapKey("LojaId"));
             this.Property(p => p.Comentario)
                 .HasColumnName("Comentario");
             this.Property(p => p.StatusPedido)
@@ -36,7 +31,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Repositories.Impl.Mapping
                 .WithMany(p => p.Pedidos)
                 .Map(a => a.MapKey("ClienteId"));
             this.HasOptional<Pagamento>(p => p.Pagamento)
-                .WithRequired();
+                .WithRequired(p => p.Pedido);
             this.HasOptional<Avaliacao>(p => p.Avaliacao)
                 .WithRequired(p => p.Pedido);
             this.Property(p => p.IsDeleted)

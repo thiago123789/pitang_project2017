@@ -44,7 +44,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
 
         public void AvaliarPedido(long idPedido, Avaliacao avaliacao)
         {
-            Pedido pedido = this.pedidoRepository.GetOne(idPedido);
+            Pedido pedido = this.pedidoRepository.Find(idPedido);
             pedido.Avaliacao = avaliacao;
             avaliacao.Pedido = pedido;
             this.pedidoRepository.Save();
