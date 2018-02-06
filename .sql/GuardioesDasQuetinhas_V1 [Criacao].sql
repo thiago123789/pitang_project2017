@@ -45,15 +45,6 @@ create table Permissao (
 	[Papel] nvarchar(20) not null unique
 )	
 
-create table Pagamento(
-	[Id] bigint not null primary key identity(0,1),
-	[OpcaoPagamento] nvarchar(20) not  null,
-	[DataCriacao] DateTime2 null,
-	[IsDeleted] bit not null,
-	[UltimaModificacao] DateTime2 null,
-	[PedidoId] bigint not null foreign key references Pedido(Id)
-)
-
 create table Pedido(
 	[Id] bigint not null primary key identity(0,1),
 	[Comentario] nvarchar(500) null,
@@ -66,6 +57,14 @@ create table Pedido(
 	[LojaId] int not null foreign key references Loja(Id), 
 )
 
+create table Pagamento(
+	[Id] bigint not null primary key identity(0,1),
+	[OpcaoPagamento] nvarchar(20) not  null,
+	[DataCriacao] DateTime2 null,
+	[IsDeleted] bit not null,
+	[UltimaModificacao] DateTime2 null,
+	[PedidoId] bigint not null foreign key references Pedido(Id)
+)
 
 create table Prato(
 	[Id] int primary key identity(0,1),

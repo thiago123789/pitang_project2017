@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Pitangueiros.GuardioesDasQuentinhas.App.Contracts;
 using Pitangueiros.GuardioesDasQuentinhas.App.Entities;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.Distribution.WebApi.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class VendedorController: ApiController
     {
         private readonly IVendedorAppService vendedorAppService;
