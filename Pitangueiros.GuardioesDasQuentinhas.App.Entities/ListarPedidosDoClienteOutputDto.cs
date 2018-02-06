@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Pitangueiros.GuardioesDasQuentinhas.App.Entities
 {
-    public class ListarPedidosDaLojaOutputDto
+    public class ListarPedidosDoClienteOutputDto
     {
-        public int IdLoja { get; set; }
+        public long IdCliente { get; set; }
         public IList<PedidoOutputDto> Pedidos { get; set; }
     }
 }

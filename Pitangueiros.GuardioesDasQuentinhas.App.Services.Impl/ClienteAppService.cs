@@ -91,35 +91,14 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
             });
         }
 
-        public IList<Prato> ListarPratosDaLoja(int idLoja)
-        { 
-            
-            return this.clienteService.ListarPratosLoja(idLoja);
-        }
-
-        public IList<Porcao> ListarPorcoesDaLoja(int idLoja)
-        {
-            return this.clienteService.ListarPorcoesLoja(idLoja);
-        }
-
-        public IList<Loja> ListarLojas()
-        {
-            return this.clienteService.ListarTodasLojas();
-        }
-
         public IList<Cartao> ListarCartoesCliente(long idCliente)
         {
             return this.clienteService.ListarCartoesCliente(idCliente);
         }
 
-        public IList<Bairro> ListarBairrosLoja(int idLoja)
+        public IList<Pedido> ListarPedidosCliente(long idCliente)
         {
-            return this.clienteService.ListarBairrosLoja(idLoja);
-        }
-
-        public IList<Porcao> ListarPorcoesPrato(int idPrato)
-        {
-            return this.clienteService.ListarPorcoesPrato(idPrato);
+            return this.clienteService.ListarPedidosCliente(idCliente);
         }
     }
 }

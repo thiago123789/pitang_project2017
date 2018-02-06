@@ -98,5 +98,38 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.porcaoRepository.Desativar(porcao);
             this.porcaoRepository.Save();
         }
+
+        public IList<Loja> ListarTodasLojas()
+        {
+            IList<Loja> lojas = (IList<Loja>)lojaRepository.ListActive();
+            this.lojaRepository.Save();
+            return lojas;
+        }
+
+        public IList<Prato> ListarPratosLoja(int idLoja)
+        {
+            IList<Prato> pratos = this.lojaRepository.Find(idLoja).Pratos;
+            this.lojaRepository.Save();
+            return pratos;
+        }
+
+        public IList<Bairro> ListarBairrosLoja(int idLoja)
+        {
+            IList<Bairro> bairros = this.lojaRepository.Find(idLoja).Bairros;
+            this.lojaRepository.Save();
+            return bairros;
+        }
+
+        public IList<Porcao> ListarPorcoesPrato(int idPrato)
+        {
+            IList<Porcao> porcoes = this.pratoRepository.Find(idPrato).Porcoes;
+            this.pratoRepository.Save();
+            return porcoes;
+        }
+
+        public IList<string> ListarCategoriaPorcao()
+        {
+            return new List<string>(Enum.GetNames(typeof(CategoriaPorcao)));
+        }
     }
 }

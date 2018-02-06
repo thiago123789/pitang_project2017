@@ -134,20 +134,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.cartaoRepository.Save();
         }
 
-        public IList<Loja> ListarTodasLojas()
-        {
-            IList<Loja> lojas = (IList<Loja>) lojaRepository.ListActive();
-            this.lojaRepository.Save();
-            return lojas;
-        }
-
-        public IList<Prato> ListarPratosLoja(int idLoja)
-        {
-            IList <Prato> pratos = this.lojaRepository.Find(idLoja).Pratos;
-            this.lojaRepository.Save();
-            return pratos;
-        }
-
         public IList<Porcao> ListarPorcoesLoja(int idLoja)
         {
             IList<Porcao> porcoes = this.lojaRepository.Find(idLoja).Porcoes;
@@ -162,18 +148,11 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             return cartoes;
         }
 
-        public IList<Bairro> ListarBairrosLoja(int idLoja)
+        public IList<Pedido> ListarPedidosCliente(long idCliente)
         {
-            IList<Bairro> bairros = this.lojaRepository.Find(idLoja).Bairros;
+            IList<Pedido> pedidos = this.usuarioRepository.Find(idCliente).Pedidos;
             this.usuarioRepository.Save();
-            return bairros;
-        }
-
-        public IList<Porcao> ListarPorcoesPrato(int idPrato)
-        {
-            IList<Porcao> porcoes = this.pratoRepository.Find(idPrato).Porcoes;
-            this.pratoRepository.Save();
-            return porcoes;
+            return pedidos;
         }
     }
 }

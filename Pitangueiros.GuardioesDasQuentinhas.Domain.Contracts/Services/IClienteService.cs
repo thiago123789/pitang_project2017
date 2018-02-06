@@ -19,11 +19,7 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
         void AtualizarCartao(int idCartao, Cartao cartaoAtualizado);
         void RealizarPagamento(long idPedido, Pagamento pagamento);
         void AvaliarPedido(long idPedido, Avaliacao avaliacao);
-        IList<Loja> ListarTodasLojas();
-        IList<Prato> ListarPratosLoja(int idLoja);
-        IList<Porcao> ListarPorcoesLoja(int idLoja);
         IList<Cartao> ListarCartoesCliente(long idCliente);
-        IList<Bairro> ListarBairrosLoja(int idLoja);
-        IList<Porcao> ListarPorcoesPrato(int idPrato);
+        IList<Pedido> ListarPedidosCliente(long idCliente);
     }
 }

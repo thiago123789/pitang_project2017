@@ -20,12 +20,8 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
         void AtualizarCartao(AtualizarCartaoInputDto atualizarCartao);
         void RealizarPagamento(PagamentoInputDto pagamento);
         void AvaliarPedido(AvaliacaoInputDto avaliacao);
-        IList<Prato> ListarPratosDaLoja(int idLoja);
-        IList<Porcao> ListarPorcoesDaLoja(int idLoja);
-        IList<Loja> ListarLojas();
         IList<Cartao> ListarCartoesCliente(long idCliente);
-        IList<Bairro> ListarBairrosLoja(int idLoja);
-        IList<Porcao> ListarPorcoesPrato(int idPrato);
+        IList<Pedido> ListarPedidosCliente(long idCliente);
 
     }
 }

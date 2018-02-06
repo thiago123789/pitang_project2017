@@ -19,5 +19,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
         void AtualizarStatusDoPedido(long idPedido, StatusPedido status);
         IList<Porcao> ListarPorcoesLoja(int idLoja);
         IList<Pedido> ListarPedidosLoja(int idLoja);
+        IList<Loja> ListarTodasLojas();                       
+        IList<Prato> ListarPratosLoja(int idLoja);            
+        IList<Bairro> ListarBairrosLoja(int idLoja);
+        IList<Porcao> ListarPorcoesPrato(int idPrato);
+        IList<string> ListarCategoriaPorcao();
     }
 }

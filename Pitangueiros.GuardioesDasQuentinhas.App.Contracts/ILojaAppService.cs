@@ -15,10 +15,15 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Contracts
         void CriarNovaPorcao(PorcaoInputDto porcao);
         void CriarNovoPrato(PratoInputDto prato);
         void AdicionarBairroDeEntrega(BairroInputDto bairro);
-        IList<Porcao> ListarPorcoesLoja(int idLoja);
-        IList<Pedido> ListarPedidosLoja(int idLoja);
         void ExcluirBairroDeEntrega(int idBairro);
         void ExcluirPratoDaLoja(int idPrato);
         void ExcluirPorcaoDaLoja(int idPorcao);
+        IList<Prato> ListarPratosDaLoja(int idLoja);
+        IList<Loja> ListarLojas();
+        IList<Bairro> ListarBairrosLoja(int idLoja);
+        IList<Porcao> ListarPorcoesPrato(int idPrato);
+        IList<Porcao> ListarPorcoesLoja(int idLoja);
+        IList<Pedido> ListarPedidosLoja(int idLoja);
+        IList<string> ListarCategoriaPorcao();
     }
 }

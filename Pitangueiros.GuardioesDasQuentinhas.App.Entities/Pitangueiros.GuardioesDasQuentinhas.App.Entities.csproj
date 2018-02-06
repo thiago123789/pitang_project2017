@@ -50,6 +50,7 @@
     <Compile Include="AtualizarStatusInputDto.cs" />
     <Compile Include="AutenticacaoInputDto.cs" />
     <Compile Include="AvaliacaoInputDto.cs" />
+    <Compile Include="AvaliacaoOutputDto.cs" />
     <Compile Include="BairroInputDto.cs" />
     <Compile Include="BairroOutputDto.cs" />
     <Compile Include="CartaoInputDto.cs" />
@@ -59,13 +60,17 @@
     <Compile Include="ListarBairrosDaLojaOutputDto.cs" />
     <Compile Include="ListarCartoesDoClienteOutputDto.cs" />
     <Compile Include="ListarLojasOutputDto.cs" />
+    <Compile Include="ListarPedidosDaLojaOutputDto.cs" />
+    <Compile Include="ListarPedidosDoClienteOutputDto.cs" />
     <Compile Include="ListarPorcoesDoPratoOutputDto.cs" />
     <Compile Include="ListarPratosDaLojaOutputDto.cs" />
     <Compile Include="ListarPorcoesDaLojaOutputDto.cs" />
     <Compile Include="LojaOutputDto.cs" />
     <Compile Include="PagamentoInputDto.cs" />
+    <Compile Include="PagamentoOutputDto.cs" />
     <Compile Include="PedidoInputDto.cs" />
     <Compile Include="LojaInputDto.cs" />
+    <Compile Include="PedidoOutputDto.cs" />
     <Compile Include="PorcaoInputDto.cs" />
     <Compile Include="PorcaoOutputDto.cs" />
     <Compile Include="PratoInputDto.cs" />
