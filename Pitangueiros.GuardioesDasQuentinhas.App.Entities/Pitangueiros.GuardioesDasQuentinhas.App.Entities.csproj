@@ -59,6 +59,7 @@
     <Compile Include="InserirPratoInputDto.cs" />
     <Compile Include="ListarBairrosDaLojaOutputDto.cs" />
     <Compile Include="ListarCartoesDoClienteOutputDto.cs" />
+    <Compile Include="ListarLojasDoVendedorOutputDto.cs" />
     <Compile Include="ListarLojasOutputDto.cs" />
     <Compile Include="ListarPedidosDaLojaOutputDto.cs" />
     <Compile Include="ListarPedidosDoClienteOutputDto.cs" />

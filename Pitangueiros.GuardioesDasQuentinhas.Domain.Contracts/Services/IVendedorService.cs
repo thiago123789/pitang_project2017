@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,5 +13,6 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Contracts.Services
         void CadastrarLoja(long idVendedor, Loja loja);
         void DesativarLoja(int idLoja);
         void AtualizarLoja(int idLoja, Loja lojaAtualizada);
+        IList<Loja> ListarLojasVendedor(long idVendedor);
     }
 }

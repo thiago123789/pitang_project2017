@@ -40,5 +40,10 @@ namespace Pitangueiros.GuardioesDasQuentinhas.App.Services.Impl
         {
             this.vendedorService.DesativarLoja(IdLoja);
         }
+
+        public IList<Loja> ListarLojasVendedor(long idVendedor)
+        {
+            return this.vendedorService.ListarLojasVendedor(idVendedor);
+        }
     }
 }

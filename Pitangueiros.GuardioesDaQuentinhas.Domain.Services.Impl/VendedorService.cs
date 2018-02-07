@@ -55,5 +55,12 @@ namespace Pitangueiros.GuardioesDasQuentinhas.Domain.Services.Impl
             this.lojaRepository.Desativar(loja);
             this.lojaRepository.Save();
         }
+
+        public IList<Loja> ListarLojasVendedor(long idVendedor)
+        {
+            IList<Loja> lojas = this.usuarioRepository.Find(idVendedor).Lojas;
+            this.usuarioRepository.Save();
+            return lojas;
+        }
     }
 }
